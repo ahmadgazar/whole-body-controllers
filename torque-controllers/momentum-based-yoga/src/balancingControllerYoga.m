@@ -20,7 +20,7 @@ function [tau_star, errorCoM,f_noQP, xi_dot]    =  ...
               balancingControllerYoga(constraints, ROBOT_DOF_FOR_SIMULINK, qj, qjDes, nu, M, h, L, ...
                                       intHw, w_H_l_sole, w_H_r_sole, JL, JR, dJL_nu, dJR_nu, xCoM, ...
                                       J_CoM, desired_x_dx_ddx_CoM, gainsPCOM, gainsDCOM, gainsICOM, ...
-                                      impedances, Gain, Reg, Left_Right_F_T_Sensors, f, F)
+                                      impedances, Gain, Reg, Left_Right_F_T_Sensors, f, F, xi)
     %BALANCING CONTROLLER
 
     %% DEFINITION OF CONTROL AND DYNAMIC VARIABLES
@@ -66,7 +66,7 @@ function [tau_star, errorCoM,f_noQP, xi_dot]    =  ...
                          
     % The following variables serve for determening the rate-of-change and 
     % double rate-of-change of the robot's momentum.
-    % In particular, when balancing on two feet, one has:
+    % In particular, when balancing on two feet, one has:F1
     %
     %   dot(H) = gravityWrench +  AL*f_L + AR*f_R
     %          = gravityWrench + [AL,AR]*f
@@ -117,7 +117,9 @@ function [tau_star, errorCoM,f_noQP, xi_dot]    =  ...
     pinvA_total     =  pinv(A_total, Reg.pinvTol) * constraints(1) * constraints(2)  ...
                       + [pinv(AL*F_L, Reg.pinvTol); zeros(6)]  * constraints(1) * (1-constraints(2)) ... 
                       + [zeros(6) ; pinv(AR*F_R, Reg.pinvTol)] * constraints(2) *(1-constraints(1));  
- 
+                  
+    nullA_total     = (eye(12,12)-pinvA_total*A_total)*constraints(1)*constraints(2);
+                        
     % Joint velocity
     qjDot          = nu(7:end);
     
@@ -128,7 +130,7 @@ function [tau_star, errorCoM,f_noQP, xi_dot]    =  ...
     %xDDcomStar     = desired_x_dx_ddx_CoM(:,3) - gainsPCOM.*(xCoM - desired_x_dx_ddx_CoM(:,1)) -gainsDCOM.*(xCoM_dot - desired_x_dx_ddx_CoM(:,2));
     
     %Desired jerk for the center of mass (used in global force parametrization controller)
-    xCoM_Jerk_Star = -gainsPCOM.*(xCoM_dot - desired_x_dx_ddx_CoM(:,2)) - gainsDCOM.*(xCoM_ddot - desired_x_dx_ddx_CoM(:,3)) - gainsICOM.*(xCoM - desired_x_dx_ddx_CoM(:,1));
+    xCoM_Jerk_Star = -gainsPCOM.*(xCoM_dot - desired_x_dx_ddx_CoM(:,2)) - gainsICOM.*(xCoM - desired_x_dx_ddx_CoM(:,1)) - gainsDCOM.*(xCoM_ddot - desired_x_dx_ddx_CoM(:,3));
 
     % Time varying contact jacobian
     Jc              = [JL*constraints(1);      
@@ -157,29 +159,30 @@ function [tau_star, errorCoM,f_noQP, xi_dot]    =  ...
     % Adaptation of control gains for back compatibility with older
     % versions of the controller
     impedances      = diag(impedances)*pinv(NLMbar,Reg.pinvTol) + Reg.impedances*eye(ROBOT_DOF);
-    dampings        = diag(dampings)*pinv(NLMbar,Reg.pinvTol)   + Reg.dampings*eye(ROBOT_DOF); 
+    dampings        = diag(dampings)*pinv(NLMbar,Reg.pinvTol)  + Reg.dampings*eye(ROBOT_DOF); 
    
-    % Terms used in Eq. 0)
+    % IROS_2016
+    % Sigma collects all the terms in tau to be multiplied by f
+    % tauModel collects the rest of the terms with the pd joint controller
+    % to follow a desired postural task
+    Sigma = -(Pinv_JcMinvSt*JcMinvJct + nullJcMinvSt*JBar);
     tauModel  = Pinv_JcMinvSt*(JcMinv*h - Jc_nuDot) + nullJcMinvSt*(h(7:end) - Mbj'/Mb*h(1:6) ...
-               -impedances*NLMbar*qjTilde -dampings*NLMbar*qjDot);
-    
-    Sigma     = -(Pinv_JcMinvSt*JcMinvJct + nullJcMinvSt*JBar);
-    %SigmaNA    = Sigma*NA;
-
+                -impedances*NLMbar*qjTilde -dampings*NLMbar*qjDot);
+   
     
     % Desired rate-of-change of the robot momentum 
     %HDotDes   = [m*xDDcomStar ;
     %            -Gain.KD_AngularMomentum*L(4:end) - Gain.KP_AngularMomentum*intHw];
-            
-    % Desired double derivative of the robot momentum
-    % dot(xi)_star = ddot(H)_star     
-    H_ddot_star = [m*xCoM_Jerk_Star;
-                  -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot];
+    
+    % Desired jerk momentum dynamics 
+    L_ddot_star = [m*xCoM_Jerk_Star;
+                  -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot];          
    
     Beta        =  A_dot*f_ext_L*constraints(1) + A_dot*f_ext_R*constraints(2);
     
     % xi_dot is now the new fictitious iput realizing the desired Ddot(H).
-    xi_dot      = pinvA_total * (H_ddot_star - Beta);         
+    xi_dot      = pinvA_total * (L_ddot_star - Beta); %+ 50*(xi_desired - xi);  
+    %xi_desired  = [0; 0; log(150); 0; 0; 0; 0; 0; log(150); 0; 0; 0];
     
     % joint torques realizing the desired xi_dot
     tau_star    = Sigma*f + tauModel; 
@@ -193,6 +196,6 @@ function [tau_star, errorCoM,f_noQP, xi_dot]    =  ...
     %f_noQP                    =  pinvA*(HDotDes - gravityWrench) + NA*f0*constraints(1)*constraints(2); 
      f_noQP                    = f;
     
-    % Error on the center of mass
+    % Error on the center of massF1
     errorCoM                   = xCoM - desired_x_dx_ddx_CoM(:,1);
 end

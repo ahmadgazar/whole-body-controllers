@@ -29,14 +29,14 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
     
     Gain.KP_COM             = diag([50 50 50]);
     Gain.KD_COM             = 2*sqrt(Gain.KP_COM)*0; %don't increase this too much because the estimated xdot_com is badly estimated
-    Gain.KI_COM             = diag([20   20    20]); 
-    Gain.KP_AngularMomentum = 50 ;
+    Gain.KI_COM             = diag([10   10    10]); 
+    Gain.KP_AngularMomentum = 150 ;
     Gain.KD_AngularMomentum = 2*sqrt(Gain.KP_AngularMomentum);
 
     % Impedances acting in the null space of the desired contact forces 
-    impTorso            = [10   10   20]; 
+    impTorso            = [20   20   20]; 
 
-    impArms             = [10   10   10    8];
+    impArms             = [10   10   10    10];
 
     impLeftLeg          = [30   30   30    60   10   10]; 
 
@@ -46,7 +46,7 @@ end
 % PARAMETERS FOR ONE FOOT BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
-    Gain.KP_COM               = diag([50  100  50]); % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
+    Gain.KP_COM               = diag([100  100  100]); % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
     Gain.KD_COM               = diag([0   0    0]);  % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
     Gain.KI_COM               = diag([30   30    30]);  % Ki(x_CoMDesired - x_CoM)
     Gain.KP_AngularMomentum   = 1 ;
@@ -192,7 +192,7 @@ fZmin                        = 10;
 
 %% Regularization parameters
 Reg.pinvDamp_nu_b = 1e-7;
-Reg.pinvDamp      = 0.1; 
+Reg.pinvDamp      = 0.001; 
 Reg.pinvTol       = 1e-5;
 Reg.impedances    = 0.1;
 Reg.dampings      = 0;
