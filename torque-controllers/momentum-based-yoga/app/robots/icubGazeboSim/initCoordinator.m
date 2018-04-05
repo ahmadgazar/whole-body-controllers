@@ -5,7 +5,7 @@
 %% --- Initialization ---
 
 % Feet in contact (COORDINATOR DEMO ONLY)
-Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
+Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 0];
 
 % If true, the r    xCoM_ddot       = AL*f_ext_L*constraints(1) + AR*f_ext_R*constraints(2) + gravityWrench;
 %obot CoM will follow a desired reference trajectory (COORDINATOR DEMO ONLY)
@@ -29,12 +29,12 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
     
     Gain.KP_COM             = diag([50 50 50]);
     Gain.KD_COM             = 2*sqrt(Gain.KP_COM)*0; %don't increase this too much because the estimated xdot_com is badly estimated
-    Gain.KI_COM             = diag([10   10    10]); 
-    Gain.KP_AngularMomentum = 150 ;
+    Gain.KI_COM             = diag([30   30    30]); 
+    Gain.KP_AngularMomentum = 10 ;
     Gain.KD_AngularMomentum = 2*sqrt(Gain.KP_AngularMomentum);
 
     % Impedances acting in the null space of the desired contact forces 
-    impTorso            = [20   20   20]; 
+    impTorso            = [30   30   30]; 
 
     impArms             = [10   10   10    10];
 
@@ -46,11 +46,11 @@ end
 % PARAMETERS FOR ONE FOOT BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
-    Gain.KP_COM               = diag([100  100  100]); % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
-    Gain.KD_COM               = diag([0   0    0]);  % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
-    Gain.KI_COM               = diag([30   30    30]);  % Ki(x_CoMDesired - x_CoM)
-    Gain.KP_AngularMomentum   = 1 ;
-    Gain.KD_AngularMomentum   = 1 ;
+    Gain.KP_COM               = diag([50  50  50]); % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
+    Gain.KD_COM               = 2*sqrt(Gain.KP_COM)*0;  % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
+    Gain.KI_COM               = diag([30   20    20]);  % Ki(x_CoMDesired - x_CoM)
+    Gain.KP_AngularMomentum   = 150 ;
+    Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum);
 
     % Impedances acting in the null space of the desired contact forces    
     impTorso            = [20   20   30];
@@ -62,8 +62,8 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     impRightLeg         = [30   30   30    60    10   10];   
 end
 
-Gain.impedances         = 2*[impTorso(1,:),impArms(1,:),impArms(1,:),impLeftLeg(1,:),impRightLeg(1,:)];
-Gain.dampings           = 0*sqrt(Gain.impedances);
+Gain.impedances         = [impTorso(1,:),impArms(1,:),impArms(1,:),impLeftLeg(1,:),impRightLeg(1,:)];
+Gain.dampings           = sqrt(Gain.impedances);
 
 if (size(Gain.impedances,2) ~= ROBOT_DOF)
     error('Dimension mismatch between ROBOT_DOF and dimension of the variable impedences. Check these variables in the file gains.m');
@@ -77,7 +77,7 @@ Gain.SmoothingTimeGainScheduling = 0.02;
 % transmission ratio
 Config.Gamma = 0.01*eye(ROBOT_DOF);
 
-% motors inertia (Kg*m^2)
+% motors inertia (Kg*m^2); %don't increase this too much because the estimated xdot_com is badly estimated
 legsMotors_I_m           = 0.0827*1e-4;
 torsoPitchRollMotors_I_m = 0.0827*1e-4;
 torsoYawMotors_I_m       = 0.0585*1e-4;
@@ -177,12 +177,12 @@ Sm.yogaInLoop               = false;
 % So, numberOfPoints defines the number of points used to interpolate the circle 
 % in each cicle's quadrant
 numberOfPoints               = 4;  
-delta_c                      = 10  ;%1;      %friction coefficient
-forceFrictionCoefficient     = 10  ;%1;
-delta_x                      = 10;%1/75; %torsional coeificient
-delta_y                      = 10;%1/75;
-delta_z                      = 10;%1/75;
-torsionalFrictionCoefficient = 10;%1/75;
+delta_c                      = 10; %friction coefficient
+forceFrictionCoefficient     = 10;
+delta_x                      = 10;    %CoP along x must be inside the support polygon i.e foot size along X
+delta_y                      = 10;    %CoP along y must be inside the support polygon i.e foot size along Y
+delta_z                      = 10;    % torsional coefficient 
+torsionalFrictionCoefficient = 10; 
 
 % physical size of the foot                             
 feet_size                    = [-0.07  0.07;   % xMin, xMax
