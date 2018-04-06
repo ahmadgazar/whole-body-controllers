@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3227"
+    ComputedModelVersion    "1.3228"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -610,7 +610,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1724.0, 18.0, 1876.0, 1062.0]
+      Location		      [1724.0, -3.0, 1876.0, 1083.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -635,8 +635,8 @@ Model {
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"2087"
 	Extents			[1838.0, 932.0]
-	ZoomFactor		[0.85999999999999988]
-	Offset			[-983.33775436046517, 2318.9767441860467]
+	ZoomFactor		[1.2632084010337721]
+	Offset			[-641.08289019337019, 2494.098083563536]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -670,9 +670,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "agazar"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 04 18:09:26 2018"
-  RTWModifiedTimeStamp	  444761912
-  ModelVersionFormat	  "1.%<AutoIncrement:3227>"
+  LastModifiedDate	  "Thu Apr 05 19:03:24 2018"
+  RTWModifiedTimeStamp	  444851577
+  ModelVersionFormat	  "1.%<AutoIncrement:3228>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -5395,7 +5395,7 @@ Model {
       Variant		      off
       System {
 	Name			"Robot State and References"
-	Location		[1724, 18, 3600, 1080]
+	Location		[1724, -3, 3600, 1080]
 	Open			on
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
@@ -5408,7 +5408,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"86"
+	ZoomFactor		"126"
 	Block {
 	  BlockType		  Reference
 	  Name			  "Compare\nTo Zero"

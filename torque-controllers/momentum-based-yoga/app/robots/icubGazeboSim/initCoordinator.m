@@ -30,7 +30,7 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
     Gain.KP_COM             = diag([50 50 50]);
     Gain.KD_COM             = 2*sqrt(Gain.KP_COM)*0; %don't increase this too much because the estimated xdot_com is badly estimated
     Gain.KI_COM             = diag([30   30    30]); 
-    Gain.KP_AngularMomentum = 10 ;
+    Gain.KP_AngularMomentum = 100 ;
     Gain.KD_AngularMomentum = 2*sqrt(Gain.KP_AngularMomentum);
 
     % Impedances acting in the null space of the desired contact forces 
@@ -46,24 +46,24 @@ end
 % PARAMETERS FOR ONE FOOT BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
-    Gain.KP_COM               = diag([50  50  50]); % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
-    Gain.KD_COM               = 2*sqrt(Gain.KP_COM)*0;  % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
-    Gain.KI_COM               = diag([30   20    20]);  % Ki(x_CoMDesired - x_CoM)
-    Gain.KP_AngularMomentum   = 150 ;
+    Gain.KP_COM               = diag([100  100  100]); % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
+    Gain.KD_COM               = 2*sqrt(Gain.KP_COM);  % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
+    Gain.KI_COM               = diag([50   80    50]);  % Ki(x_CoMDesired - x_CoM)
+    Gain.KP_AngularMomentum   = 150;
     Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum);
 
     % Impedances acting in the null space of the desired contact forces    
-    impTorso            = [20   20   30];
+    impTorso            = [100   50   50];
     
     impArms             = [15   15   15    8];
                         
-    impLeftLeg          = [30   30   30    120   10   10];
+    impLeftLeg          = [60   60   60    60   20   20];
 
     impRightLeg         = [30   30   30    60    10   10];   
 end
 
-Gain.impedances         = [impTorso(1,:),impArms(1,:),impArms(1,:),impLeftLeg(1,:),impRightLeg(1,:)];
-Gain.dampings           = sqrt(Gain.impedances);
+Gain.impedances         = 2*[impTorso(1,:),impArms(1,:),impArms(1,:),impLeftLeg(1,:),impRightLeg(1,:)];
+Gain.dampings           = 0*sqrt(Gain.impedances);
 
 if (size(Gain.impedances,2) ~= ROBOT_DOF)
     error('Dimension mismatch between ROBOT_DOF and dimension of the variable impedences. Check these variables in the file gains.m');
@@ -177,12 +177,12 @@ Sm.yogaInLoop               = false;
 % So, numberOfPoints defines the number of points used to interpolate the circle 
 % in each cicle's quadrant
 numberOfPoints               = 4;  
-delta_c                      = 10; %friction coefficient
-forceFrictionCoefficient     = 10;
-delta_x                      = 10;    %CoP along x must be inside the support polygon i.e foot size along X
-delta_y                      = 10;    %CoP along y must be inside the support polygon i.e foot size along Y
-delta_z                      = 10;    % torsional coefficient 
-torsionalFrictionCoefficient = 10; 
+delta_c                      = 1; %friction coefficient
+forceFrictionCoefficient     = 1;
+delta_x                      = 1;    %CoP along x must be inside the support polygon i.e foot size along X
+delta_y                      = 1;    %CoP along y must be inside the support polygon i.e foot size along Y
+delta_z                      = 1/75;    % torsional coefficient 
+torsionalFrictionCoefficient = 1; 
 
 % physical size of the foot                             
 feet_size                    = [-0.07  0.07;   % xMin, xMax
