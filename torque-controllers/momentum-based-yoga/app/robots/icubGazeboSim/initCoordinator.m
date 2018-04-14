@@ -46,14 +46,14 @@ end
 % PARAMETERS FOR ONE FOOT BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
-    Gain.KP_COM               = diag([100  100  100]); % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
-    Gain.KD_COM               = 2*sqrt(Gain.KP_COM);  % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
-    Gain.KI_COM               = diag([50   80    50]);  % Ki(x_CoMDesired - x_CoM)
-    Gain.KP_AngularMomentum   = 150;
+    Gain.KP_COM               = diag([50  50  50]); % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
+    Gain.KD_COM               = 2*sqrt(Gain.KP_COM);     % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
+    Gain.KI_COM               = diag([30   30    30]);  % Ki(x_CoMDesired - x_CoM)
+    Gain.KP_AngularMomentum   = diag([200   150    150]);
     Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum);
 
     % Impedances acting in the null space of the desired contact forces    
-    impTorso            = [100   50   50];
+    impTorso            = [30   30   30];
     
     impArms             = [15   15   15    8];
                         
@@ -179,10 +179,10 @@ Sm.yogaInLoop               = false;
 numberOfPoints               = 4;  
 delta_c                      = 1; %friction coefficient
 forceFrictionCoefficient     = 1;
-delta_x                      = 1;    %CoP along x must be inside the support polygon i.e foot size along X
-delta_y                      = 1;    %CoP along y must be inside the support polygon i.e foot size along Y
+delta_x                      = 0.07*2;    %CoP along x must be inside the support polygon i.e foot size along X
+delta_y                      = 0.03*2;    %CoP along y must be inside the support polygon i.e foot size along Y
 delta_z                      = 1/75;    % torsional coefficient 
-torsionalFrictionCoefficient = 1; 
+torsionalFrictionCoefficient = 1/75; 
 
 % physical size of the foot                             
 feet_size                    = [-0.07  0.07;   % xMin, xMax
@@ -192,7 +192,7 @@ fZmin                        = 10;
 
 %% Regularization parameters
 Reg.pinvDamp_nu_b = 1e-7;
-Reg.pinvDamp      = 0.001; 
+Reg.pinvDamp      = 1; 
 Reg.pinvTol       = 1e-5;
 Reg.impedances    = 0.1;
 Reg.dampings      = 0;

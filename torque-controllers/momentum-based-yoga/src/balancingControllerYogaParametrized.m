@@ -21,8 +21,6 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
                                       intHw, w_H_l_sole, w_H_r_sole, JL, JR, dJL_nu, dJR_nu, xCoM, ...
                                       J_CoM, desired_x_dx_ddx_CoM, gainsPCOM, gainsDCOM, gainsICOM, ...
                                       impedances, Gain, Reg, Left_Right_F_T_Sensors, f, F, xi)
-    %BALANCING CONTROLLER
-
     %% DEFINITION OF CONTROL AND DYNAMIC VARIABLES
     pos_leftFoot   = w_H_l_sole(1:3,4);
 %   w_R_l_sole     = w_H_l_sole(1:3,1:3);
@@ -115,7 +113,7 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     A_total         = [AL*F_L, AR*F_R];
                   
     pinvA_total     =  pinv(A_total, Reg.pinvTol) * constraints(1) * constraints(2)  ...
-                      + [inv(AL*F_L); zeros(6)]  * constraints(1) * (1-constraints(2)) ... 
+                      + [pinv(AL*F_L); zeros(6)]  * constraints(1) * (1-constraints(2)) ... 
                       + [zeros(6) ; inv(AR*F_R)] * constraints(2) *(1-constraints(1));  
                   
     nullA_total     = (eye(12,12)-pinvA_total*A_total)*constraints(1)*constraints(2);
@@ -180,8 +178,8 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     Beta           =  A_dot*f_ext_L*constraints(1) + A_dot*f_ext_R*constraints(2);
     
     % xi_dot is now the new fictitious iput realizing the desired Ddot(H).
-%   xi_desired     = [0; 0; log(150); 0; 0; 0; 0; 0; log(150); 0; 0; 0];
-    xi_dot         = pinvA_total * (L_ddot_star - Beta); % + nullA_total*(xi_desired - xi);  
+    %xi_desired     = [0; 0; 0; 0; 0; 0; 0; 0; log(300); 0; 0; 0];
+    xi_dot         = pinvA_total * (L_ddot_star - Beta); %+ 5*(xi_desired - xi);  
     
     % joint torques realizing the desired xi_dot
     tau_star       = Sigma*f + tauModel; 
