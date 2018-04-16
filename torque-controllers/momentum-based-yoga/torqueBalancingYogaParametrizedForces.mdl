@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3287"
+    ComputedModelVersion    "1.3288"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -653,10 +653,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"4504"
+	LoadSaveID		"2355"
 	Extents			[1880.0, 864.0]
-	ZoomFactor		[0.98]
-	Offset			[0.0, 0.0]
+	ZoomFactor		[0.74]
+	Offset			[-26732.410472972973, -5037.04054054054]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -690,9 +690,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ahmad"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Apr 14 18:08:02 2018"
-  RTWModifiedTimeStamp	  445623674
-  ModelVersionFormat	  "1.%<AutoIncrement:3287>"
+  LastModifiedDate	  "Mon Apr 16 09:51:11 2018"
+  RTWModifiedTimeStamp	  445772944
+  ModelVersionFormat	  "1.%<AutoIncrement:3288>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -2034,7 +2034,7 @@ Model {
 	  System {
 	    Name		    "Visualizer"
 	    Location		    [0, 24, 1920, 1056]
-	    Open		    on
+	    Open		    off
 	    PortBlocksUseCompactNotation off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5477,7 +5477,7 @@ Model {
       System {
 	Name			"Force_paramterization_controller"
 	Location		[0, 24, 1920, 1056]
-	Open			off
+	Open			on
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -21584,9 +21584,6 @@ Stateflow {
     screen		    [1 1 1280 1024 1.000677131425054]
     treeNode		    [0 153 0 0]
     viewObj		    152
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    88
     decomposition	    CLUSTER_CHART
     type		    EML_CHART

@@ -173,7 +173,7 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     
     % Desired jerk momentum dynamics 
     L_ddot_star    = [m*xCoM_Jerk_Star;
-                     -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot];          
+                     -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - 80*intHw] ;          
    
     Beta           =  A_dot*f_ext_L*constraints(1) + A_dot*f_ext_R*constraints(2);
     
