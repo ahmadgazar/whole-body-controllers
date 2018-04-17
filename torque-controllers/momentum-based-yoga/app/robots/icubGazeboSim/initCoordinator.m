@@ -5,7 +5,7 @@
 %% --- Initialization ---
 
 % Feet in contact (COORDINATOR DEMO ONLY)
-Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 0];
+Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
 
 % If true, the r    xCoM_ddot       = AL*f_ext_L*constraints(1) + AR*f_ext_R*constraints(2) + gravityWrench;
 %obot CoM will follow a desired reference trajectory (COORDINATOR DEMO ONLY)
@@ -27,10 +27,10 @@ Sat.torque = 34;
 % PARAMETERS FOR TWO FEET BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
     
-    Gain.KP_COM             = diag([50 50 50]);
-    Gain.KD_COM             = 2*sqrt(Gain.KP_COM)*0; %don't increase this too much because the estimated xdot_com is badly estimated
+    Gain.KP_COM             = diag([30 30 30]);
+    Gain.KD_COM             = 2*sqrt(Gain.KP_COM); %don't increase this too much because the estimated xdot_com is badly estimated
     Gain.KI_COM             = diag([30   30    30]); 
-    Gain.KP_AngularMomentum = 100 ;
+    Gain.KP_AngularMomentum = diag([200   200    200]);
     Gain.KD_AngularMomentum = 2*sqrt(Gain.KP_AngularMomentum);
 
     % Impedances acting in the null space of the desired contact forces 
@@ -177,8 +177,8 @@ Sm.yogaInLoop               = false;
 % So, numberOfPoints defines the number of points used to interpolate the circle 
 % in each cicle's quadrant
 numberOfPoints               = 4;  
-delta_c                      = 1; %friction coefficient
-forceFrictionCoefficient     = 1;
+delta_c                      = 1/3; %friction coefficient
+forceFrictionCoefficient     = 1/3;
 delta_x                      = 0.07*2;    %CoP along x must be inside the support polygon i.e foot size along X
 delta_y                      = 0.03*2;    %CoP along y must be inside the support polygon i.e foot size along Y
 delta_z                      = 1/75;    % torsional coefficient 

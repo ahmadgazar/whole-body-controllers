@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3291"
+    ComputedModelVersion    "1.3293"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -665,8 +665,8 @@ Model {
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "2355"
 	  Extents		  [1880.0, 862.0]
-	  ZoomFactor		  [0.73483602938185144]
-	  Offset		  [-26738.634439745503, -5037.051869315359]
+	  ZoomFactor		  [0.7353160984250714]
+	  Offset		  [-26737.799284834207, -5037.0394308379555]
 	}
 	PropName		"EditorsInfo"
       }
@@ -702,9 +702,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ahmad"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 16 17:57:59 2018"
-  RTWModifiedTimeStamp	  445800542
-  ModelVersionFormat	  "1.%<AutoIncrement:3291>"
+  LastModifiedDate	  "Tue Apr 17 12:07:47 2018"
+  RTWModifiedTimeStamp	  445867338
+  ModelVersionFormat	  "1.%<AutoIncrement:3293>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -5502,7 +5502,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"73"
+	ZoomFactor		"74"
 	Block {
 	  BlockType		  Inport
 	  Name			  "M"
@@ -5699,596 +5699,6 @@ Model {
 	  ZOrder		  342
 	  ShowName		  off
 	  Value			  "ROBOT_DOF_FOR_SIMULINK"
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Balancing Controller\n"
-	  SID			  "2407"
-	  Ports			  [26, 4]
-	  Position		  [-25745, -5013, -25460, -3987]
-	  ZOrder		  863
-	  LibraryVersion	  "1.32"
-	  ErrorFcn		  "Stateflow.Translate.translate"
-	  PermitHierarchicalResolution "ExplicitOnly"
-	  TreatAsAtomicUnit	  on
-	  RequestExecContextInheritance	off
-	  SFBlockType		  "MATLAB Function"
-	  Variant		  off
-	  Port {
-	    PortNumber		    2
-	    Name		    "CoM_Error"
-	    PropagatedSignals	    "errorCoM"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "fNoQP"
-	    PropagatedSignals	    "f_desired"
-	  }
-	  System {
-	    Name		    "Balancing Controller\n"
-	    Location		    [219, 337, 814, 775]
-	    Open		    off
-	    PortBlocksUseCompactNotation off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    SIDHighWatermark	    "3737"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "constraints"
-	      SID		      "2407::28"
-	      Position		      [20, 101, 40, 119]
-	      ZOrder		      14
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "ROBOT_DOF_FOR_SIMULINK"
-	      SID		      "2407::29"
-	      Position		      [20, 136, 40, 154]
-	      ZOrder		      15
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "qj"
-	      SID		      "2407::1"
-	      Position		      [20, 171, 40, 189]
-	      ZOrder		      -1
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "qjDes"
-	      SID		      "2407::21"
-	      Position		      [20, 206, 40, 224]
-	      ZOrder		      7
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "nu"
-	      SID		      "2407::22"
-	      Position		      [20, 246, 40, 264]
-	      ZOrder		      8
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "M"
-	      SID		      "2407::23"
-	      Position		      [20, 281, 40, 299]
-	      ZOrder		      9
-	      Port		      "6"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "h"
-	      SID		      "2407::24"
-	      Position		      [20, 316, 40, 334]
-	      ZOrder		      10
-	      Port		      "7"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "L"
-	      SID		      "2407::26"
-	      Position		      [20, 351, 40, 369]
-	      ZOrder		      12
-	      Port		      "8"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "intHw"
-	      SID		      "2407::841"
-	      Position		      [20, 386, 40, 404]
-	      ZOrder		      84
-	      Port		      "9"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "w_H_l_sole"
-	      SID		      "2407::800"
-	      Position		      [20, 426, 40, 444]
-	      ZOrder		      50
-	      Port		      "10"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "w_H_r_sole"
-	      SID		      "2407::27"
-	      Position		      [20, 461, 40, 479]
-	      ZOrder		      13
-	      Port		      "11"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "JL"
-	      SID		      "2407::790"
-	      Position		      [20, 496, 40, 514]
-	      ZOrder		      41
-	      Port		      "12"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "JR"
-	      SID		      "2407::784"
-	      Position		      [20, 531, 40, 549]
-	      ZOrder		      36
-	      Port		      "13"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "dJLv"
-	      SID		      "2407::785"
-	      Position		      [20, 566, 40, 584]
-	      ZOrder		      37
-	      Port		      "14"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "dJRv"
-	      SID		      "2407::798"
-	      Position		      [20, 606, 40, 624]
-	      ZOrder		      48
-	      Port		      "15"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "xCoM"
-	      SID		      "2407::30"
-	      Position		      [20, 641, 40, 659]
-	      ZOrder		      16
-	      Port		      "16"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "J_CoM"
-	      SID		      "2407::31"
-	      Position		      [20, 676, 40, 694]
-	      ZOrder		      17
-	      Port		      "17"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "desired_x_dx_ddx_CoM"
-	      SID		      "2407::32"
-	      Position		      [20, 711, 40, 729]
-	      ZOrder		      18
-	      Port		      "18"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "gainsPCOM"
-	      SID		      "2407::845"
-	      Position		      [20, 746, 40, 764]
-	      ZOrder		      88
-	      Port		      "19"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "gainsDCOM"
-	      SID		      "2407::846"
-	      Position		      [20, 786, 40, 804]
-	      ZOrder		      89
-	      Port		      "20"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "gainsICOM"
-	      SID		      "2407::3734"
-	      Position		      [20, 821, 40, 839]
-	      ZOrder		      137
-	      Port		      "21"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "impedances"
-	      SID		      "2407::34"
-	      Position		      [20, 856, 40, 874]
-	      ZOrder		      20
-	      Port		      "22"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Left_Right_F_T_Sensors"
-	      SID		      "2407::3735"
-	      Position		      [20, 891, 40, 909]
-	      ZOrder		      138
-	      Port		      "23"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "f"
-	      SID		      "2407::3736"
-	      Position		      [20, 926, 40, 944]
-	      ZOrder		      139
-	      Port		      "24"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "F"
-	      SID		      "2407::3733"
-	      Position		      [20, 966, 40, 984]
-	      ZOrder		      136
-	      Port		      "25"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "xi"
-	      SID		      "2407::3737"
-	      Position		      [20, 1001, 40, 1019]
-	      ZOrder		      140
-	      Port		      "26"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Demux
-	      Name		      " Demux "
-	      SID		      "2407::3730"
-	      Ports		      [1, 1]
-	      Position		      [270, 280, 320, 320]
-	      ZOrder		      133
-	      Outputs		      "1"
-	    }
-	    Block {
-	      BlockType		      S-Function
-	      Name		      " SFunction "
-	      SID		      "2407::3729"
-	      Tag		      "Stateflow S-Function torqueBalancingYogaParametrizedForces 17"
-	      Ports		      [26, 5]
-	      Position		      [180, 65, 230, 605]
-	      ZOrder		      132
-	      FunctionName	      "sf_sfun"
-	      Parameters	      "Gain,Reg"
-	      PortCounts	      "[26 5]"
-	      SFunctionDeploymentMode off
-	      EnableBusSupport	      on
-	      SFcnIsStateOwnerBlock   off
-	      Port {
-		PortNumber		2
-		Name			"tau_star"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"errorCoM"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"f_desired"
-	      }
-	      Port {
-		PortNumber		5
-		Name			"xi_dot"
-	      }
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      " Terminator "
-	      SID		      "2407::3731"
-	      Position		      [460, 291, 480, 309]
-	      ZOrder		      134
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "tau_star"
-	      SID		      "2407::815"
-	      Position		      [460, 101, 480, 119]
-	      ZOrder		      63
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "errorCoM"
-	      SID		      "2407::806"
-	      Position		      [460, 136, 480, 154]
-	      ZOrder		      54
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "f_desired"
-	      SID		      "2407::807"
-	      Position		      [460, 171, 480, 189]
-	      ZOrder		      55
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "xi_dot"
-	      SID		      "2407::3732"
-	      Position		      [460, 206, 480, 224]
-	      ZOrder		      135
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      1383
-	      SrcBlock		      "constraints"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      1384
-	      SrcBlock		      "ROBOT_DOF_FOR_SIMULINK"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      1385
-	      SrcBlock		      "qj"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      3
-	    }
-	    Line {
-	      ZOrder		      1386
-	      SrcBlock		      "qjDes"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      4
-	    }
-	    Line {
-	      ZOrder		      1387
-	      SrcBlock		      "nu"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      5
-	    }
-	    Line {
-	      ZOrder		      1388
-	      SrcBlock		      "M"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      6
-	    }
-	    Line {
-	      ZOrder		      1389
-	      SrcBlock		      "h"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      7
-	    }
-	    Line {
-	      ZOrder		      1390
-	      SrcBlock		      "L"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      8
-	    }
-	    Line {
-	      ZOrder		      1391
-	      SrcBlock		      "intHw"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      9
-	    }
-	    Line {
-	      ZOrder		      1392
-	      SrcBlock		      "w_H_l_sole"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      10
-	    }
-	    Line {
-	      ZOrder		      1393
-	      SrcBlock		      "w_H_r_sole"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      11
-	    }
-	    Line {
-	      ZOrder		      1394
-	      SrcBlock		      "JL"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      12
-	    }
-	    Line {
-	      ZOrder		      1395
-	      SrcBlock		      "JR"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      13
-	    }
-	    Line {
-	      ZOrder		      1396
-	      SrcBlock		      "dJLv"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      14
-	    }
-	    Line {
-	      ZOrder		      1397
-	      SrcBlock		      "dJRv"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      15
-	    }
-	    Line {
-	      ZOrder		      1398
-	      SrcBlock		      "xCoM"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      16
-	    }
-	    Line {
-	      ZOrder		      1399
-	      SrcBlock		      "J_CoM"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      17
-	    }
-	    Line {
-	      ZOrder		      1400
-	      SrcBlock		      "desired_x_dx_ddx_CoM"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      18
-	    }
-	    Line {
-	      ZOrder		      1401
-	      SrcBlock		      "gainsPCOM"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      19
-	    }
-	    Line {
-	      ZOrder		      1402
-	      SrcBlock		      "gainsDCOM"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      20
-	    }
-	    Line {
-	      ZOrder		      1403
-	      SrcBlock		      "gainsICOM"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      21
-	    }
-	    Line {
-	      ZOrder		      1404
-	      SrcBlock		      "impedances"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      22
-	    }
-	    Line {
-	      ZOrder		      1405
-	      SrcBlock		      "Left_Right_F_T_Sensors"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      23
-	    }
-	    Line {
-	      ZOrder		      1406
-	      SrcBlock		      "f"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      24
-	    }
-	    Line {
-	      ZOrder		      1407
-	      SrcBlock		      "F"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      25
-	    }
-	    Line {
-	      ZOrder		      1408
-	      SrcBlock		      "xi"
-	      SrcPort		      1
-	      DstBlock		      " SFunction "
-	      DstPort		      26
-	    }
-	    Line {
-	      Name		      "tau_star"
-	      ZOrder		      1409
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      2
-	      DstBlock		      "tau_star"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "errorCoM"
-	      ZOrder		      1410
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      3
-	      DstBlock		      "errorCoM"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "f_desired"
-	      ZOrder		      1411
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      4
-	      DstBlock		      "f_desired"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "xi_dot"
-	      ZOrder		      1412
-	      Labels		      [0, 0]
-	      SrcBlock		      " SFunction "
-	      SrcPort		      5
-	      DstBlock		      "xi_dot"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      1413
-	      SrcBlock		      " Demux "
-	      SrcPort		      1
-	      DstBlock		      " Terminator "
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      1414
-	      SrcBlock		      " SFunction "
-	      SrcPort		      1
-	      DstBlock		      " Demux "
-	      DstPort		      1
-	    }
-	  }
 	}
 	Block {
 	  BlockType		  SubSystem
@@ -8945,6 +8355,596 @@ Model {
 	  TagVisibility		  "global"
 	}
 	Block {
+	  BlockType		  SubSystem
+	  Name			  "Momentum jerk Controller\n"
+	  SID			  "2407"
+	  Ports			  [26, 4]
+	  Position		  [-25745, -5013, -25460, -3987]
+	  ZOrder		  863
+	  LibraryVersion	  "1.32"
+	  ErrorFcn		  "Stateflow.Translate.translate"
+	  PermitHierarchicalResolution "ExplicitOnly"
+	  TreatAsAtomicUnit	  on
+	  RequestExecContextInheritance	off
+	  SFBlockType		  "MATLAB Function"
+	  Variant		  off
+	  Port {
+	    PortNumber		    2
+	    Name		    "CoM_Error"
+	    PropagatedSignals	    "errorCoM"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "fNoQP"
+	    PropagatedSignals	    "f_desired"
+	  }
+	  System {
+	    Name		    "Momentum jerk Controller\n"
+	    Location		    [219, 337, 814, 775]
+	    Open		    off
+	    PortBlocksUseCompactNotation off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    SIDHighWatermark	    "3737"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "constraints"
+	      SID		      "2407::28"
+	      Position		      [20, 101, 40, 119]
+	      ZOrder		      14
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "ROBOT_DOF_FOR_SIMULINK"
+	      SID		      "2407::29"
+	      Position		      [20, 136, 40, 154]
+	      ZOrder		      15
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "qj"
+	      SID		      "2407::1"
+	      Position		      [20, 171, 40, 189]
+	      ZOrder		      -1
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "qjDes"
+	      SID		      "2407::21"
+	      Position		      [20, 206, 40, 224]
+	      ZOrder		      7
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "nu"
+	      SID		      "2407::22"
+	      Position		      [20, 246, 40, 264]
+	      ZOrder		      8
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "M"
+	      SID		      "2407::23"
+	      Position		      [20, 281, 40, 299]
+	      ZOrder		      9
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "h"
+	      SID		      "2407::24"
+	      Position		      [20, 316, 40, 334]
+	      ZOrder		      10
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "L"
+	      SID		      "2407::26"
+	      Position		      [20, 351, 40, 369]
+	      ZOrder		      12
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "intHw"
+	      SID		      "2407::841"
+	      Position		      [20, 386, 40, 404]
+	      ZOrder		      84
+	      Port		      "9"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "w_H_l_sole"
+	      SID		      "2407::800"
+	      Position		      [20, 426, 40, 444]
+	      ZOrder		      50
+	      Port		      "10"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "w_H_r_sole"
+	      SID		      "2407::27"
+	      Position		      [20, 461, 40, 479]
+	      ZOrder		      13
+	      Port		      "11"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "JL"
+	      SID		      "2407::790"
+	      Position		      [20, 496, 40, 514]
+	      ZOrder		      41
+	      Port		      "12"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "JR"
+	      SID		      "2407::784"
+	      Position		      [20, 531, 40, 549]
+	      ZOrder		      36
+	      Port		      "13"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "dJLv"
+	      SID		      "2407::785"
+	      Position		      [20, 566, 40, 584]
+	      ZOrder		      37
+	      Port		      "14"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "dJRv"
+	      SID		      "2407::798"
+	      Position		      [20, 606, 40, 624]
+	      ZOrder		      48
+	      Port		      "15"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "xCoM"
+	      SID		      "2407::30"
+	      Position		      [20, 641, 40, 659]
+	      ZOrder		      16
+	      Port		      "16"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "J_CoM"
+	      SID		      "2407::31"
+	      Position		      [20, 676, 40, 694]
+	      ZOrder		      17
+	      Port		      "17"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "desired_x_dx_ddx_CoM"
+	      SID		      "2407::32"
+	      Position		      [20, 711, 40, 729]
+	      ZOrder		      18
+	      Port		      "18"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "gainsPCOM"
+	      SID		      "2407::845"
+	      Position		      [20, 746, 40, 764]
+	      ZOrder		      88
+	      Port		      "19"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "gainsDCOM"
+	      SID		      "2407::846"
+	      Position		      [20, 786, 40, 804]
+	      ZOrder		      89
+	      Port		      "20"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "gainsICOM"
+	      SID		      "2407::3734"
+	      Position		      [20, 821, 40, 839]
+	      ZOrder		      137
+	      Port		      "21"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "impedances"
+	      SID		      "2407::34"
+	      Position		      [20, 856, 40, 874]
+	      ZOrder		      20
+	      Port		      "22"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Left_Right_F_T_Sensors"
+	      SID		      "2407::3735"
+	      Position		      [20, 891, 40, 909]
+	      ZOrder		      138
+	      Port		      "23"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "f"
+	      SID		      "2407::3736"
+	      Position		      [20, 926, 40, 944]
+	      ZOrder		      139
+	      Port		      "24"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "F"
+	      SID		      "2407::3733"
+	      Position		      [20, 966, 40, 984]
+	      ZOrder		      136
+	      Port		      "25"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "xi"
+	      SID		      "2407::3737"
+	      Position		      [20, 1001, 40, 1019]
+	      ZOrder		      140
+	      Port		      "26"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      " Demux "
+	      SID		      "2407::3730"
+	      Ports		      [1, 1]
+	      Position		      [270, 280, 320, 320]
+	      ZOrder		      133
+	      Outputs		      "1"
+	    }
+	    Block {
+	      BlockType		      S-Function
+	      Name		      " SFunction "
+	      SID		      "2407::3729"
+	      Tag		      "Stateflow S-Function torqueBalancingYogaParametrizedForces 17"
+	      Ports		      [26, 5]
+	      Position		      [180, 65, 230, 605]
+	      ZOrder		      132
+	      FunctionName	      "sf_sfun"
+	      Parameters	      "Gain,Reg"
+	      PortCounts	      "[26 5]"
+	      SFunctionDeploymentMode off
+	      EnableBusSupport	      on
+	      SFcnIsStateOwnerBlock   off
+	      Port {
+		PortNumber		2
+		Name			"tau_star"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"errorCoM"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"f_desired"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"xi_dot"
+	      }
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      " Terminator "
+	      SID		      "2407::3731"
+	      Position		      [460, 291, 480, 309]
+	      ZOrder		      134
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "tau_star"
+	      SID		      "2407::815"
+	      Position		      [460, 101, 480, 119]
+	      ZOrder		      63
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "errorCoM"
+	      SID		      "2407::806"
+	      Position		      [460, 136, 480, 154]
+	      ZOrder		      54
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "f_desired"
+	      SID		      "2407::807"
+	      Position		      [460, 171, 480, 189]
+	      ZOrder		      55
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "xi_dot"
+	      SID		      "2407::3732"
+	      Position		      [460, 206, 480, 224]
+	      ZOrder		      135
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1383
+	      SrcBlock		      "constraints"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      1384
+	      SrcBlock		      "ROBOT_DOF_FOR_SIMULINK"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      1385
+	      SrcBlock		      "qj"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      1386
+	      SrcBlock		      "qjDes"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      4
+	    }
+	    Line {
+	      ZOrder		      1387
+	      SrcBlock		      "nu"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      5
+	    }
+	    Line {
+	      ZOrder		      1388
+	      SrcBlock		      "M"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      6
+	    }
+	    Line {
+	      ZOrder		      1389
+	      SrcBlock		      "h"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      7
+	    }
+	    Line {
+	      ZOrder		      1390
+	      SrcBlock		      "L"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      8
+	    }
+	    Line {
+	      ZOrder		      1391
+	      SrcBlock		      "intHw"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      9
+	    }
+	    Line {
+	      ZOrder		      1392
+	      SrcBlock		      "w_H_l_sole"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      10
+	    }
+	    Line {
+	      ZOrder		      1393
+	      SrcBlock		      "w_H_r_sole"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      11
+	    }
+	    Line {
+	      ZOrder		      1394
+	      SrcBlock		      "JL"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      12
+	    }
+	    Line {
+	      ZOrder		      1395
+	      SrcBlock		      "JR"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      13
+	    }
+	    Line {
+	      ZOrder		      1396
+	      SrcBlock		      "dJLv"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      14
+	    }
+	    Line {
+	      ZOrder		      1397
+	      SrcBlock		      "dJRv"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      15
+	    }
+	    Line {
+	      ZOrder		      1398
+	      SrcBlock		      "xCoM"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      16
+	    }
+	    Line {
+	      ZOrder		      1399
+	      SrcBlock		      "J_CoM"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      17
+	    }
+	    Line {
+	      ZOrder		      1400
+	      SrcBlock		      "desired_x_dx_ddx_CoM"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      18
+	    }
+	    Line {
+	      ZOrder		      1401
+	      SrcBlock		      "gainsPCOM"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      19
+	    }
+	    Line {
+	      ZOrder		      1402
+	      SrcBlock		      "gainsDCOM"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      20
+	    }
+	    Line {
+	      ZOrder		      1403
+	      SrcBlock		      "gainsICOM"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      21
+	    }
+	    Line {
+	      ZOrder		      1404
+	      SrcBlock		      "impedances"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      22
+	    }
+	    Line {
+	      ZOrder		      1405
+	      SrcBlock		      "Left_Right_F_T_Sensors"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      23
+	    }
+	    Line {
+	      ZOrder		      1406
+	      SrcBlock		      "f"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      24
+	    }
+	    Line {
+	      ZOrder		      1407
+	      SrcBlock		      "F"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      25
+	    }
+	    Line {
+	      ZOrder		      1408
+	      SrcBlock		      "xi"
+	      SrcPort		      1
+	      DstBlock		      " SFunction "
+	      DstPort		      26
+	    }
+	    Line {
+	      Name		      "tau_star"
+	      ZOrder		      1409
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      2
+	      DstBlock		      "tau_star"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "errorCoM"
+	      ZOrder		      1410
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      3
+	      DstBlock		      "errorCoM"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "f_desired"
+	      ZOrder		      1411
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      4
+	      DstBlock		      "f_desired"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "xi_dot"
+	      ZOrder		      1412
+	      Labels		      [0, 0]
+	      SrcBlock		      " SFunction "
+	      SrcPort		      5
+	      DstBlock		      "xi_dot"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      1413
+	      SrcBlock		      " Demux "
+	      SrcPort		      1
+	      DstBlock		      " Terminator "
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      1414
+	      SrcBlock		      " SFunction "
+	      SrcPort		      1
+	      DstBlock		      " Demux "
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
 	  SID			  "4585"
@@ -9272,7 +9272,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    705
-	    DstBlock		    "Balancing Controller\n"
+	    DstBlock		    "Momentum jerk Controller\n"
 	    DstPort		    1
 	  }
 	}
@@ -9289,7 +9289,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    598
-	    DstBlock		    "Balancing Controller\n"
+	    DstBlock		    "Momentum jerk Controller\n"
 	    DstPort		    3
 	  }
 	}
@@ -9306,7 +9306,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    599
-	    DstBlock		    "Balancing Controller\n"
+	    DstBlock		    "Momentum jerk Controller\n"
 	    DstPort		    4
 	  }
 	}
@@ -9314,105 +9314,105 @@ Model {
 	  ZOrder		  493
 	  SrcBlock		  "biasTorques"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  7
 	}
 	Line {
 	  ZOrder		  498
 	  SrcBlock		  "desired_x_dx_ddx_CoM"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  18
 	}
 	Line {
 	  ZOrder		  502
 	  SrcBlock		  "impedances"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  22
 	}
 	Line {
 	  ZOrder		  496
 	  SrcBlock		  "L"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  8
 	}
 	Line {
 	  ZOrder		  457
 	  SrcBlock		  "\n\n  5"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  2
 	}
 	Line {
 	  ZOrder		  507
 	  SrcBlock		  "gainsPCOM"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  19
 	}
 	Line {
 	  ZOrder		  506
 	  SrcBlock		  "gainsDCOM"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  20
 	}
 	Line {
 	  ZOrder		  500
 	  SrcBlock		  "w_H_r_sole"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  11
 	}
 	Line {
 	  ZOrder		  492
 	  SrcBlock		  "w_H_l_sole"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  10
 	}
 	Line {
 	  ZOrder		  495
 	  SrcBlock		  "JL"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  12
 	}
 	Line {
 	  ZOrder		  494
 	  SrcBlock		  "JR"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  13
 	}
 	Line {
 	  ZOrder		  497
 	  SrcBlock		  "dJL_nu"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  14
 	}
 	Line {
 	  ZOrder		  505
 	  SrcBlock		  "dJR_nu"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  15
 	}
 	Line {
 	  ZOrder		  503
 	  SrcBlock		  "J_CoM"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  17
 	}
 	Line {
 	  ZOrder		  501
 	  SrcBlock		  "xCoM"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  16
 	}
 	Line {
@@ -9424,7 +9424,7 @@ Model {
 	}
 	Line {
 	  ZOrder		  791
-	  SrcBlock		  "Balancing Controller\n"
+	  SrcBlock		  "Momentum jerk Controller\n"
 	  SrcPort		  1
 	  DstBlock		  "Compute joint torques (motor reflected inertia)"
 	  DstPort		  1
@@ -9450,7 +9450,7 @@ Model {
 	  Name			  "CoM_Error"
 	  ZOrder		  427
 	  Labels		  [0, 0]
-	  SrcBlock		  "Balancing Controller\n"
+	  SrcBlock		  "Momentum jerk Controller\n"
 	  SrcPort		  2
 	  DstBlock		  "Goto6"
 	  DstPort		  1
@@ -9487,19 +9487,19 @@ Model {
 	  ZOrder		  508
 	  SrcBlock		  "nu"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  5
 	}
 	Line {
 	  ZOrder		  509
 	  SrcBlock		  "M"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  6
 	}
 	Line {
 	  ZOrder		  956
-	  SrcBlock		  "Balancing Controller\n"
+	  SrcBlock		  "Momentum jerk Controller\n"
 	  SrcPort		  4
 	  Points		  [155, 0; 0, -285]
 	  Branch {
@@ -9535,7 +9535,7 @@ Model {
 	  Points		  [17, 0]
 	  Branch {
 	    ZOrder		    954
-	    DstBlock		    "Balancing Controller\n"
+	    DstBlock		    "Momentum jerk Controller\n"
 	    DstPort		    23
 	  }
 	  Branch {
@@ -9553,7 +9553,7 @@ Model {
 	  Branch {
 	    ZOrder		    1016
 	    Points		    [0, 487; -1092, 0; 0, -127]
-	    DstBlock		    "Balancing Controller\n"
+	    DstBlock		    "Momentum jerk Controller\n"
 	    DstPort		    25
 	  }
 	  Branch {
@@ -9566,14 +9566,14 @@ Model {
 	  ZOrder		  696
 	  SrcBlock		  "gainsICOM"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  21
 	}
 	Line {
 	  ZOrder		  778
 	  SrcBlock		  "Compute angular momentum integral"
 	  SrcPort		  1
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  9
 	}
 	Line {
@@ -9581,14 +9581,14 @@ Model {
 	  SrcBlock		  "Parametrized Forces\n"
 	  SrcPort		  1
 	  Points		  [23, 0; 0, 601; -1133, 0; 0, -196]
-	  DstBlock		  "Balancing Controller\n"
+	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  24
 	}
 	Line {
 	  Name			  "fNoQP"
 	  ZOrder		  795
 	  Labels		  [1, 1]
-	  SrcBlock		  "Balancing Controller\n"
+	  SrcBlock		  "Momentum jerk Controller\n"
 	  SrcPort		  3
 	  DstBlock		  "Goto"
 	  DstPort		  1
@@ -9601,7 +9601,7 @@ Model {
 	  Branch {
 	    ZOrder		    958
 	    Points		    [0, 533; -752, 0; 0, -53]
-	    DstBlock		    "Balancing Controller\n"
+	    DstBlock		    "Momentum jerk Controller\n"
 	    DstPort		    26
 	  }
 	  Branch {
@@ -9656,7 +9656,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"129"
 	Block {
 	  BlockType		  Reference
 	  Name			  "Compare\nTo Zero"
@@ -11980,7 +11980,7 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "Select State and References"
-	    Location		    [59, 54, 1680, 1080]
+	    Location		    [0, 24, 1920, 1056]
 	    Open		    off
 	    PortBlocksUseCompactNotation off
 	    ModelBrowserVisibility  off
@@ -11993,7 +11993,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "117"
+	    ZoomFactor		    "115"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "StateAndReferences"
@@ -16752,19 +16752,19 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "w_H_b"
-	      SID		      "2241"
-	      Position		      [3235, 267, 3265, 283]
-	      ZOrder		      578
+	      Name		      "KiCoM"
+	      SID		      "4608"
+	      Position		      [3235, 510, 3270, 530]
+	      ZOrder		      902
 	      Port		      "11"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "KiCoM"
-	      SID		      "4608"
-	      Position		      [3235, 510, 3270, 530]
-	      ZOrder		      902
+	      Name		      "w_H_b"
+	      SID		      "2241"
+	      Position		      [3235, 267, 3265, 283]
+	      ZOrder		      578
 	      Port		      "12"
 	      IconDisplay	      "Port number"
 	    }
@@ -17467,13 +17467,6 @@ Model {
 	  }
 	}
 	Line {
-	  ZOrder		  384
-	  SrcBlock		  "State Machine Yoga"
-	  SrcPort		  11
-	  DstBlock		  "Mux1"
-	  DstPort		  11
-	}
-	Line {
 	  ZOrder		  389
 	  SrcBlock		  "Mux2"
 	  SrcPort		  1
@@ -17627,19 +17620,26 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  567
-	  SrcBlock		  "State Machine Yoga"
-	  SrcPort		  12
-	  DstBlock		  "Mux1"
-	  DstPort		  12
-	}
-	Line {
 	  ZOrder		  568
 	  SrcBlock		  "Mux1"
 	  SrcPort		  1
 	  Points		  [38, 0; 0, -130]
 	  DstBlock		  "Multiport\nSwitch1"
 	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  569
+	  SrcBlock		  "State Machine Yoga"
+	  SrcPort		  11
+	  DstBlock		  "Mux1"
+	  DstPort		  11
+	}
+	Line {
+	  ZOrder		  570
+	  SrcBlock		  "State Machine Yoga"
+	  SrcPort		  12
+	  DstBlock		  "Mux1"
+	  DstPort		  12
 	}
       }
     }
@@ -20684,6 +20684,9 @@ Stateflow {
     screen		    [1 1 3600 1200 1.180555555555556]
     treeNode		    [0 114 0 0]
     viewObj		    113
+    visible		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    10
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -20710,52 +20713,54 @@ Stateflow {
     decomposition	    CLUSTER_STATE
     eml {
       isEML		      1
-      script		      "function [f,F] = fcn(delta_c, xi, delta_x, delta_y, delta_z)\n\nf_L = [(sqrt(delta_c))*(tanh(xi(1"
-      ")))*(exp(xi(3)))/(1+(tanh(xi(2))^2))^0.5;\n       (sqrt(delta_c))*(tanh(xi(2)))*(exp(xi(3)))/(1+(tanh(xi(1))^2))"
-      "^0.5;\n       exp(xi(3));\n       delta_y*(tanh(xi(4)))*(exp(xi(3)));\n       delta_x*(tanh(xi(5)))*(exp(xi(3)))"
-      ";\n       delta_z*(tanh(xi(6)))*(exp(xi(3)))];\n\n F_L = [(sqrt(delta_c))*(exp(xi(3)))*(1-(tanh(xi(1)))^2)/(1+(t"
-      "anh(xi(2)))^2)^0.5                             , (sqrt(delta_c))*(exp(xi(3)))*(tanh(xi(1)))*(tanh(xi(2)))*(-1+(t"
-      "anh(xi(2)))^2)/(1+(tanh(xi(2)))^2)^1.5, (sqrt(delta_c))*(exp(xi(3)))*(tanh(xi(1)))/(1+(tanh(xi(2)))^2)^0.5, 0   "
-      "                                    , 0                                       , 0;\n        (sqrt(delta_c))*(exp"
-      "(xi(3)))*(tanh(xi(1)))*(tanh(xi(2)))*(-1+(tanh(xi(1)))^2)/(1+(tanh(xi(1)))^2)^1.5, (sqrt(delta_c))*(exp(xi(3)))*"
-      "(1-(tanh(xi(2)))^2)/(1+(tanh(xi(1)))^2)^0.5                             , (sqrt(delta_c))*(exp(xi(3)))*(tanh(xi("
-      "2)))/(1+(tanh(xi(1)))^2)^0.5, 0                                       , 0                                       "
-      ", 0;\n        0                                                                                                 "
-      "   , 0                                                                                                    , exp("
-      "xi(3))                                                        , 0                                       , 0     "
-      "                                  , 0;\n        0                                                               "
-      "                                     , 0                                                                        "
-      "                            , delta_y*(tanh(xi(4)))*(exp(xi(3)))                                , delta_y*(1-(ta"
-      "nh(xi(4)))^2)*(exp(xi(3))), 0                                       , 0;\n        0                             "
-      "                                                                       , 0                                      "
-      "                                                              , delta_x*(tanh(xi(5)))*(exp(xi(3)))              "
-      "                  , 0                                       , delta_x*(1-(tanh(xi(5)))^2)*(exp(xi(3))), 0;\n    "
-      "    0                                                                                                    , 0    "
-      "                                                                                                , delta_z*(tanh("
-      "xi(6)))*(exp(xi(3)))                                , 0                                       , 0               "
-      "                        , delta_z*(1-(tanh(xi(6)))^2)*(exp(xi(3)))];                 \n     \n f_R = [sqrt(delta"
-      "_c)*tanh(xi(7))*exp(xi(9))/(1+(tanh(xi(8))^2))^0.5;\n         sqrt(delta_c)*tanh(xi(8))*exp(xi(9))/(1+(tanh(xi(7"
-      "))^2))^0.5;\n         exp(xi(9));\n         delta_y*tanh(xi(10))*exp(xi(9));\n         delta_x*tanh(xi(11))*exp("
-      "xi(9));\n         delta_z*tanh(xi(12))*exp(xi(9))];\n\n F_R = [sqrt(delta_c)*exp(xi(9))*(1-(tanh(xi(7))^2))/(1+("
-      "tanh(xi(8))^2))^0.5                        , sqrt(delta_c)*exp(xi(9))*tanh(xi(7))*tanh(xi(8))*((tanh(xi(8))^2)-1"
-      ")/(1+(tanh(xi(8))^2))^1.5, sqrt(delta_c)*exp(xi(9))*tanh(xi(7))/(1+(tanh(xi(7))^2))^0.5, 0                      "
-      "                , 0                                      , 0;\n        sqrt(delta_c)*exp(xi(9))*tanh(xi(7))*tanh"
-      "(xi(8))*((tanh(xi(7))^2)-1)/(1+(tanh(xi(7))^2))^1.5, sqrt(delta_c)*exp(xi(9))*(1-(tanh(xi(8))^2))/(1+(tanh(xi(7)"
-      ")^2))^0.5                        , sqrt(delta_c)*exp(xi(9))*tanh(xi(8))/(1+(tanh(xi(7))^2))^0.5, 0              "
-      "                        , 0                                      , 0;\n        0                                "
-      "                                                           , 0                                                  "
-      "                                         , exp(xi(9))                                                  , 0      "
-      "                                , 0                                      , 0;\n        0                        "
-      "                                                                   , 0                                          "
-      "                                                 , delta_y*(tanh(xi(10)))*exp(xi(9))                           ,"
-      " delta_y*(1-(tanh(xi(10)))^2)*exp(xi(9)), 0                                      , 0;\n        0                "
-      "                                                                           , 0                                  "
-      "                                                         , delta_x*(tanh(xi(11)))*exp(xi(9))                    "
-      "       , 0                                      , delta_x*(1-(tanh(xi(11)))^2)*exp(xi(9)), 0;\n        0        "
-      "                                                                                   , 0                          "
-      "                                                                 , delta_z*(tanh(xi(12)))*exp(xi(9))            "
-      "               , 0                                      , 0                                      , delta_z*(1-(t"
-      "anh(xi(12)))^2)*exp(xi(9))];                 \n  \n f = [f_L ; f_R];\n F = [F_L, F_R]; "
+      script		      "function [f,F] = fcn(delta_c, xi, delta_x, delta_y, delta_z)\n\n f_L = [(sqrt(delta_c))*(tanh(xi("
+      "1)))*(exp(xi(3)))/(1+(tanh(xi(2))^2))^0.5;\n       (sqrt(delta_c))*(tanh(xi(2)))*(exp(xi(3)))/(1+(tanh(xi(1))^2)"
+      ")^0.5;\n       exp(xi(3));\n       delta_y*(tanh(xi(4)))*(exp(xi(3)));\n       delta_x*(tanh(xi(5)))*(exp(xi(3))"
+      ");\n       delta_z*(tanh(xi(6)))*(exp(xi(3)))];\n\n F_L = [(sqrt(delta_c))*(exp(xi(3)))*(1-(tanh(xi(1)))^2)/(1+("
+      "tanh(xi(2)))^2)^0.5                             , (sqrt(delta_c))*(exp(xi(3)))*(tanh(xi(1)))*(tanh(xi(2)))*(-1+("
+      "tanh(xi(2)))^2)/(1+(tanh(xi(2)))^2)^1.5, (sqrt(delta_c))*(exp(xi(3)))*(tanh(xi(1)))/(1+(tanh(xi(2)))^2)^0.5, 0  "
+      "                                     , 0                                       , 0;\n        (sqrt(delta_c))*(ex"
+      "p(xi(3)))*(tanh(xi(1)))*(tanh(xi(2)))*(-1+(tanh(xi(1)))^2)/(1+(tanh(xi(1)))^2)^1.5, (sqrt(delta_c))*(exp(xi(3)))"
+      "*(1-(tanh(xi(2)))^2)/(1+(tanh(xi(1)))^2)^0.5                             , (sqrt(delta_c))*(exp(xi(3)))*(tanh(xi"
+      "(2)))/(1+(tanh(xi(1)))^2)^0.5, 0                                       , 0                                      "
+      " , 0;\n        0                                                                                                "
+      "    , 0                                                                                                    , exp"
+      "(xi(3))                                                        , 0                                       , 0    "
+      "                                   , 0;\n        0                                                              "
+      "                                      , 0                                                                       "
+      "                             , delta_y*(tanh(xi(4)))*(exp(xi(3)))                                , delta_y*(1-(t"
+      "anh(xi(4)))^2)*(exp(xi(3))), 0                                       , 0;\n        0                            "
+      "                                                                        , 0                                     "
+      "                                                               , delta_x*(tanh(xi(5)))*(exp(xi(3)))             "
+      "                   , 0                                       , delta_x*(1-(tanh(xi(5)))^2)*(exp(xi(3))), 0;\n   "
+      "     0                                                                                                    , 0   "
+      "                                                                                                 , delta_z*(tanh"
+      "(xi(6)))*(exp(xi(3)))                                , 0                                       , 0              "
+      "                         , delta_z*(1-(tanh(xi(6)))^2)*(exp(xi(3)))];                 \n     \n f_R = [(sqrt(del"
+      "ta_c))*(tanh(xi(7)))*(exp(xi(9)))/(1+(tanh(xi(8))^2))^0.5;\n       (sqrt(delta_c))*(tanh(xi(8)))*(exp(xi(9)))/(1"
+      "+(tanh(xi(7))^2))^0.5;\n       exp(xi(9));\n       delta_y*(tanh(xi(10)))*(exp(xi(9)));\n       delta_x*(tanh(xi"
+      "(11)))*(exp(xi(9)));\n       delta_z*(tanh(xi(12)))*(exp(xi(9)))];\n\n F_R = [(sqrt(delta_c))*(exp(xi(9)))*(1-(t"
+      "anh(xi(7)))^2)/(1+(tanh(xi(8)))^2)^0.5                             , (sqrt(delta_c))*(exp(xi(9)))*(tanh(xi(7)))*"
+      "(tanh(xi(8)))*(-1+(tanh(xi(8)))^2)/(1+(tanh(xi(8)))^2)^1.5, (sqrt(delta_c))*(exp(xi(9)))*(tanh(xi(7)))/(1+(tanh("
+      "xi(8)))^2)^0.5, 0                                        , 0                                        , 0;\n      "
+      "  (sqrt(delta_c))*(exp(xi(9)))*(tanh(xi(1)))*(tanh(xi(8)))*(-1+(tanh(xi(7)))^2)/(1+(tanh(xi(7)))^2)^1.5, (sqrt(d"
+      "elta_c))*(exp(xi(9)))*(1-(tanh(xi(8)))^2)/(1+(tanh(xi(7)))^2)^0.5                             , (sqrt(delta_c))*"
+      "(exp(xi(9)))*(tanh(xi(8)))/(1+(tanh(xi(7)))^2)^0.5, 0                                        , 0                "
+      "                        , 0;\n        0                                                                         "
+      "                           , 0                                                                                  "
+      "                  , exp(xi(9))                                                        , 0                       "
+      "                 , 0                                        , 0;\n        0                                     "
+      "                                                               , 0                                              "
+      "                                                      , delta_y*(tanh(xi(10)))*(exp(xi(9)))                     "
+      "          , delta_y*(1-(tanh(xi(10)))^2)*(exp(xi(9))), 0                                        , 0;\n        0 "
+      "                                                                                                   , 0          "
+      "                                                                                          , delta_x*(tanh(xi(11)"
+      "))*(exp(xi(9)))                               , 0                                        , delta_x*(1-(tanh(xi(1"
+      "1)))^2)*(exp(xi(9))), 0;\n        0                                                                             "
+      "                       , 0                                                                                      "
+      "              , delta_z*(tanh(xi(12)))*(exp(xi(9)))                               , 0                           "
+      "             , 0                                        , delta_z*(1-(tanh(xi(12)))^2)*(exp(xi(9)))];           "
+      "      \n     \n \n f = [f_L ; f_R];\n F = [F_L, F_R]; "
       editorLayout	      "100 M4x1[10 5 700 500]"
     }
   }
@@ -20963,9 +20968,6 @@ Stateflow {
     screen		    [1 1 1280 1024 1.000677131425054]
     treeNode		    [0 126 0 0]
     viewObj		    125
-    visible		    1
-    subviewS {
-    }
     ssIdHighWaterMark	    84
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -21594,12 +21596,15 @@ Stateflow {
   chart {
     id			    152
     machine		    1
-    name		    "Force_paramterization_controller/Balancing Controller\n"
+    name		    "Force_paramterization_controller/Momentum jerk Controller\n"
     windowPosition	    [352.761 488.141 161 328]
     viewLimits		    [0 156.75 0 153.75]
     screen		    [1 1 1280 1024 1.000677131425054]
     treeNode		    [0 153 0 0]
     viewObj		    152
+    visible		    1
+    subviewS {
+    }
     ssIdHighWaterMark	    88
     decomposition	    CLUSTER_CHART
     type		    EML_CHART
@@ -22470,7 +22475,7 @@ Stateflow {
   instance {
     id			    188
     machine		    1
-    name		    "Force_paramterization_controller/Balancing Controller\n"
+    name		    "Force_paramterization_controller/Momentum jerk Controller\n"
     chart		    152
   }
   chart {

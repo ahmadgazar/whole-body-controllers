@@ -173,13 +173,14 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     
     % Desired jerk momentum dynamics 
     L_ddot_star    = [m*xCoM_Jerk_Star;
-                     -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - 80*intHw] ;          
+                     -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - 100*intHw] ;          
    
     Beta           =  A_dot*f_ext_L*constraints(1) + A_dot*f_ext_R*constraints(2);
     
     % xi_dot is now the new fictitious iput realizing the desired Ddot(H).
-    %xi_desired     = [0; 0; 0; 0; 0; 0; 0; 0; log(300); 0; 0; 0];
-    xi_dot         = pinvA_total * (L_ddot_star - Beta); %+ 5*(xi_desired - xi);  
+    xi_desired     = [0; 0; log(150); 0; 0; 0; 0; 0; log(150); 0; 0; 0];
+    k              = 10;
+    xi_dot         = pinvA_total * (L_ddot_star - Beta); %- nullA_total*k*(xi-xi_desired);  
     
     % joint torques realizing the desired xi_dot
     tau_star       = Sigma*f + tauModel; 
