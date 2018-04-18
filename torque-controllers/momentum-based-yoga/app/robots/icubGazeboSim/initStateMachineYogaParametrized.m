@@ -35,23 +35,37 @@ Reg.dampings      = 0;
 Reg.HessianQP     = 1e-7;    
                             
 %% COM AND JOINT GAINS 
-Gain.KP_COM     =      [10    50  10  % state ==  1  TWO FEET BALANCING
-                        10    50  10  % state ==  2  COM TRANSITION TO LEFT 
-                        10    50  10  % state ==  3  LEFT FOOT BALANCING
-                        10    50  10  % state ==  4  YOGA LEFT FOOT 
-                        10    50  10  % state ==  5  PREPARING FOR SWITCHING 
-                        10    50  10  % state ==  6  LOOKING FOR CONTACT
-                        10    50  10  % state ==  7  TRANSITION TO INITIAL POSITION 
-                        10    50  10  % state ==  8  COM TRANSITION TO RIGHT FOOT
-                        10    50  10  % state ==  9  RIGHT FOOT BALANCING
-                        10    50  10  % state == 10  YOGA RIGHT FOOT 
-                        10    50  10  % state == 11  PREPARING FOR SWITCHING 
-                        10    50  10  % state == 12  LOOKING FOR CONTACT
-                        10    50  10];% state == 13  TRANSITION TO INITIAL POSITION
+Gain.KP_COM              =      [10    50  10  % state ==  1  TWO FEET BALANCING
+                                10    50  10  % state ==  2  COM TRANSITION TO LEFT 
+                                10    50  10  % state ==  3  LEFT FOOT BALANCING
+                                10    50  10  % state ==  4  YOGA LEFT FOOT 
+                                10    50  10  % state ==  5  PREPARING FOR SWITCHING 
+                                10    50  10  % state ==  6  LOOKING FOR CONTACT
+                                10    50  10  % state ==  7  TRANSITION TO INITIAL POSITION 
+                                10    50  10  % state ==  8  COM TRANSITION TO RIGHT FOOT
+                                10    50  10  % state ==  9  RIGHT FOOT BALANCING
+                                10    50  10  % state == 10  YOGA RIGHT FOOT 
+                                10    50  10  % state == 11  PREPARING FOR SWITCHING 
+                                10    50  10  % state == 12  LOOKING FOR CONTACT
+                                10    50  10];% state == 13  TRANSITION TO INITIAL POSITION
+                            
+% Gain.KI_COM              = [30   30    30
+%                             30   30    30
+%                             30   30    30
+%                             30   30    30
+%                             30   30    30
+%                             30   30    30
+%                             30   30    30
+%                             30   30    30
+%                             30   30    30
+%                             30   30    30
+%                             30   30    30
+%                             30   30    30
+%                             30   30    30]; 
+%                         
+Gain.KD_COM              = 2*sqrt(Gain.KP_COM);
 
-Gain.KD_COM = 2*sqrt(Gain.KP_COM);
-
-Gain.KP_AngularMomentum  = 0.25 ;
+Gain.KP_AngularMomentum  = diag([200   200    200]);
 Gain.KD_AngularMomentum  = 2*sqrt(Gain.KP_AngularMomentum);
 
 %                   %   TORSO  %%      LEFT ARM   %%      RIGHT ARM   %%         LEFT LEG            %%         RIGHT LEG           %% 

@@ -1,10 +1,11 @@
 function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM, currentState, jointsSmoothingTime] = ...
-            stateMachineYogaParametrized(CoM_0, qj_0, l_sole_CoM, r_sole_CoM, qj, t, wrench_rightFoot, wrench_leftFoot, l_sole_H_b, r_sole_H_b, Sm, Gain)
+            stateMachineYogaParametrized(wrench_rightFoot, wrench_leftFoot, CoM_0, qj_0, l_sole_CoM, r_sole_CoM, qj, t, l_sole_H_b, r_sole_H_b, Sm, Gain)
     
     persistent state;
     persistent tSwitch;
     persistent w_H_fixedLink;
-
+    
+    
     if isempty(state) || isempty(tSwitch) || isempty(w_H_fixedLink) 
         state         = Sm.stateAt0;
         tSwitch       = 0;
@@ -51,6 +52,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         impedances = Gain.impedances(state,:);
         KPCoM      = Gain.KP_COM(state,:);   
         KDCoM      = Gain.KD_COM(state,:);   
+        KICoM      = Gain.KI_COM(state,:);
 
         fixed_link_CoMDes = w_H_fixedLink\[CoM_des;1];
         CoM_Error          = fixed_link_CoMDes(1:3) -l_sole_CoM(1:3);
@@ -79,6 +81,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         impedances  = Gain.impedances(state,:);
         KPCoM       = Gain.KP_COM(state,:);   
         KDCoM       = Gain.KD_COM(state,:);   
+        KICoM       = Gain.KI_COM(state,:);
 
         if t > (tSwitch + Sm.tBalancingBeforeYoga) 
             
@@ -108,6 +111,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         impedances   = Gain.impedances(state,:);
         KPCoM        = Gain.KP_COM(state,:);   
         KDCoM        = Gain.KD_COM(state,:);   
+        KICoM        = Gain.KI_COM(state,:);
 
         for i = 1: size(Sm.joints_leftYogaRef,1)-1
             
@@ -143,6 +147,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         impedances  = Gain.impedances(state,:);
         KPCoM       = Gain.KP_COM(state,:);   
         KDCoM       = Gain.KD_COM(state,:);   
+        KICoM       = Gain.KI_COM(state,:);
 
         qj_errorRLeg  = qj(end-5:end)    -qj_des(end-5:end);      
         qj_errorLLeg  = qj(end-11:end-6) -qj_des(end-11:end-6);
@@ -170,6 +175,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         impedances  = Gain.impedances(state,:);
         KPCoM       = Gain.KP_COM(state,:);   
         KDCoM       = Gain.KD_COM(state,:);   
+        KICoM       = Gain.KI_COM(state,:);
 
         if wrench_rightFoot(3) > Sm.wrench_thresholdContactOn
             
@@ -190,7 +196,8 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         impedances   = Gain.impedances(state,:);
         KPCoM        = Gain.KP_COM(state,:);   
         KDCoM        = Gain.KD_COM(state,:); 
-        
+        KICoM        = Gain.KI_COM(state,:);
+
         if norm(l_sole_CoM(1:2)-CoM_des(1:2)) < 10*Sm.CoM_threshold && Sm.yogaAlsoOnRightFoot && t > tSwitch + Sm.tBalancing
             
             w_H_fixedLink   = w_H_fixedLink*l_sole_H_b/r_sole_H_b;
@@ -218,7 +225,9 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         
         impedances  = Gain.impedances(state,:);
         KPCoM       = Gain.KP_COM(state,:);   
-        KDCoM       = Gain.KD_COM(state,:);   
+        KDCoM       = Gain.KD_COM(state,:);
+        KICoM      = Gain.KI_COM(state,:);
+       
         qj_des      = Sm.joints_references(state,:)';
 
         if norm(CoM_Error(2)) < Sm.CoM_threshold  && wrench_leftFoot(3) < Sm.wrench_thresholdContactOff
@@ -240,6 +249,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         impedances  = Gain.impedances(state,:);
         KPCoM       = Gain.KP_COM(state,:);   
         KDCoM       = Gain.KD_COM(state,:);
+        KICoM       = Gain.KI_COM(state,:);
         
         if t > (tSwitch + Sm.tBalancingBeforeYoga)
             
@@ -263,6 +273,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         impedances  = Gain.impedances(state,:);
         KPCoM       = Gain.KP_COM(state,:);   
         KDCoM       = Gain.KD_COM(state,:);   
+        KICoM       = Gain.KI_COM(state,:);
 
         for i = 1: size(Sm.joints_rightYogaRef,1)-1
             
@@ -294,6 +305,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         impedances  = Gain.impedances(state,:);
         KPCoM       = Gain.KP_COM(state,:);   
         KDCoM       = Gain.KD_COM(state,:);   
+        KICoM       = Gain.KI_COM(state,:);
 
         qj_errorRLeg  = qj(end-5:end)-qj_des(end-5:end);
         qj_errorLLeg  = qj(end-11:end-6)-qj_des(end-11:end-6);
@@ -315,6 +327,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         impedances  = Gain.impedances(state,:);
         KPCoM       = Gain.KP_COM(state,:);   
         KDCoM       = Gain.KD_COM(state,:);   
+        KICoM       = Gain.KI_COM(state,:);
 
         if wrench_leftFoot(3) > Sm.wrench_thresholdContactOn
             
@@ -331,7 +344,8 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         impedances  = Gain.impedances(state,:);
         KPCoM       = Gain.KP_COM(state,:);   
         KDCoM       = Gain.KD_COM(state,:);   
-        
+        KICoM       = Gain.KI_COM(state,:);
+       
         if t - tSwitch > Sm.tBalancing 
             
            if Sm.yogaInLoop
