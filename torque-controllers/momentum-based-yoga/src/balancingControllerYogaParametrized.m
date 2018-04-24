@@ -185,9 +185,9 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
 
     %% xi_dot is now the new fictitious iput realizing the desired momentum jerk.
     
-    %xi_desired    = [0; 0; log(150); 0; 0; 0; 0; 0; log(150); 0; 0; 0];
-    %k             = 10;
-    xi_dot         = pinvA_total * (L_ddot_star - Beta); %- nullA_total*k*(xi-xi_desired);  
+    xi_desired    = [0; 0; log(300); 0; 0; 0; 0; 0; 0; 0; 0; 0];
+    k             = 10;
+    xi_dot         = pinvA_total * (L_ddot_star - Beta) - k*(xi-xi_desired);  
     
     %% joint torques realizing the desired xi_dot
     

@@ -5,7 +5,7 @@
 %% --- Initialization ---
 
 % Feet in contact (COORDINATOR DEMO ONLY)
-Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
+Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 0];
 
 % Initial foot on ground. If false, right foot is used as default contact
 % frame (this does not means that the other foot cannot be in contact too).
@@ -24,7 +24,8 @@ Config.SMOOTH_COM_DES = false;
 Config.SMOOTH_JOINT_DES = false;   
 
 % torque saturation
-Sat.torque = 34; 
+Sat.torque = 34;
+Sat.xiDot  = 10;
 
 %% Control gains
 
@@ -50,11 +51,12 @@ end
 % PARAMETERS FOR ONE FOOT BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
-    Gain.KP_COM               = diag([50  50  50]); % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
-    Gain.KD_COM               = 2*sqrt(Gain.KP_COM);     % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
-    Gain.KI_COM               = diag([30   30    30]);  % Ki(x_CoMDesired - x_CoM)
+    Gain.KP_COM               = diag([50  50  50])/15;     % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
+    Gain.KD_COM               = 2*sqrt(Gain.KP_COM);      % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
+    Gain.KI_COM               = diag([30   30    30])/20;  % Ki(x_CoMDesired - x_CoM)
     Gain.KP_AngularMomentum   = diag([200   150    150]);
-    Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum);
+    Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum)/15;
+    Gain.KP_AngularMomentum   = diag([200   150    150])/2;
 
     % Impedances acting in the null space of the desired contact forces    
     impTorso            = [30   30   30];
