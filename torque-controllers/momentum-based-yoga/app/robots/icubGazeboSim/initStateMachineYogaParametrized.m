@@ -35,11 +35,11 @@ Reg.dampings      = 0;
 Reg.HessianQP     = 1e-7;    
                             
 %% COM AND JOINT GAINS 
-Gain.KP_COM              =      [10    50  10  % state ==  1  TWO FEET BALANCING
-                                10    50  10  % state ==  2  COM TRANSITION TO LEFT 
-                                10    50  10  % state ==  3  LEFT FOOT BALANCING
+Gain.KP_COM              =      [50    50  50  % state ==  1  TWO FEET BALANCING
+                                50    30  30  % state ==  2  COM TRANSITION TO LEFT 
+                                50    30  30  % state ==  3  LEFT FOOT BALANCING
                                 10    50  10  % state ==  4  YOGA LEFT FOOT 
-                                10    50  10  % state ==  5  PREPARING FOR SWITCHING 
+                                50    50  50  % state ==  5  PREPARING FOR SWITCHING 
                                 10    50  10  % state ==  6  LOOKING FOR CONTACT
                                 10    50  10  % state ==  7  TRANSITION TO INITIAL POSITION 
                                 10    50  10  % state ==  8  COM TRANSITION TO RIGHT FOOT
@@ -49,31 +49,43 @@ Gain.KP_COM              =      [10    50  10  % state ==  1  TWO FEET BALANCING
                                 10    50  10  % state == 12  LOOKING FOR CONTACT
                                 10    50  10];% state == 13  TRANSITION TO INITIAL POSITION
                             
-% Gain.KI_COM              = [30   30    30
-%                             30   30    30
-%                             30   30    30
-%                             30   30    30
-%                             30   30    30
-%                             30   30    30
-%                             30   30    30
-%                             30   30    30
-%                             30   30    30
-%                             30   30    30
-%                             30   30    30
-%                             30   30    30
-%                             30   30    30]; 
+Gain.KI_COM              = [30   30    30
+                            30   30    30
+                            30   30    30
+                            30   30    30
+                            30   30    30
+                            30   30    30
+                            30   30    30
+                            30   30    30
+                            30   30    30
+                            30   30    30
+                            30   30    30
+                            30   30    30
+                            30   30    30]; 
 %                         
 Gain.KD_COM              = 2*sqrt(Gain.KP_COM);
 
-Gain.KP_AngularMomentum  = diag([200   200    200]);
+Gain.KP_AngularMomentum  = [diag([200   200  200])
+                            diag([200   200  200])
+                            diag([200   200  200])
+                            diag([200   200  200])
+                            diag([200   150  150])
+                            diag([200   150  150])
+                            diag([200   150  150])
+                            diag([200   200  200])
+                            diag([200   200  200])
+                            diag([200   200  200])
+                            diag([200   200  200])
+                            diag([200   200  200])
+                            diag([200   200  200])];
 Gain.KD_AngularMomentum  = 2*sqrt(Gain.KP_AngularMomentum);
 
 %                   %   TORSO  %%      LEFT ARM   %%      RIGHT ARM   %%         LEFT LEG            %%         RIGHT LEG           %% 
-Gain.impedances  = [10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  1  TWO FEET BALANCING
-                    10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  2  COM TRANSITION TO LEFT 
-                    10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  3  LEFT FOOT BALANCING
-                    30   30   30, 10   10    10   10, 10   10    10   10, 50   50  250   200     50  50, 50   50   50    50     50  50  % state ==  4  YOGA LEFT FOOT 
-                    30   30   30, 10   10    10   10, 10   10    10   10, 30   50  300    60     50  50, 30   50   30    60     50  50  % state ==  5  PREPARING FOR SWITCHING 
+Gain.impedances  = [30   30   30, 10   10    10    10, 10   10    10    10, 30   30   30    60   10  10, 30   30   30    60    10  10  % state ==  1  TWO FEET BALANCING
+                    30   30   30, 15   15    15    8, 15   15    15    8, 60   60   60    60     30  30, 30   30   30    60     10  10  % state ==  2  COM TRANSITION TO LEFT 
+                    30   30   30, 15   15    15    8, 15   15    15    8, 60   60   60    60     30  30, 30   30   30    60     10  10  % state ==  2  COM TRANSITION TO LEFT 
+                    30   30   30, 15   15    15    8, 15   15    15    8, 30   30   30    30     10  10, 30   30   30    60     10  10  % state ==  2  COM TRANSITION TO LEFT 
+                    30   30   30, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   30   30    60     10  10  % state ==  3  LEFT FOOT BALANCING
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  6  LOOKING FOR CONTACT
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  7  TRANSITION TO INITIAL POSITION 
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  8  COM TRANSITION TO RIGHT FOOT
@@ -332,13 +344,18 @@ Config.K_ff  = 0;
 % So, numberOfPoints defines the number of points used to interpolate the circle 
 % in each cicle's quadrant
 numberOfPoints               = 4;  
-forceFrictionCoefficient     = 1/3;    
-torsionalFrictionCoefficient = 1/75;
-fZmin                        = 10;
+delta_c                      = 1/3; %friction coefficient
+forceFrictionCoefficient     = 1/3;
+delta_x                      = 0.07*2;    %CoP along x must be inside the support polygon i.e foot size along X
+delta_y                      = 0.03*2;    %CoP along y must be inside the support polygon i.e foot size along Y
+delta_z                      = 1/75;    % torsional coefficient 
+torsionalFrictionCoefficient = 1/75; 
 
 % physical size of the foot                             
-feet_size                    = [-0.05  0.10;     % xMin, xMax
-                                -0.025 0.025];   % yMin, yMax 
+feet_size                    = [-0.07  0.07;   % xMin, xMax
+                                -0.03  0.03];  % yMin, yMax    
+ 
+fZmin                        = 10;
                             
 %% Cleanup
 clear q1 q2 q3 q4;

@@ -17,10 +17,10 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
-              balancingControllerYogaParametrized(constraints, ROBOT_DOF_FOR_SIMULINK, qj, qjDes, nu, M, h, L, ...
+              balancingControllerYogaParametrized(SM_TYPE_BIN, constraints, ROBOT_DOF_FOR_SIMULINK, qj, qjDes, nu, M, h, L, ...
                                       intHw, w_H_l_sole, w_H_r_sole, JL, JR, dJL_nu, dJR_nu, xCoM, ...
                                       J_CoM, desired_x_dx_ddx_CoM, gainsPCOM, gainsDCOM, gainsICOM, ...
-                                      impedances, Gain, Reg, Left_Right_F_T_Sensors, f, F, xi)
+                                      impedances, Gain, Reg, Left_Right_F_T_Sensors, f, F, xi, state)
     %% DEFINITION OF CONTROL AND DYNAMIC VARIABLES
     pos_leftFoot   = w_H_l_sole(1:3,4);
 %   w_R_l_sole     = w_H_l_sole(1:3,1:3);
@@ -112,7 +112,7 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     % ddot(H) = dot(A)*f + A_R*F_R*dot(xi_R) + A_L*F_L*dot(xi_L) 
     A_total         = [AL*F_L, AR*F_R];
                   
-    pinvA_total     =  pinv(A_total, Reg.pinvTol) * constraints(1) * constraints(2)  ...
+    pinvA_total     =  pinv(A_total, Reg.pinvDamp) * constraints(1) * constraints(2)  ...
                       + [pinv(AL*F_L); zeros(6)]  * constraints(1) * (1-constraints(2)) ... 
                       + [zeros(6) ; inv(AR*F_R)] * constraints(2) *(1-constraints(1));  
                   
@@ -171,25 +171,33 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     % HDotDes      = [m*xDDcomStar ;
     %                -Gain.KD_AngularMomentum*L(4:end) - Gain.KP_AngularMomentum*intHw];
     
-    % Desired jerk momentum dynamics 
-    L_ddot_star    = [m*xCoM_Jerk_Star;
-                     -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - 100*intHw] ;          
-   
+    %% Desired momentum jerk dynamics 
+    %if SM_TYPE_BIN == 1 % coordinator 
+    %    pause;
+        L_ddot_star    = [m*xCoM_Jerk_Star;
+                         -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - 100*intHw] ;          
+    %else  %yoga
+        
+    %    L_ddot_star    = [m*xCoM_Jerk_Star;
+     %                    -Gain.KP_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*L(4:end) - Gain.KD_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*w_dot - (100*intHw)] ;          
+    %end
     Beta           =  A_dot*f_ext_L*constraints(1) + A_dot*f_ext_R*constraints(2);
+
+    %% xi_dot is now the new fictitious iput realizing the desired momentum jerk.
     
-    % xi_dot is now the new fictitious iput realizing the desired Ddot(H).
-    xi_desired     = [0; 0; log(150); 0; 0; 0; 0; 0; log(150); 0; 0; 0];
-    k              = 10;
+    %xi_desired    = [0; 0; log(150); 0; 0; 0; 0; 0; log(150); 0; 0; 0];
+    %k             = 10;
     xi_dot         = pinvA_total * (L_ddot_star - Beta); %- nullA_total*k*(xi-xi_desired);  
     
-    % joint torques realizing the desired xi_dot
+    %% joint torques realizing the desired xi_dot
+    
     tau_star       = Sigma*f + tauModel; 
     
     %% DEBUG DIAGNOSTICS
 
     % Desired parametrized contact wrenches
-     f_desired                 = f;
+     f_desired     = f;
     
     % Error on the center of massF1
-    errorCoM                   = xCoM - desired_x_dx_ddx_CoM(:,1);
+    errorCoM       = xCoM - desired_x_dx_ddx_CoM(:,1);
 end

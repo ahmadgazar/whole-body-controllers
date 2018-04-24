@@ -30,11 +30,11 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
     Gain.KP_COM             = diag([30 30 30]);
     Gain.KD_COM             = 2*sqrt(Gain.KP_COM); %don't increase this too much because the estimated xdot_com is badly estimated
     Gain.KI_COM             = diag([30   30    30]); 
-    Gain.KP_AngularMomentum = diag([200   200    200]);
+    Gain.KP_AngularMomentum = diag([150  150    150]);
     Gain.KD_AngularMomentum = 2*sqrt(Gain.KP_AngularMomentum);
 
     % Impedances acting in the null space of the desired contact forces 
-    impTorso            = [30   30   30]; 
+    impTorso            = [50   30   30]; 
 
     impArms             = [10   10   10    10];
 
@@ -42,7 +42,6 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
 
     impRightLeg         = [30   30   30    60   10   10];                                            
 end
-
 % PARAMETERS FOR ONE FOOT BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
@@ -57,9 +56,9 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
     impArms             = [15   15   15    8];
                         
-    impLeftLeg          = [60   60   60    60   20   20];
+    impLeftLeg          = [60   60   60    60   10   10];
 
-    impRightLeg         = [30   30   30    60    10   10];   
+    impRightLeg         = [30   30   30    30    10   10];   
 end
 
 Gain.impedances         = 2*[impTorso(1,:),impArms(1,:),impArms(1,:),impLeftLeg(1,:),impRightLeg(1,:)];
