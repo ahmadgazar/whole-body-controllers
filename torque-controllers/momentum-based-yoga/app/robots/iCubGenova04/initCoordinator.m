@@ -5,12 +5,12 @@
 %% --- Initialization ---
 
 % Feet in contact (COORDINATOR DEMO ONLY)
-Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 0];
+Config.LEFT_RIGHT_FOOT_IN_CONTACT = [0 1];
 
 % Initial foot on ground. If false, right foot is used as default contact
 % frame (this does not means that the other foot cannot be in contact too).
 % (COORDINATOR DEMO ONLY)
-Config.LEFT_FOOT_IN_CONTACT_AT_0 = true;
+Config.LEFT_FOOT_IN_CONTACT_AT_0 = false;
 
 % If true, the robot CoM will follow a desired reference trajectory (COORDINATOR DEMO ONLY)
 Config.DEMO_MOVEMENTS = false;
@@ -53,7 +53,7 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
     Gain.KP_COM               = diag([50  50  50])/2;     % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
     Gain.KD_COM               = 2*sqrt(Gain.KP_COM)*0;      % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
-    Gain.KI_COM               = diag([30   30    30])*0;  % Ki(x_CoMDesired - x_CoM)
+    Gain.KI_COM               = diag([30   30    30])/5;  % Ki(x_CoMDesired - x_CoM)
     Gain.KP_AngularMomentum   = diag([200   150    150])/10;
     Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum)*0;
     Gain.KI_AngularMomentum   = 10;
