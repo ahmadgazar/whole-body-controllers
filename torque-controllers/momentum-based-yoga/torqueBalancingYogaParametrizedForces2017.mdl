@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3301"
+    ComputedModelVersion    "1.3303"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -603,11 +603,11 @@ Model {
     }
     OrderedModelArguments   1
   }
-  DiagnosticSuppressor	  "on"
-  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 1 0"
   LogicAnalyzerGraphicalSettings ""
   LogicAnalyzerPlugin	  "on"
   LogicAnalyzerSignalOrdering ""
+  DiagnosticSuppressor	  "on"
+  SuppressorTable	  "22 serialization::archive 11 0 6 0 0 0 11 0"
   CustomCodeFunctionData  ""
   SLCCPlugin		  "on"
   ScopeRefreshTime	  0.035000
@@ -631,7 +631,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [52.0, 26.0, 1876.0, 1062.0]
+      Location		      [0.0, 27.0, 1920.0, 1020.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -654,11 +654,11 @@ Model {
 	Object {
 	  $ObjectID		  5
 	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1838.0, 927.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [-1761.0, -508.20000000000005]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "4504"
+	  Extents		  [1882.0, 828.0]
+	  ZoomFactor		  [0.98]
+	  Offset		  [0.0, 0.0]
 	}
 	Object {
 	  $ObjectID		  6
@@ -674,9 +674,9 @@ Model {
 	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "2355"
-	  Extents		  [1838.0, 927.0]
-	  ZoomFactor		  [0.797353890695597]
-	  Offset		  [-26608.281007140653, -5028.5580757344605]
+	  Extents		  [1882.0, 828.0]
+	  ZoomFactor		  [0.70915298783377156]
+	  Offset		  [-26783.364800435847, -5030.7418614039334]
 	}
 	PropName		"EditorsInfo"
       }
@@ -696,12 +696,12 @@ Model {
       }
       WindowState	      "AAAA/wAAAAD9AAAAAgAAAAAAAAC9AAAB+PwCAAAAA/sAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAA"
       "AAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0Ac"
-      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABJAP///wAAAAEAAAAAAAAAAPwCA"
+      "ABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAABiAP///wAAAAEAAAAAAAAAAPwCA"
       "AAAAfsAAABUAEcATABVAEUAMgA6AFAAcgBvAHAAZQByAHQAeQBJAG4AcwBwAGUAYwB0AG8AcgAvAFAAcgBvAHAAZQByAHQAeQAgAEkAbgBzAHAAZ"
-      "QBjAHQAbwByAAAAAAD/////AAAAKAD///8AAAdUAAAD2wAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
+      "QBjAHQAbwByAAAAAAD/////AAAALAD///8AAAeAAAADgAAAAAEAAAACAAAAAQAAAAL8AAAAAQAAAAIAAAAP/////wAAAAAA/////wAAAAAAAAAA/"
       "////wEAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/"
-      "////wEAAAB2/////wAAAAAAAAAA/////wEAAADa/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFQ/////wAAAAAAAAAA/"
-      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAALv/////wAAAAAAAAAA/"
+      "////wEAAACA/////wAAAAAAAAAA/////wEAAADo/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAAFo/////wAAAAAAAAAA/"
+      "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA/////wEAAANR/////wAAAAAAAAAA/"
       "////wAAAAAA/////wAAAAAAAAAA/////wAAAAAA/////wAAAAAAAAAA"
     }
   }
@@ -710,11 +710,11 @@ Model {
   Creator		  "daniele"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "agazar"
+  LastModifiedBy	  "icub"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 24 10:22:36 2018"
-  RTWModifiedTimeStamp	  446466156
-  ModelVersionFormat	  "1.%<AutoIncrement:3301>"
+  LastModifiedDate	  "Tue Apr 24 17:57:10 2018"
+  RTWModifiedTimeStamp	  446492005
+  ModelVersionFormat	  "1.%<AutoIncrement:3303>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1425,6 +1425,7 @@ Model {
 	      LookupTableObjectStructAxisOrder "1,2,3,4,..."
 	      LUTObjectStructOrderExplicitValues "Size,Breakpoints,Table"
 	      LUTObjectStructOrderEvenSpacing "Size,Breakpoints,Table"
+	      ArrayLayout	      "Column-major"
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -1784,6 +1785,7 @@ Model {
     Block {
       BlockType		      Scope
       DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+      Floating		      off
     }
     Block {
       BlockType		      Selector
@@ -1818,7 +1820,6 @@ Model {
       Opaque		      off
       MaskHideContents	      off
       SFBlockType	      "NONE"
-      Variant		      off
       GeneratePreprocessorConditionals off
       AllowZeroVariantControls off
       PropagateVariantConditions off
@@ -1875,7 +1876,7 @@ Model {
   }
   System {
     Name		    "torqueBalancingYogaParametrizedForces2017"
-    Location		    [52, 26, 1928, 1088]
+    Location		    [0, 27, 1920, 1047]
     Open		    off
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
@@ -1888,9 +1889,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "116"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "4629"
+    SIDHighWatermark	    "4630"
     Block {
       BlockType		      Reference
       Name		      "Configuration"
@@ -1905,12 +1906,6 @@ Model {
       ContentPreviewEnabled   off
       ConfigSource	      "Workspace"
       ConfigObject	      "'WBTConfigRobot'"
-      RobotName		      "'icub'"
-      UrdfFile		      "'model.urdf'"
-      ControlledJoints	      "{'l_elbow','l_shoulder_pitch','torso_roll'}"
-      ControlBoardsNames      "{'left_arm','right_arm','torso'}"
-      LocalName		      "'WBT'"
-      GravityVector	      "[0,0,-9.81]"
     }
     Block {
       BlockType		      SubSystem
@@ -1923,6 +1918,7 @@ Model {
       BackgroundColor	      "[0.333333, 1.000000, 1.000000]"
       ShowName		      off
       RequestExecContextInheritance off
+      Variant		      off
       Object {
 	$PropName		"MaskObject"
 	$ObjectID		23
@@ -1931,7 +1927,7 @@ Model {
       }
       System {
 	Name			"Dump and visualize"
-	Location		[1724, 18, 3600, 1080]
+	Location		[0, 27, 1920, 1047]
 	Open			off
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
@@ -2057,10 +2053,11 @@ Model {
 	  Position		  [715, 149, 855, 506]
 	  ZOrder		  707
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "Visualizer"
-	    Location		    [52, 26, 1928, 1088]
-	    Open		    off
+	    Location		    [0, 27, 1920, 1047]
+	    Open		    on
 	    PortBlocksUseCompactNotation off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2228,7 +2225,6 @@ Model {
 	      "Tools','Measurements',true,'Version','2018a')),'Version','2018a','Location',[-1679 151 -58 1079],'WindowStyle',"
 	      "'docked')"
 	      NumInputPorts	      "4"
-	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Selector
@@ -2334,7 +2330,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
 	      SourceType	      "DoFs converter"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      yarp2WBIOption	      "From YARP to WBI"
 	      Port {
 		PortNumber		1
@@ -2368,7 +2363,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
 	      SourceType	      "DoFs converter"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      yarp2WBIOption	      "From YARP to WBI"
 	      Port {
 		PortNumber		1
@@ -2402,7 +2396,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
 	      SourceType	      "DoFs converter"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      yarp2WBIOption	      "From YARP to WBI"
 	      Port {
 		PortNumber		1
@@ -2436,7 +2429,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
 	      SourceType	      "DoFs converter"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      yarp2WBIOption	      "From YARP to WBI"
 	      Port {
 		PortNumber		1
@@ -2470,7 +2462,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
 	      SourceType	      "DoFs converter"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      yarp2WBIOption	      "From YARP to WBI"
 	      Port {
 		PortNumber		1
@@ -2504,7 +2495,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
 	      SourceType	      "DoFs converter"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      yarp2WBIOption	      "From YARP to WBI"
 	      Port {
 		PortNumber		1
@@ -2727,7 +2717,6 @@ Model {
 	      " Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true)),'Version','2018a','Loc"
 	      "ation',[640 396 1920 1044])"
 	      NumInputPorts	      "2"
-	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -2836,7 +2825,6 @@ Model {
 	      "false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version',"
 	      "'2018a','Location',[-1679 151 -58 1079],'WindowStyle','docked')"
 	      NumInputPorts	      "7"
-	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -2934,7 +2922,6 @@ Model {
 	      "ousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2016b')),'Version','2018a','Loc"
 	      "ation',[56 78 1367 767])"
 	      NumInputPorts	      "6"
-	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3029,7 +3016,6 @@ Model {
 	      "isplayLayoutDimensions',[6 1]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.C"
 	      "onfiguration('Tools','Measurements',true)),'Version','2018a','Location',[1 95 1709 986])"
 	      NumInputPorts	      "6"
-	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3126,7 +3112,6 @@ Model {
 	      "ion('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Location',[-1679 151 -58 1079],'WindowSt"
 	      "yle','docked')"
 	      NumInputPorts	      "6"
-	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3140,89 +3125,88 @@ Model {
 	      "]),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggi"
 	      "ng',true,'DataLoggingVariableName','tauDesiredData','DataLoggingSaveFormat','StructureWithTime','DataLoggingDec"
 	      "imation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDispl"
-	      "ays',{struct('MinYLimReal','-10.31181','MaxYLimReal','2.22487','YLabelReal','','MinYLimMag','0.00000','MaxYLimM"
-	      "ag','10.31181','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'Axes"
-	      "TickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450"
-	      "98039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745"
-	      "098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098039215686"
-	      "3],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Mar"
-	      "ker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','o"
-	      "n'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 "
-	      "0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','Line"
-	      "Width',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','non"
-	      "e','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'torso:1','torso:2','torso:3'}},"
-	      "'ShowContent',true,'Placement',1),struct('MinYLimReal','-1.79178','MaxYLimReal','1.13926','YLabelReal','','MinY"
-	      "LimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor"
-	      "',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.066666666"
-	      "6666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8313725"
-	      "49019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0"
-	      ".650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','Line"
-	      "Width',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','non"
-	      "e','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struc"
-	      "t('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineS"
-	      "tyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0."
-	      "5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',4,'LineNames',{{'left_arm:1','lef"
-	      "t_arm:2','left_arm:3','left_arm:4'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-1.699','MaxYLimRe"
-	      "al','1.86012','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',t"
-	      "rue,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68627450980"
-	      "3922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.1607843"
-	      "1372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.05882352"
-	      "94117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('C"
-	      "olor',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle"
-	      "','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'M"
-	      "arker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible',"
-	      "'on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 "
-	      "0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines"
-	      "',4,'LineNames',{{'right_arm:1','right_arm:2','right_arm:3','right_arm:4'}},'ShowContent',true,'Placement',3),s"
-	      "truct('MinYLimReal','-22.11364','MaxYLimReal','31.9238','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','Leg"
-	      "endVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.68627"
-	      "4509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352"
-	      "9411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7176"
-	      "47058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Signa"
-	      "lLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visibl"
-	      "e','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',"
-	      "[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-',"
-	      "'LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker'"
-	      ",'none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}"
-	      "},'UserDefinedChannelNames',{{}},'NumLines',6,'LineNames',{{'left_leg:1','left_leg:2','left_leg:3','left_leg:4'"
-	      ",'left_leg:5','left_leg:6'}},'ShowContent',true,'Placement',4),struct('MinYLimReal','-3.30865','MaxYLimReal','7"
-	      ".38785','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'P"
-	      "lotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],"
-	      "'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.1607843137254"
-	      "9;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.05882352941176"
-	      "47 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',"
-	      "[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-',"
-	      "'LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker'"
-	      ",'none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),"
-	      "struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'"
-	      "LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',6,'L"
-	      "ineNames',{{'right_leg:1','right_leg:2','right_leg:3','right_leg:4','right_leg:5','right_leg:6'}},'ShowContent'"
-	      ",true,'Placement',5),struct('MinYLimReal','0.9','MaxYLimReal','1.1','YLabelReal','','MinYLimMag','0','MaxYLimMa"
-	      "g','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickCol"
-	      "or',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074509803921"
-	      "5686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980392"
-	      "15686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Tit"
-	      "le','','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible'"
-	      ",'on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0"
-	      " 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','L"
-	      "ineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','"
-	      "none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},"
-	      "'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'state'}},'ShowContent',true,'Placement',6)},'Display"
-	      "PropertyDefaults',struct('YLabelReal','','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false"
-	      ",'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 "
-	      "0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.39215686274509"
-	      "8 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098"
-	      "039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle"
-	      "','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'M"
-	      "arker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible',"
-	      "'on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 "
-	      "1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','Li"
-	      "neWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'"
-	      "ShowContent',true,'Placement',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[6 1]"
-	      "),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Confi"
-	      "guration('Tools','Measurements',true,'Version','2017b')),'Version','2018a','Location',[1 106 1921 1055])"
+	      "ays',{struct('MinYLimReal','-3.22717','MaxYLimReal','1.82119','YLabelReal','','MinYLimMag','0.00000','MaxYLimMa"
+	      "g','3.22717','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTi"
+	      "ckColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098"
+	      "039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509"
+	      "8039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]"
+	      ",'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marke"
+	      "r','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'"
+	      "),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0]"
+	      ",'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWi"
+	      "dth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none'"
+	      ",'Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',3,'LineNames',{{'torso:1','torso:2','torso:3'}},'S"
+	      "howContent',true,'Placement',1),struct('MinYLimReal','-1.98143','MaxYLimReal','1.74678','YLabelReal','','MinYLi"
+	      "mMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',"
+	      "[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.06666666666"
+	      "66667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549"
+	      "019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.6"
+	      "50980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWi"
+	      "dth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none'"
+	      ",'Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct("
+	      "'Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineSty"
+	      "le','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,"
+	      "'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',4,'LineNames',{{'left_arm:1','left_"
+	      "arm:2','left_arm:3','left_arm:4'}},'ShowContent',true,'Placement',2),struct('MinYLimReal','-2.1472','MaxYLimRea"
+	      "l','1.82419','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',tr"
+	      "ue,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803"
+	      "922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431"
+	      "372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.058823529"
+	      "4117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Co"
+	      "lor',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle'"
+	      ",'-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Ma"
+	      "rker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','"
+	      "on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0"
+	      " 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines'"
+	      ",4,'LineNames',{{'right_arm:1','right_arm:2','right_arm:3','right_arm:4'}},'ShowContent',true,'Placement',3),st"
+	      "ruct('MinYLimReal','-12.58339','MaxYLimReal','32.2927','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','Lege"
+	      "ndVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274"
+	      "509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529"
+	      "411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.71764"
+	      "7058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Signal"
+	      "Label>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible"
+	      "','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',["
+	      "0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','"
+	      "LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker',"
+	      "'none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}}"
+	      ",'UserDefinedChannelNames',{{}},'NumLines',6,'LineNames',{{'left_leg:1','left_leg:2','left_leg:3','left_leg:4',"
+	      "'left_leg:5','left_leg:6'}},'ShowContent',true,'Placement',4),struct('MinYLimReal','-2.41048','MaxYLimReal','6."
+	      "27385','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','on','XGrid',true,'YGrid',true,'Pl"
+	      "otMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'"
+	      "ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549"
+	      ";0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.058823529411764"
+	      "7 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',["
+	      "1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','"
+	      "LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker',"
+	      "'none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),s"
+	      "truct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'L"
+	      "ineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',6,'Li"
+	      "neNames',{{'right_leg:1','right_leg:2','right_leg:3','right_leg:4','right_leg:5','right_leg:6'}},'ShowContent',"
+	      "true,'Placement',5),struct('MinYLimReal','0.9','MaxYLimReal','1.1','YLabelReal','','MinYLimMag','0','MaxYLimMag"
+	      "','10','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColo"
+	      "r',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215"
+	      "686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509803921"
+	      "5686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Titl"
+	      "e','','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible',"
+	      "'on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 "
+	      "1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 0],'LineStyle','-','Li"
+	      "neWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1 0],'LineStyle','-','LineWidth',0.5,'Marker','n"
+	      "one','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'"
+	      "UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'state'}},'ShowContent',true,'Placement',6)},'DisplayP"
+	      "ropertyDefaults',struct('YLabelReal','','LegendVisibility','on','XGrid',true,'YGrid',true,'PlotMagPhase',false,"
+	      "'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0"
+	      ".0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098"
+	      " 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.07450980"
+	      "39215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[1 1 0],'LineStyle'"
+	      ",'-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0 1],'LineStyle','-','LineWidth',0.5,'Ma"
+	      "rker','none','Visible','on'),struct('Color',[0 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','"
+	      "on'),struct('Color',[1 0 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 1"
+	      " 0],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0 0 1],'LineStyle','-','Lin"
+	      "eWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'S"
+	      "howContent',true,'Placement',1),'TimeRangeSamples','14','TimeRangeFrames','14','DisplayLayoutDimensions',[6 1])"
+	      ",extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Config"
+	      "uration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Location',[1 118 1921 1046])"
 	      NumInputPorts	      "6"
-	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3318,7 +3302,6 @@ Model {
 	      ",[6 1]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr"
 	      ".Configuration('Tools','Measurements',true,'Version','2017b')),'Version','2018a','Location',[61 146 1351 772])"
 	      NumInputPorts	      "6"
-	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3414,7 +3397,6 @@ Model {
 	      "),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Confi"
 	      "guration('Tools','Measurements',true,'Version','2017b')),'Version','2018a','Location',[457 473 1737 1180])"
 	      NumInputPorts	      "6"
-	      Floating		      off
 	    }
 	    Block {
 	      BlockType		      Scope
@@ -3447,7 +3429,6 @@ Model {
 	      "le','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version','2018a','Location',[5 "
 	      "106 1917 1054])"
 	      NumInputPorts	      "1"
-	      Floating		      off
 	    }
 	    Line {
 	      Name		      "CoM_Error"
@@ -4181,6 +4162,7 @@ Model {
       BackgroundColor	      "[0.000000, 1.000000, 0.498039]"
       NamePlacement	      "alternate"
       RequestExecContextInheritance off
+      Variant		      off
       System {
 	Name			"Dynamics and Kinematics"
 	Location		[59, 54, 1680, 1080]
@@ -4231,6 +4213,7 @@ Model {
 	  Position		  [-655, -196, -550, 16]
 	  ZOrder		  838
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "Dynamics"
 	    Location		    [59, 54, 1680, 1080]
@@ -4281,6 +4264,7 @@ Model {
 	      Position		      [580, 34, 705, 76]
 	      ZOrder		      -19
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"Add motors reflected inertias"
 		Location		[59, 54, 1680, 1080]
@@ -4317,6 +4301,7 @@ Model {
 		  TreatAsAtomicUnit	  on
 		  RequestExecContextInheritance	off
 		  SFBlockType		  "MATLAB Function"
+		  Variant		  off
 		  System {
 		    Name		    "Add motor reflected inertias"
 		    Location		    [223, 338, 826, 833]
@@ -4673,6 +4658,7 @@ Model {
 	  Position		  [-400, 21, -200, 359]
 	  ZOrder		  837
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "Kinematics"
 	    Location		    [59, 54, 1680, 1080]
@@ -4854,6 +4840,7 @@ Model {
 	      ZOrder		      872
 	      ShowName		      off
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"xCom"
 		Location		[65, 24, 1366, 768]
@@ -5510,10 +5497,11 @@ Model {
       ZOrder		      542
       BackgroundColor	      "lightBlue"
       RequestExecContextInheritance off
+      Variant		      off
       System {
 	Name			"Force_paramterization_controller"
-	Location		[52, 26, 1928, 1088]
-	Open			off
+	Location		[0, 27, 1920, 1047]
+	Open			on
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5525,7 +5513,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"71"
 	Block {
 	  BlockType		  Inport
 	  Name			  "M"
@@ -5731,10 +5719,11 @@ Model {
 	  Position		  [-26030, -4676, -25915, -4634]
 	  ZOrder		  835
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "Compute angular momentum integral"
-	    Location		    [52, 26, 1928, 1088]
-	    Open		    off
+	    Location		    [8, 35, 1884, 1097]
+	    Open		    on
 	    PortBlocksUseCompactNotation off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5804,6 +5793,7 @@ Model {
 	      ZOrder		      901
 	      NamePlacement	      "alternate"
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"Compute base to fixed link transform"
 		Location		[59, 54, 1680, 1080]
@@ -5854,6 +5844,7 @@ Model {
 		  Position		  [435, 15, 580, 55]
 		  ZOrder		  893
 		  RequestExecContextInheritance	off
+		  Variant		  off
 		  System {
 		    Name		    "LFoot to base link transform "
 		    Location		    [65, 24, 1366, 768]
@@ -5981,7 +5972,6 @@ Model {
 		    SourceBlock		    "WBToolboxLibrary/Utilities/Yarp Read"
 		    SourceType		    "YARP Read"
 		    SourceProductName	    "Whole Body Toolbox"
-		    MultiThreadCoSim	    "auto"
 		    portName		    "Ports.NECK_POS"
 		    signalSize		    "6"
 		    timeout		    "0.5"
@@ -6024,6 +6014,7 @@ Model {
 		    TreatAsAtomicUnit	    on
 		    RequestExecContextInheritance off
 		    SFBlockType		    "MATLAB Function"
+		    Variant		    off
 		    System {
 		    Name		    "fromImuToHomogeousTransformFCN"
 		    Location		    [219, 337, 814, 775]
@@ -6243,6 +6234,7 @@ Model {
 		    Position		    [1135, 305, 1260, 335]
 		    ZOrder		    743
 		    RequestExecContextInheritance off
+		    Variant		    off
 		    System {
 		    Name		    "neck transform"
 		    Location		    [65, 24, 1366, 768]
@@ -6583,6 +6575,7 @@ Model {
 		  Position		  [435, 100, 580, 140]
 		  ZOrder		  896
 		  RequestExecContextInheritance	off
+		  Variant		  off
 		  System {
 		    Name		    "RFoot to base link transform"
 		    Location		    [65, 24, 1366, 768]
@@ -6710,7 +6703,6 @@ Model {
 		    SourceBlock		    "WBToolboxLibrary/Utilities/Yarp Read"
 		    SourceType		    "YARP Read"
 		    SourceProductName	    "Whole Body Toolbox"
-		    MultiThreadCoSim	    "auto"
 		    portName		    "Ports.NECK_POS"
 		    signalSize		    "6"
 		    timeout		    "0.5"
@@ -6753,6 +6745,7 @@ Model {
 		    TreatAsAtomicUnit	    on
 		    RequestExecContextInheritance off
 		    SFBlockType		    "MATLAB Function"
+		    Variant		    off
 		    System {
 		    Name		    "fromImuToHomogeousTransformFCN"
 		    Location		    [219, 337, 814, 775]
@@ -6972,6 +6965,7 @@ Model {
 		    Position		    [1135, 305, 1260, 335]
 		    ZOrder		    743
 		    RequestExecContextInheritance off
+		    Variant		    off
 		    System {
 		    Name		    "neck transform"
 		    Location		    [65, 24, 1366, 768]
@@ -7476,6 +7470,7 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
+	      Variant		      off
 	      System {
 		Name			"References for H"
 		Location		[223, 338, 826, 833]
@@ -7675,6 +7670,7 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
+	      Variant		      off
 	      System {
 		Name			"choose base to world transform"
 		Location		[223, 338, 826, 833]
@@ -7786,7 +7782,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Read"
 	      SourceType	      "YARP Read"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      portName		      "Ports.IMU"
 	      signalSize	      "12"
 	      timeout		      "0.5"
@@ -7984,6 +7979,7 @@ Model {
 	  Position		  [-25390, -4909, -25235, -4851]
 	  ZOrder		  870
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "Compute joint torques (motor reflected inertia)"
 	    Location		    [1724, 18, 3600, 1080]
@@ -8028,6 +8024,7 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
+	      Variant		      off
 	      System {
 		Name			"(transpose(T*Gamma))^{-1}*I_m*(T*Gamma)^{-1}"
 		Location		[223, 338, 826, 833]
@@ -8316,7 +8313,7 @@ Model {
 	  ZOrder		  923
 	  ShowName		  off
 	  HideAutomaticName	  off
-	  InitialCondition	  "[0 0 log(150) 0 0 0 0 0 log(150) 0 0 0]"
+	  InitialCondition	  "[0 0 log(300) 0 0 0 0 0 0 0 0 0]"
 	  InitialConditionSetting "State (most efficient)"
 	  SampleTime		  "Config.Ts "
 	  ICPrevOutput		  "DiscIntNeverNeededParam"
@@ -8362,7 +8359,6 @@ Model {
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Read"
 	  SourceType		  "YARP Read"
 	  SourceProductName	  "Whole Body Toolbox"
-	  MultiThreadCoSim	  "auto"
 	  portName		  "'/wholeBodyDynamics/left_foot/cartesianEndEffectorWrench:o'"
 	  signalSize		  "6"
 	  timeout		  "0.5"
@@ -8395,6 +8391,7 @@ Model {
 	  TreatAsAtomicUnit	  on
 	  RequestExecContextInheritance	off
 	  SFBlockType		  "MATLAB Function"
+	  Variant		  off
 	  Port {
 	    PortNumber		    2
 	    Name		    "CoM_Error"
@@ -9026,6 +9023,7 @@ Model {
 	  TreatAsAtomicUnit	  on
 	  RequestExecContextInheritance	off
 	  SFBlockType		  "MATLAB Function"
+	  Variant		  off
 	  System {
 	    Name		    "Parametrized Forces\n"
 	    Location		    [223, 338, 826, 833]
@@ -9224,7 +9222,6 @@ Model {
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Read"
 	  SourceType		  "YARP Read"
 	  SourceProductName	  "Whole Body Toolbox"
-	  MultiThreadCoSim	  "auto"
 	  portName		  "'/wholeBodyDynamics/right_foot/cartesianEndEffectorWrench:o'"
 	  signalSize		  "6"
 	  timeout		  "0.5"
@@ -9232,6 +9229,18 @@ Model {
 	  timestamp		  off
 	  autoconnect		  on
 	  errorOnConnection	  on
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  SID			  "4630"
+	  Ports			  [1, 1]
+	  Position		  [-25315, -4275, -25285, -4245]
+	  ZOrder		  928
+	  BlockRotation		  270
+	  InputPortMap		  "u0"
+	  UpperLimit		  "10"
+	  LowerLimit		  "-10"
 	}
 	Block {
 	  BlockType		  ToWorkspace
@@ -9257,28 +9266,26 @@ Model {
 	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingVariableName','ScopeData1','SampleTime','Config.Ts'),extmgr.Configuration('Visua"
-	  "ls','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-353523.27266','MaxYLimReal','3172631.69933','YL"
-	  "abelReal','','MinYLimMag','    0.00000','MaxYLimMag','3172631.69933','LegendVisibility','On','XGrid',true,'YGrid',t"
-	  "rue,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922"
-	  "],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;"
-	  "0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1"
-	  ";1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','off'),s"
-	  "truct('Visible','off'),struct('Visible','on'),struct('Visible','off'),struct('Visible','off'),struct('Visible','off"
-	  "'),struct('Visible','off'),struct('Visible','off'),struct('Visible','off'),struct('Visible','off'),struct('Visible'"
-	  ",'off'),struct('Visible','off')}},'UserDefinedChannelNames',{{}},'NumLines',12,'LineNames',{{'Discrete-Time Integra"
-	  "tor1:1','Discrete-Time Integrator1:2','Discrete-Time Integrator1:3','Discrete-Time Integrator1:4','Discrete-Time In"
-	  "tegrator1:5','Discrete-Time Integrator1:6','Discrete-Time Integrator1:7','Discrete-Time Integrator1:8','Discrete-Ti"
-	  "me Integrator1:9','Discrete-Time Integrator1:10','Discrete-Time Integrator1:11','Discrete-Time Integrator1:12'}},'S"
-	  "howContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-353523.27266','MaxYLimReal','3172"
-	  "631.69933','YLabelReal','','MinYLimMag','    0.00000','MaxYLimMag','3172631.69933','LegendVisibility','On','XGrid',"
-	  "true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.6"
-	  "86274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.066"
-	  "6666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.058823"
-	  "5294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'OnceA"
-	  "tStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Versio"
-	  "n','2018a','Position',[-1679 1 1621 928],'WindowStyle','docked')"
+	  "ls','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-0.94515','MaxYLimReal','6.44255','YLabelReal','"
+	  "','MinYLimMag','0.00000','MaxYLimMag','6.44255','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',fa"
+	  "lse,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0"
+	  ".0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8"
+	  "31372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686"
+	  " 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','on'),struct('Visible','on'),"
+	  "struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','off')"
+	  ",struct('Visible','off'),struct('Visible','off'),struct('Visible','off'),struct('Visible','off'),struct('Visible','"
+	  "off')}},'UserDefinedChannelNames',{{}},'NumLines',12,'LineNames',{{'Discrete-Time Integrator1:1','Discrete-Time Int"
+	  "egrator1:2','Discrete-Time Integrator1:3','Discrete-Time Integrator1:4','Discrete-Time Integrator1:5','Discrete-Tim"
+	  "e Integrator1:6','Discrete-Time Integrator1:7','Discrete-Time Integrator1:8','Discrete-Time Integrator1:9','Discret"
+	  "e-Time Integrator1:10','Discrete-Time Integrator1:11','Discrete-Time Integrator1:12'}},'ShowContent',true,'Placemen"
+	  "t',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.94515','MaxYLimReal','6.44255','YLabelReal','','MinYLimMa"
+	  "g','0.00000','MaxYLimMag','6.44255','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesCol"
+	  "or',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.074509803921568"
+	  "6 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.2745098039215"
+	  "69 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392"
+	  "156863])),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.C"
+	  "onfiguration('Tools','Measurements',true,'Version','2017b')),'Version','2017b','Position',[6 34 1621 928])"
 	  NumInputPorts		  "1"
-	  Floating		  off
 	}
 	Block {
 	  BlockType		  Scope
@@ -9290,29 +9297,25 @@ Model {
 	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
 	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
 	  "','WiredSimulink',true,'DataLoggingVariableName','ScopeData1','SampleTime','Config.Ts'),extmgr.Configuration('Visua"
-	  "ls','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-17122.08473','MaxYLimReal','4598.8573','YLabelR"
-	  "eal','','MinYLimMag','   0.00000','MaxYLimMag','17122.08473','LegendVisibility','On','XGrid',true,'YGrid',true,'Plo"
-	  "tMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'Color"
-	  "Order',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156"
-	  "862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074"
-	  "5098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','on'),struct('Vi"
-	  "sible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Vi"
-	  "sible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Vi"
-	  "sible','on')}},'UserDefinedChannelNames',{{}},'NumLines',12,'LineNames',{{'Momentum jerk Controller /xi_dot:1','Mom"
-	  "entum jerk Controller /xi_dot:2','Momentum jerk Controller /xi_dot:3','Momentum jerk Controller /xi_dot:4','Momentu"
-	  "m jerk Controller /xi_dot:5','Momentum jerk Controller /xi_dot:6','Momentum jerk Controller /xi_dot:7','Momentum je"
-	  "rk Controller /xi_dot:8','Momentum jerk Controller /xi_dot:9','Momentum jerk Controller /xi_dot:10','Momentum jerk "
-	  "Controller /xi_dot:11','Momentum jerk Controller /xi_dot:12'}},'ShowContent',true,'Placement',1)},'DisplayPropertyD"
-	  "efaults',struct('MinYLimReal','-17122.08473','MaxYLimReal','4598.8573','YLabelReal','','MinYLimMag','   0.00000','M"
-	  "axYLimMag','17122.08473','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0]"
-	  ",'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.6235294"
-	  "11764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.3921"
-	  "56862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),e"
-	  "xtmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuratio"
-	  "n('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Position',[-1679 1 1621 928],'WindowStyle','do"
-	  "cked')"
+	  "ls','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-0.95154','MaxYLimReal','0.97077','YLabelReal','"
+	  "','MinYLimMag','0.00000','MaxYLimMag','0.97077','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',fa"
+	  "lse,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0"
+	  ".0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8"
+	  "31372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686"
+	  " 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Visible','on'),struct('Visible','on'),"
+	  "struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),"
+	  "struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on'),struct('Visible','on')}"
+	  "},'UserDefinedChannelNames',{{}},'NumLines',12,'LineNames',{{'Saturation:1','Saturation:2','Saturation:3','Saturati"
+	  "on:4','Saturation:5','Saturation:6','Saturation:7','Saturation:8','Saturation:9','Saturation:10','Saturation:11','S"
+	  "aturation:12'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.95154','MaxYL"
+	  "imReal','0.97077','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','0.97077','LegendVisibility','On','XGrid',tru"
+	  "e,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.6862"
+	  "74509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.066666"
+	  "6666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.058823529"
+	  "4117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtSt"
+	  "op',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2017b')),'Version',"
+	  "'2017b','Position',[1 34 1631 921])"
 	  NumInputPorts		  "1"
-	  Floating		  off
 	}
 	Block {
 	  BlockType		  Outport
@@ -9574,18 +9577,9 @@ Model {
 	  ZOrder		  956
 	  SrcBlock		  "Momentum jerk Controller\n"
 	  SrcPort		  4
-	  Points		  [155, 0; 0, -285]
-	  Branch {
-	    ZOrder		    994
-	    DstBlock		    "xi_dot"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    993
-	    Points		    [0, -80]
-	    DstBlock		    "Discrete-Time\nIntegrator1"
-	    DstPort		    1
-	  }
+	  Points		  [155, 0]
+	  DstBlock		  "Saturation"
+	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  596
@@ -9695,6 +9689,23 @@ Model {
 	  DstBlock		  "Momentum jerk Controller\n"
 	  DstPort		  1
 	}
+	Line {
+	  ZOrder		  1136
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [0, -120]
+	  Branch {
+	    ZOrder		    994
+	    DstBlock		    "xi_dot"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    993
+	    Points		    [0, -80]
+	    DstBlock		    "Discrete-Time\nIntegrator1"
+	    DstPort		    1
+	  }
+	}
       }
     }
     Block {
@@ -9719,6 +9730,7 @@ Model {
       BackgroundColor	      "orange"
       Priority		      "-10"
       RequestExecContextInheritance off
+      Variant		      off
       System {
 	Name			"Robot State and References"
 	Location		[1724, 18, 3600, 1080]
@@ -9743,7 +9755,7 @@ Model {
 	  Position		  [-1890, 2680, -1860, 2710]
 	  ZOrder		  613
 	  ShowName		  off
-	  LibraryVersion	  "1.441"
+	  LibraryVersion	  "1.401"
 	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
 	  SourceType		  "Compare To Zero"
 	  SourceProductName	  "Simulink"
@@ -9761,7 +9773,7 @@ Model {
 	  Position		  [-1890, 2410, -1860, 2440]
 	  ZOrder		  614
 	  ShowName		  off
-	  LibraryVersion	  "1.441"
+	  LibraryVersion	  "1.401"
 	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Zero"
 	  SourceType		  "Compare To Zero"
 	  SourceProductName	  "Simulink"
@@ -9801,12 +9813,11 @@ Model {
 	  Position		  [-2050, 2411, -1990, 2439]
 	  ZOrder		  605
 	  ShowName		  off
-	  LibraryVersion	  "1.441"
+	  LibraryVersion	  "1.401"
 	  SourceBlock		  "simulink/Logic and Bit\nOperations/Bitwise\nOperator"
 	  SourceType		  "Bitwise Operator"
 	  SourceProductName	  "Simulink"
 	  SourceProductBaseCode	  "SL"
-	  MultiThreadCoSim	  "auto"
 	  logicop		  "AND"
 	  UseBitMask		  on
 	  NumInputPorts		  "1"
@@ -9872,6 +9883,7 @@ Model {
 	  Position		  [-1820, 2444, -1640, 2651]
 	  ZOrder		  505
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "Internal Coordinator"
 	    Location		    [1724, 18, 3600, 1080]
@@ -9912,6 +9924,7 @@ Model {
 	      Position		      [-480, 281, -350, 319]
 	      ZOrder		      886
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"Base to fixed_link"
 		Location		[59, 54, 1680, 1080]
@@ -9971,6 +9984,7 @@ Model {
 		  Position		  [1000, -287, 1195, 117]
 		  ZOrder		  718
 		  RequestExecContextInheritance	off
+		  Variant		  off
 		  System {
 		    Name		    "LFoot to base link transform "
 		    Location		    [59, 54, 1680, 1080]
@@ -10098,7 +10112,6 @@ Model {
 		    SourceBlock		    "WBToolboxLibrary/Utilities/Yarp Read"
 		    SourceType		    "YARP Read"
 		    SourceProductName	    "Whole Body Toolbox"
-		    MultiThreadCoSim	    "auto"
 		    portName		    "Ports.NECK_POS"
 		    signalSize		    "6"
 		    timeout		    "0.5"
@@ -10141,6 +10154,7 @@ Model {
 		    TreatAsAtomicUnit	    on
 		    RequestExecContextInheritance off
 		    SFBlockType		    "MATLAB Function"
+		    Variant		    off
 		    System {
 		    Name		    "fromImuToHomogeousTransformFCN"
 		    Location		    [219, 337, 814, 775]
@@ -10360,6 +10374,7 @@ Model {
 		    Position		    [1135, 305, 1260, 335]
 		    ZOrder		    743
 		    RequestExecContextInheritance off
+		    Variant		    off
 		    System {
 		    Name		    "neck transform"
 		    Location		    [65, 24, 1366, 768]
@@ -10834,6 +10849,7 @@ Model {
 	      Position		      [165, 239, 315, 311]
 	      ZOrder		      887
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"Compute State Velocity"
 		Location		[59, 54, 1680, 1080]
@@ -10890,6 +10906,7 @@ Model {
 		  TreatAsAtomicUnit	  on
 		  RequestExecContextInheritance	off
 		  SFBlockType		  "MATLAB Function"
+		  Variant		  off
 		  System {
 		    Name		    "Compute Base Velocity"
 		    Location		    [19, 45, 910, 1950]
@@ -11046,6 +11063,7 @@ Model {
 		  Position		  [55, -191, 205, -149]
 		  ZOrder		  -21
 		  RequestExecContextInheritance	off
+		  Variant		  off
 		  System {
 		    Name		    "Feet Jacobians"
 		    Location		    [65, 24, 1920, 1080]
@@ -11359,7 +11377,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Read"
 	      SourceType	      "YARP Read"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      portName		      "Ports.IMU"
 	      signalSize	      "12"
 	      timeout		      "0.5"
@@ -11393,6 +11410,7 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
+	      Variant		      off
 	      System {
 		Name			"Reference Generator CoM"
 		Location		[53, 45, 896, 1715]
@@ -11579,6 +11597,7 @@ Model {
 	      ZOrder		      -30
 	      ShowName		      off
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"xCom"
 		Location		[65, 24, 1920, 1080]
@@ -12048,6 +12067,7 @@ Model {
 	  Position		  [-1290, 2519, -1095, 2801]
 	  ZOrder		  702
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "Select State and References"
 	    Location		    [1724, 18, 3600, 1080]
@@ -12131,7 +12151,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Minimum Jerk Trajectory Generator"
 	      SourceType	      "Minimum Jerk Trajectory Generator"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      externalSettlingTime    on
 	      settlingTime	      "1"
 	      sampleTime	      "Config.Ts"
@@ -12152,7 +12171,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Minimum Jerk Trajectory Generator"
 	      SourceType	      "Minimum Jerk Trajectory Generator"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      externalSettlingTime    on
 	      settlingTime	      "references.com.smoothingTime "
 	      sampleTime	      "Config.Ts"
@@ -12273,6 +12291,7 @@ Model {
 	      Position		      [380, -87, 690, -3]
 	      ZOrder		      720
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"Visualize Gain Tuning  "
 		Location		[59, 54, 1680, 1080]
@@ -12385,7 +12404,6 @@ Model {
 		  SourceBlock		  "WBToolboxLibrary/Utilities/DoFs converter"
 		  SourceType		  "DoFs converter"
 		  SourceProductName	  "Whole Body Toolbox"
-		  MultiThreadCoSim	  "auto"
 		  yarp2WBIOption	  "From YARP to WBI"
 		  Port {
 		    PortNumber		    1
@@ -12419,7 +12437,6 @@ Model {
 		  SourceBlock		  "WBToolboxLibrary/Utilities/DoFs converter"
 		  SourceType		  "DoFs converter"
 		  SourceProductName	  "Whole Body Toolbox"
-		  MultiThreadCoSim	  "auto"
 		  yarp2WBIOption	  "From YARP to WBI"
 		  Port {
 		    PortNumber		    1
@@ -12557,7 +12574,6 @@ Model {
 		  "tStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2016b')),'Version','2018a','Location',[5"
 		  "6 78 1367 767])"
 		  NumInputPorts		  "6"
-		  Floating		  off
 		}
 		Block {
 		  BlockType		  Scope
@@ -12595,7 +12611,6 @@ Model {
 		  "'Placement',1)),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tool"
 		  "s','Measurements',true)),'Version','2018a','Location',[1000 510 1560 930])"
 		  NumInputPorts		  "1"
-		  Floating		  off
 		}
 		Block {
 		  BlockType		  Selector
@@ -12670,7 +12685,6 @@ Model {
 		  ",extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurement"
 		  "s',true)),'Version','2018a','Location',[179 455 1300 1435])"
 		  NumInputPorts		  "2"
-		  Floating		  off
 		}
 		Block {
 		  BlockType		  Scope
@@ -12730,7 +12744,6 @@ Model {
 		  "','Plot Navigation',true,'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true)),'Version','2018a',"
 		  "'Location',[1 455 1921 1435])"
 		  NumInputPorts		  "3"
-		  Floating		  off
 		}
 		Block {
 		  BlockType		  Scope
@@ -12822,7 +12835,6 @@ Model {
 		  "splayLayoutDimensions',[6 1]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false),extmgr.Confi"
 		  "guration('Tools','Measurements',true)),'Version','2018a','Location',[384 319 2304 1299])"
 		  NumInputPorts		  "6"
-		  Floating		  off
 		}
 		Line {
 		  Name			  "state"
@@ -13452,6 +13464,7 @@ Model {
 	  ZOrder		  506
 	  Priority		  "-100"
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "State Machine Yoga"
 	    Location		    [1724, 18, 3600, 1080]
@@ -13501,6 +13514,7 @@ Model {
 	      Position		      [3185, 74, 3335, 146]
 	      ZOrder		      889
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"Compute State Velocity"
 		Location		[65, 24, 1920, 1080]
@@ -13557,6 +13571,7 @@ Model {
 		  TreatAsAtomicUnit	  on
 		  RequestExecContextInheritance	off
 		  SFBlockType		  "MATLAB Function"
+		  Variant		  off
 		  System {
 		    Name		    "Compute Base Velocity"
 		    Location		    [19, 45, 910, 1950]
@@ -13713,6 +13728,7 @@ Model {
 		  Position		  [55, -191, 205, -149]
 		  ZOrder		  -21
 		  RequestExecContextInheritance	off
+		  Variant		  off
 		  System {
 		    Name		    "Feet Jacobians"
 		    Location		    [65, 24, 1920, 1080]
@@ -13951,6 +13967,7 @@ Model {
 	      Position		      [2060, 537, 2170, 608]
 	      ZOrder		      900
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"Compute base to fixed link transform"
 		Location		[65, 24, 1366, 768]
@@ -14001,6 +14018,7 @@ Model {
 		  Position		  [435, 15, 580, 55]
 		  ZOrder		  893
 		  RequestExecContextInheritance	off
+		  Variant		  off
 		  System {
 		    Name		    "LFoot to base link transform "
 		    Location		    [65, 24, 1920, 1080]
@@ -14128,7 +14146,6 @@ Model {
 		    SourceBlock		    "WBToolboxLibrary/Utilities/Yarp Read"
 		    SourceType		    "YARP Read"
 		    SourceProductName	    "Whole Body Toolbox"
-		    MultiThreadCoSim	    "auto"
 		    portName		    "Ports.NECK_POS"
 		    signalSize		    "6"
 		    timeout		    "0.5"
@@ -14171,6 +14188,7 @@ Model {
 		    TreatAsAtomicUnit	    on
 		    RequestExecContextInheritance off
 		    SFBlockType		    "MATLAB Function"
+		    Variant		    off
 		    System {
 		    Name		    "fromImuToHomogeousTransformFCN"
 		    Location		    [219, 337, 814, 775]
@@ -14390,6 +14408,7 @@ Model {
 		    Position		    [1135, 305, 1260, 335]
 		    ZOrder		    743
 		    RequestExecContextInheritance off
+		    Variant		    off
 		    System {
 		    Name		    "neck transform"
 		    Location		    [65, 24, 1920, 1080]
@@ -14730,6 +14749,7 @@ Model {
 		  Position		  [435, 100, 580, 140]
 		  ZOrder		  896
 		  RequestExecContextInheritance	off
+		  Variant		  off
 		  System {
 		    Name		    "RFoot to base link transform"
 		    Location		    [65, 24, 1920, 1080]
@@ -14857,7 +14877,6 @@ Model {
 		    SourceBlock		    "WBToolboxLibrary/Utilities/Yarp Read"
 		    SourceType		    "YARP Read"
 		    SourceProductName	    "Whole Body Toolbox"
-		    MultiThreadCoSim	    "auto"
 		    portName		    "Ports.NECK_POS"
 		    signalSize		    "6"
 		    timeout		    "0.5"
@@ -14900,6 +14919,7 @@ Model {
 		    TreatAsAtomicUnit	    on
 		    RequestExecContextInheritance off
 		    SFBlockType		    "MATLAB Function"
+		    Variant		    off
 		    System {
 		    Name		    "fromImuToHomogeousTransformFCN"
 		    Location		    [219, 337, 814, 775]
@@ -15119,6 +15139,7 @@ Model {
 		    Position		    [1135, 305, 1260, 335]
 		    ZOrder		    743
 		    RequestExecContextInheritance off
+		    Variant		    off
 		    System {
 		    Name		    "neck transform"
 		    Location		    [65, 24, 1920, 1080]
@@ -15626,7 +15647,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Minimum Jerk Trajectory Generator"
 	      SourceType	      "Minimum Jerk Trajectory Generator"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      externalSettlingTime    off
 	      settlingTime	      "Gain.SmoothingTimeGainScheduling"
 	      sampleTime	      "Config.Ts"
@@ -15692,6 +15712,7 @@ Model {
 	      Position		      [2195, 161, 2395, 234]
 	      ZOrder		      681
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"Visualise extrnal wrenches  "
 		Location		[65, 24, 1366, 768]
@@ -15827,7 +15848,6 @@ Model {
 		  "gr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration("
 		  "'Tools','Measurements',true,'Version','2016b')),'Version','2018a','Location',[248 245 1228 807])"
 		  NumInputPorts		  "3"
-		  Floating		  off
 		}
 		Block {
 		  BlockType		  Scope
@@ -15889,7 +15909,6 @@ Model {
 		  "',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2016b')),'Version','"
 		  "2018a','Location',[56 123 1335 823])"
 		  NumInputPorts		  "3"
-		  Floating		  off
 		}
 		Line {
 		  Name			  "thresholdContactOn"
@@ -15991,7 +16010,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Read"
 	      SourceType	      "YARP Read"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      portName		      "Ports.IMU"
 	      signalSize	      "12"
 	      timeout		      "0.5"
@@ -16013,7 +16031,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Read"
 	      SourceType	      "YARP Read"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      portName		      "Ports.WBD_LEFTLEG_EE"
 	      signalSize	      "6"
 	      timeout		      "0.5"
@@ -16039,7 +16056,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Read"
 	      SourceType	      "YARP Read"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      portName		      "Ports.WBD_RIGHTLEG_EE"
 	      signalSize	      "6"
 	      timeout		      "0.5"
@@ -16066,6 +16082,7 @@ Model {
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
 	      SFBlockType	      "MATLAB Function"
+	      Variant		      off
 	      Port {
 		PortNumber		4
 		Name			"constraintsSmooth"
@@ -16524,6 +16541,7 @@ Model {
 	      ZOrder		      890
 	      ShowName		      off
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"xCom"
 		Location		[65, 24, 1366, 768]
@@ -16633,6 +16651,7 @@ Model {
 	      ZOrder		      898
 	      ShowName		      off
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"xCom1"
 		Location		[59, 26, 1680, 1080]
@@ -17218,12 +17237,11 @@ Model {
 	  Position		  [-2055, 2681, -1995, 2709]
 	  ZOrder		  606
 	  ShowName		  off
-	  LibraryVersion	  "1.441"
+	  LibraryVersion	  "1.401"
 	  SourceBlock		  "simulink/Logic and Bit\nOperations/Bitwise\nOperator"
 	  SourceType		  "Bitwise Operator"
 	  SourceProductName	  "Simulink"
 	  SourceProductBaseCode	  "SL"
-	  MultiThreadCoSim	  "auto"
 	  logicop		  "AND"
 	  UseBitMask		  on
 	  NumInputPorts		  "1"
@@ -17756,6 +17774,7 @@ Model {
       BackgroundColor	      "red"
       ShowName		      off
       RequestExecContextInheritance off
+      Variant		      off
       System {
 	Name			"emergency stop: joint limits"
 	Location		[59, 54, 1680, 1080]
@@ -17826,6 +17845,7 @@ Model {
 	  TreatAsAtomicUnit	  on
 	  RequestExecContextInheritance	off
 	  SFBlockType		  "MATLAB Function"
+	  Variant		  off
 	  System {
 	    Name		    "MATLAB Function"
 	    Location		    [121, 45, 868, 1245]
@@ -18031,6 +18051,7 @@ Model {
       BackgroundColor	      "green"
       ShowName		      off
       RequestExecContextInheritance off
+      Variant		      off
       Object {
 	$PropName		"MaskObject"
 	$ObjectID		24
@@ -18061,6 +18082,7 @@ Model {
 	  Position		  [5, 15, 130, 75]
 	  ZOrder		  -7
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "GAZEBO_SYNCHRONIZER"
 	    Location		    [65, 24, 1366, 768]
@@ -18098,7 +18120,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Simulator Synchronizer"
 	      SourceType	      "Simulator Synchronizer"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      period		      "Config.Ts"
 	      serverPortName	      "'/clock/rpc'"
 	      clientPortName	      "'/WBT_synchronizer/rpc:o'"
@@ -18138,6 +18159,7 @@ Model {
 	  Position		  [-170, 12, -45, 72]
 	  ZOrder		  -9
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "REAL_TIME_SYNC"
 	    Location		    [1724, -3, 3600, 1080]
@@ -18176,7 +18198,6 @@ Model {
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Real Time Synchronizer"
 	      SourceType	      "Real Time Synchronizer"
 	      SourceProductName	      "Whole Body Toolbox"
-	      MultiThreadCoSim	      "auto"
 	      period		      "Config.Ts"
 	    }
 	  }
@@ -18416,7 +18437,7 @@ Model {
 }
 #Finite State Machines
 #
-#   Stateflow 80000014
+#   Stateflow 80000012
 #
 #
 Stateflow {

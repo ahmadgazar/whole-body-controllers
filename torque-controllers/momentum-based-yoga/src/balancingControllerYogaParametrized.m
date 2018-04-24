@@ -175,7 +175,7 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     %if SM_TYPE_BIN == 1 % coordinator 
     %    pause;
         L_ddot_star    = [m*xCoM_Jerk_Star;
-                         -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - 100*intHw] ;          
+                         -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - Gain.KI_AngularMomentum *intHw] ;          
     %else  %yoga
         
     %    L_ddot_star    = [m*xCoM_Jerk_Star;
@@ -186,8 +186,7 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     %% xi_dot is now the new fictitious iput realizing the desired momentum jerk.
     
     xi_desired    = [0; 0; log(300); 0; 0; 0; 0; 0; 0; 0; 0; 0];
-    k             = 10;
-    xi_dot         = pinvA_total * (L_ddot_star - Beta) - k*(xi-xi_desired);  
+    xi_dot        = pinvA_total * (L_ddot_star - Beta) - Gain.k_xi*(xi-xi_desired);  
     
     %% joint torques realizing the desired xi_dot
     
