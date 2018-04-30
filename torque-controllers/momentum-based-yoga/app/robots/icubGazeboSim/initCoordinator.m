@@ -9,7 +9,7 @@ Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
 
 % If true, the r    xCoM_ddot       = AL*f_ext_L*constraints(1) + AR*f_ext_R*constraints(2) + gravityWrench;
 %obot CoM will follow a desired reference trajectory (COORDINATOR DEMO ONLY)
-Config.DEMO_MOVEMENTS = false;
+Config.DEMO_MOVEMENTS = true;
 
 % If equal to true, the desired streamed values of the center of mass 
 % are smoothed internally 
