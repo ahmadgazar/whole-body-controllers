@@ -174,12 +174,12 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     %% Desired momentum jerk dynamics 
     %if SM_TYPE_BIN == 1 % coordinator 
     %    pause;
-        L_ddot_star    = [m*xCoM_Jerk_Star;
-                         -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - 100*intHw] ;          
+    %    L_ddot_star    = [m*xCoM_Jerk_Star;
+    %                     -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - Gain.KI_AngularMomentum *intHw] ;          
     %else  %yoga
         
-    %    L_ddot_star    = [m*xCoM_Jerk_Star;
-     %                    -Gain.KP_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*L(4:end) - Gain.KD_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*w_dot - (100*intHw)] ;          
+        L_ddot_star    = [m*xCoM_Jerk_Star;
+                         -Gain.KP_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*L(4:end) - Gain.KD_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*w_dot - (100*intHw)] ;          
     %end
     Beta           =  A_dot*f_ext_L*constraints(1) + A_dot*f_ext_R*constraints(2);
 
@@ -187,12 +187,21 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     
     %xi_desired    = [0; 0; log(300); 0; 0; 0; 0; 0; 0; 0; 0; 0];
     %k             = 50;
-    xi_dot         = pinvA_total * (L_ddot_star - Beta); %- k*(xi-xi_desired);  
+    %xi_dot         = pinvA_total * (L_ddot_star - Beta); %- k*(xi-xi_desired);  
+
     
     %% joint torques realizing the desired xi_dot
     
     tau_star       = Sigma*f + tauModel; 
     
+    %% xi_dot option for minimizing the joint torques
+    xi_dot1       = pinvA_total * (L_ddot_star - Beta);
+    k_t           = 1;
+    sigma_ATotal_JcMinvSt = Sigma * A_total * JcMinvSt;
+    xi_dot0       = -pinvDamped(sigma_ATotal_JcMinvSt, Reg.pinvDamp) ...
+                   * ((Sigma * A_total *  xi_dot1) + k_t*tau_star);
+    xi_dot        =  xi_dot1 + nullA_total * xi_dot0;          
+                  
     %% DEBUG DIAGNOSTICS
 
     % Desired parametrized contact wrenches
