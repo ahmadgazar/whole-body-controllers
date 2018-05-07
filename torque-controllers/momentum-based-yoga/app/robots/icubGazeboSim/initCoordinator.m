@@ -27,20 +27,23 @@ Sat.torque = 34;
 % PARAMETERS FOR TWO FEET BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
     
-    Gain.KP_COM             = diag([30 30 30]);
-    Gain.KD_COM             = 2*sqrt(Gain.KP_COM); %don't increase this too much because the estimated xdot_com is badly estimated
-    Gain.KI_COM             = diag([30   30    30]); 
-    Gain.KP_AngularMomentum = diag([150  150    150]);
+    Gain.KP_COM             = diag([1 15 1]);
+    Gain.KD_COM             = diag([0 2.5 0]); %don't increase this too much because the estimated xdot_com is badly estimated
+    Gain.KI_COM             = diag([20  20     20]); 
+    Gain.KP_AngularMomentum = diag([0  150    150]);
     Gain.KD_AngularMomentum = 2*sqrt(Gain.KP_AngularMomentum);
+    Gain.KI_AngularMomentum = 100;
+    Gain.k_xi               = 0;
+    Gain.k_t                = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
 
     % Impedances acting in the null space of the desired contact forces 
-    impTorso            = [50   30   30]; 
+    impTorso            = [70   50   50]; 
 
     impArms             = [10   10   10    10];
 
-    impLeftLeg          = [30   30   30    60   10   10]; 
+    impLeftLeg          = [30   30   30    30   10   40]; 
 
-    impRightLeg         = [30   30   30    60   10   10];                                            
+    impRightLeg         = [30   30   30    30   10   40];                                            
 end
 % PARAMETERS FOR ONE FOOT BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
@@ -50,7 +53,9 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     Gain.KI_COM               = diag([30   30    30]);  % Ki(x_CoMDesired - x_CoM)
     Gain.KP_AngularMomentum   = diag([200   150    150]);
     Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum);
-
+    Gain.KI_AngularMomentum   = 100;
+    Gain.k_xi                 = 0;
+    
     % Impedances acting in the null space of the desired contact forces    
     impTorso            = [30   30   30];
     
@@ -117,8 +122,8 @@ Config.K_ff  = 0;
 
 %% References for CoM trajectory (COORDINATOR DEMO ONLY)
 
-% that the robot waits before starting the left-and-right 
-Config.noOscillationTime = 0;   
+% time that the robot waits before starting the left-and-right 
+Config.noOscillationTime = 3;   
 
 if Config.DEMO_MOVEMENTS && sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
         
