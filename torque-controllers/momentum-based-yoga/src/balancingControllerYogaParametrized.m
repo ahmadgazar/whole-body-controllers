@@ -171,37 +171,28 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     % HDotDes      = [m*xDDcomStar ;
     %                -Gain.KD_AngularMomentum*L(4:end) - Gain.KP_AngularMomentum*intHw];
     
-    %% Desired momentum jerk dynamics 
-    %if SM_TYPE_BIN == 1 % coordinator 
-    %    pause;
-    %    L_ddot_star    = [m*xCoM_Jerk_Star;
-    %                     -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - Gain.KI_AngularMomentum *intHw] ;          
-    %else  %yoga
-        
-        L_ddot_star    = [m*xCoM_Jerk_Star;
-                         -Gain.KP_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*L(4:end) - Gain.KD_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*w_dot - (100*intHw)] ;          
-    %end
+    %% Desired momentum jerk dynamics        
+    L_ddot_star    = [m*xCoM_Jerk_Star;
+                      -Gain.KP_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*L(4:end) - Gain.KD_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*w_dot - Gain.KI_AngularMomentum*intHw] ;          
+   
     Beta           =  A_dot*f_ext_L*constraints(1) + A_dot*f_ext_R*constraints(2);
 
-    %% xi_dot is now the new fictitious iput realizing the desired momentum jerk.
+    %% xi_dot for one foot balancing or obtaining equal vertical forces for two feet balancing
     
     %xi_desired    = [0; 0; log(300); 0; 0; 0; 0; 0; 0; 0; 0; 0];
-    %k             = 50;
-    %xi_dot         = pinvA_total * (L_ddot_star - Beta); %- k*(xi-xi_desired);  
-
+    %xi_dot         = pinvA_total * (L_ddot_star - Beta) - Gain.k_xi*(xi-xi_desired);  
     
     %% joint torques realizing the desired xi_dot
     
-    tau_star       = Sigma*f + tauModel; 
+    %tau_star       = Sigma*f + tauModel; 
+    tau       = Sigma*f + tauModel;
     
     %% xi_dot option for minimizing the joint torques
     xi_dot1       = pinvA_total * (L_ddot_star - Beta);
-    k_t           = 1;
-    sigma_ATotal_JcMinvSt = Sigma * A_total * JcMinvSt;
-    xi_dot0       = -pinvDamped(sigma_ATotal_JcMinvSt, Reg.pinvDamp) ...
-                   * ((Sigma * A_total *  xi_dot1) + k_t*tau_star);
-    xi_dot        =  xi_dot1 + nullA_total * xi_dot0;          
-                  
+    xi_dot0       = -pinvDamped((Sigma*nullA_total), Reg.pinvDamp) ...
+                   * ((Sigma * xi_dot1) + Gain.k_t*tau);
+    xi_dot        =  xi_dot1 + nullA_total * xi_dot0 ;                      
+    tau_star      = tau;
     %% DEBUG DIAGNOSTICS
 
     % Desired parametrized contact wrenches
