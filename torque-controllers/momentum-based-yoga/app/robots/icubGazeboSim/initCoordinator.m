@@ -7,6 +7,16 @@
 % Feet in contact (COORDINATOR DEMO ONLY)
 Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
 
+%initial conditions of xi_dot
+if Config.LEFT_RIGHT_FOOT_IN_CONTACT(1) == 1 && Config.LEFT_RIGHT_FOOT_IN_CONTACT(2) == 0
+  Config.xi_dot_initial = [0 0 log(300) 0 0 0 0 0 0 0 0 0];
+  
+elseif Config.LEFT_RIGHT_FOOT_IN_CONTACT(1) == 0 && Config.LEFT_RIGHT_FOOT_IN_CONTACT(2) == 1
+    Config.xi_dot_initial = [0 0 0 0 0 0 0 0 log(300) 0 0 0];
+else
+    Config.xi_dot_initial = [0 0 log(150) 0 0 0 0 0 log(150) 0 0 0];
+end
+
 % If true, the r    xCoM_ddot       = AL*f_ext_L*constraints(1) + AR*f_ext_R*constraints(2) + gravityWrench;
 %obot CoM will follow a desired reference trajectory (COORDINATOR DEMO ONLY)
 Config.DEMO_MOVEMENTS = false;
@@ -55,7 +65,8 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum);
     Gain.KI_AngularMomentum   = 100;
     Gain.k_xi                 = 0;
-    
+    Gain.k_t                  = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
+
     % Impedances acting in the null space of the desired contact forces    
     impTorso            = [30   30   30];
     
