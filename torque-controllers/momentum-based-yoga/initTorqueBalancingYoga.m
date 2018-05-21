@@ -27,8 +27,8 @@ clc
 % and set the environmental variable YARP_ROBOT_NAME = icubGazeboSim.
 % To do this, you can uncomment the 
 
-% setenv('YARP_ROBOT_NAME','iCubGenova04');
-  setenv('YARP_ROBOT_NAME','icubGazeboSim');
+setenv('YARP_ROBOT_NAME','iCubGenova04');
+ % setenv('YARP_ROBOT_NAME','icubGazeboSim');
 % setenv('YARP_ROBOT_NAME','iCubGenova02');
 % setenv('YARP_ROBOT_NAME','iCubGazeboV2_5');  
 
@@ -49,7 +49,7 @@ Config.SIMULATION_TIME = inf;
 %
 %                app/robots/YARP_ROBOT_NAME/initRefGen.m
 % 
-SM_TYPE                      = 'COORDINATOR';
+SM_TYPE                      = 'YOGA';
 % Config.SCOPES: if set to true, all visualizers for debugging are active
 Config.SCOPES_ALL            = true;
 

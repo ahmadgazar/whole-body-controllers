@@ -8,8 +8,14 @@
 Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
 
 %initial conditions of xi_dot
-Config.xi_dot_initial = [0 0 log(150) 0 0 0 0 0 log(150) 0 0 0];
-
+if Config.LEFT_RIGHT_FOOT_IN_CONTACT(1) == 1 && Config.LEFT_RIGHT_FOOT_IN_CONTACT(2) == 0
+  Config.xi_dot_initial = [0 0 log(300) 0 0 0 0 0 0 0 0 0];
+  
+elseif Config.LEFT_RIGHT_FOOT_IN_CONTACT(1) == 0 && Config.LEFT_RIGHT_FOOT_IN_CONTACT(2) == 1
+    Config.xi_dot_initial = [0 0 0 0 0 0 0 0 log(300) 0 0 0];
+else
+    Config.xi_dot_initial = [0 0 log(150) 0 0 0 0 0 log(150) 0 0 0];
+end
 % Initial foot on ground. If false, right foot is used as default contact
 % frame (this does not means that the other foot cannot be in contact too).
 % (COORDINATOR DEMO ONLY)
@@ -38,7 +44,7 @@ Reg.dampings      = 0;
 Reg.HessianQP     = 1e-7;    
                             
 %% COM AND JOINT GAINS 
-Gain.KP_COM              =     [25    75  25  % state ==  1  TWO FEET BALANCING
+Gain.KP_COM              =     0.1*[25    75  25  % state ==  1  TWO FEET BALANCING
                                 25    75  25  % state ==  2  COM TRANSITION TO LEFT 
                                 25    25  25  % state ==  3  LEFT FOOT BALANCING
                                 25    25  25  % state ==  4  YOGA LEFT FOOT 
@@ -54,19 +60,19 @@ Gain.KP_COM              =     [25    75  25  % state ==  1  TWO FEET BALANCING
                             
 %Gain.KI_COM                = ones(13,3);                        
                             
-Gain.KI_COM              = [7.5  30    0
-                            7.5  30    0
-                            5    30    5
-                            5    30    5
-                            5    30    5
-                            5    30    5
-                            7.5  30    0
-                            6    6     0
-                            30   30    0
-                            30   30    0
-                            30   30    0
-                            30   30    0
-                            30   30    0]; 
+Gain.KI_COM              = [15  30    0
+                            15  30    0
+                            15  30    0
+                            15  30    0
+                            15  30    0
+                            15  30    0
+                            15  30    0
+                            6    6    0
+                            30   30   0
+                            30   30   0
+                            30   30   0
+                            30   30   0
+                            30   30   0]; 
 %                         
 Gain.KD_COM              = 2*sqrt(Gain.KP_COM)*0;
 
@@ -162,7 +168,7 @@ Sm.tBalancingBeforeYoga     = 1;
 Sm.yogaExtended             = false;
 Sm.skipYoga                 = false;
 Sm.demoOnlyBalancing        = false;
-Sm.demoStartsOnRightSupport = false;
+Sm.demoStartsOnRightSupport = true;
 Sm.yogaAlsoOnRightFoot      = false; % TO DO: yoga on both feet starting from right foot
 Sm.yogaInLoop               = false;
 

@@ -81,8 +81,8 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     A              = [AL, AR]; 
     
     pinvA          = pinv(A, Reg.pinvTol)*constraints(1)*constraints(2)  ...
-                      + [inv(AL);zeros(6)]*constraints(1)*(1-constraints(2)) ... 
-                      + [zeros(6);inv(AR)]*constraints(2)*(1-constraints(1)); 
+                      + [pinv(AL);zeros(6)]*constraints(1)*(1-constraints(2)) ... 
+                      + [zeros(6);pinv(AR)]*constraints(2)*(1-constraints(1)); 
                   
     % Both AR_dot = AL_dot = A_dot = [0             , 0 
     %                                -skew(xCoM_dot), 0]                             
@@ -113,8 +113,8 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     A_total         = [AL*F_L, AR*F_R];
                   
     pinvA_total     =  pinv(A_total, Reg.pinvDamp) * constraints(1) * constraints(2)  ...
-                      + [pinv(AL*F_L); zeros(6)]  * constraints(1) * (1-constraints(2)) ... 
-                      + [zeros(6) ; inv(AR*F_R)] * constraints(2) *(1-constraints(1));  
+                      + [pinv(AL*F_L, Reg.pinvTol); zeros(6)]  * constraints(1) * (1-constraints(2)) ... 
+                      + [zeros(6) ; pinv(AR*F_R, Reg.pinvTol)] * constraints(2) *(1-constraints(1));  
                   
     nullA_total     = (eye(12,12)-pinvA_total*A_total)*constraints(1)*constraints(2);
                         
@@ -172,26 +172,31 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     %                -Gain.KD_AngularMomentum*L(4:end) - Gain.KP_AngularMomentum*intHw];
     
     %% Desired momentum jerk dynamics 
-    %if SM_TYPE_BIN == 1 % coordinator 
-    %    pause;
-        L_ddot_star    = [m*xCoM_Jerk_Star;
-                         -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - Gain.KI_AngularMomentum *intHw] ;          
-    %else  %yoga
+     %   L_ddot_star    = [m*xCoM_Jerk_Star;
+      %                   -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - Gain.KI_AngularMomentum *intHw] ;          
         
-    %    L_ddot_star    = [m*xCoM_Jerk_Star;
-     %                    -Gain.KP_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*L(4:end) - Gain.KD_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*w_dot - (100*intHw)] ;          
-    %end
+    L_ddot_star    = [m*xCoM_Jerk_Star;
+                      -Gain.KP_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*L(4:end) - Gain.KD_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*w_dot - Gain.KI_AngularMomentum*intHw]; 
+                  
     Beta           =  A_dot*f_ext_L*constraints(1) + A_dot*f_ext_R*constraints(2);
-
+    
     %% xi_dot is now the new fictitious iput realizing the desired momentum jerk.
     
-    xi_desired    = [0; 0; log(300); 0; 0; 0; 0; 0; 0; 0; 0; 0];
-    xi_dot        = pinvA_total * (L_ddot_star - Beta) - Gain.k_xi*(xi-xi_desired);  
+    %xi_desired    = [0; 0; log(300); 0; 0; 0; 0; 0; 0; 0; 0; 0];
+    %xi_dot        = pinvA_total * (L_ddot_star - Beta) - Gain.k_xi*(xi-xi_desired);  
     
     %% joint torques realizing the desired xi_dot
     
-    tau_star       = Sigma*f + tauModel; 
+   
+    %tau_star       = Sigma*f + tauModel; 
+    tau       = Sigma*f + tauModel;
     
+    %% xi_dot option for minimizing the joint torques
+    xi_dot1       = pinvA_total * (L_ddot_star - Beta);
+    xi_dot0       = -pinvDamped((Sigma*nullA_total), Reg.pinvDamp) ...
+                   * ((Sigma * xi_dot1) + Gain.k_t*tau);
+    xi_dot        =  xi_dot1 + nullA_total * xi_dot0 ;                      
+    tau_star      = tau;
     %% DEBUG DIAGNOSTICS
 
     % Desired parametrized contact wrenches
