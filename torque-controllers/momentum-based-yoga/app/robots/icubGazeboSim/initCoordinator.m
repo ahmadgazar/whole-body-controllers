@@ -5,9 +5,9 @@
 %% --- Initialization ---
 
 % Feet in contact (COORDINATOR DEMO ONLY)
-Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
+Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 0];
 
-%initial conditions of xi_dot
+%initial conditions of xi_dot 
 if Config.LEFT_RIGHT_FOOT_IN_CONTACT(1) == 1 && Config.LEFT_RIGHT_FOOT_IN_CONTACT(2) == 0
   Config.xi_dot_initial = [0 0 log(300) 0 0 0 0 0 0 0 0 0];
   
