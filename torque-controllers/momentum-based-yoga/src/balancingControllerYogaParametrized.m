@@ -113,7 +113,7 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     A_total         = [AL*F_L, AR*F_R];
                   
     pinvA_total     =  pinv(A_total, Reg.pinvDamp) * constraints(1) * constraints(2)  ...
-                      + [pinv(AL*F_L); zeros(6)]  * constraints(1) * (1-constraints(2)) ... 
+                      + [inv(AL*F_L); zeros(6)]  * constraints(1) * (1-constraints(2)) ... 
                       + [zeros(6) ; inv(AR*F_R)] * constraints(2) *(1-constraints(1));  
                   
     nullA_total     = (eye(12,12)-pinvA_total*A_total)*constraints(1)*constraints(2);
@@ -146,7 +146,8 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     JBar           = transpose(Jc(:,7:end)) -Mbj'/Mb*transpose(Jc(:,1:6)); 
 
     Pinv_JcMinvSt  = pinvDamped(JcMinvSt,Reg.pinvDamp); 
-   
+
+    
     % nullJcMinvSt --> null space of Pinv_JcMinvSt
     nullJcMinvSt   = eye(ROBOT_DOF) - Pinv_JcMinvSt*JcMinvSt;
 
@@ -157,7 +158,7 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     % Adaptation of control gains for back compatibility with older
     % versions of the controller
     impedances     = diag(impedances)*pinv(NLMbar,Reg.pinvTol) + Reg.impedances*eye(ROBOT_DOF);
-    dampings       = diag(dampings)*pinv(NLMbar,Reg.pinvTol)  + Reg.dampings*eye(ROBOT_DOF); 
+    dampings       = diag(dampings)*pinv(NLMbar,Reg.pinvTol)   + Reg.dampings*eye(ROBOT_DOF); 
    
     % IROS_2016
     % Sigma collects all the terms in tau to be multiplied by f
@@ -188,10 +189,21 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     tau       = Sigma*f + tauModel;
     
     %% xi_dot option for minimizing the joint torques
-    xi_dot1       = pinvA_total * (L_ddot_star - Beta);
-    xi_dot0       = -pinvDamped((Sigma*nullA_total), Reg.pinvDamp) ...
-                   * ((Sigma * xi_dot1) + Gain.k_t*tau);
-    xi_dot        =  xi_dot1 + nullA_total * xi_dot0 ;                      
+    %xi_dot1       = pinvA_total * (L_ddot_star - Beta);
+    %xi_dot0       = -pinvDamped((Sigma*nullA_total), Reg.pinvDamp) ...
+    %               * ((Sigma * xi_dot1) + Gain.k_t*tau);
+               
+    if  constraints(1) == 1 && constraints (2) == 1
+         xi_dot1       = pinvA_total * (L_ddot_star - Beta);
+         xi_dot0       = -pinvDamped((Sigma*nullA_total), Reg.pinvDamp) ...
+                       * ((Sigma * xi_dot1) + Gain.k_t*tau);
+                   
+         xi_dot        =  xi_dot1 + nullA_total * xi_dot0 ;  
+         fprintf('two feet balacning')
+    else
+         xi_dot        = pinvA_total * (L_ddot_star - Beta);      
+         fprintf('one foot yoga')
+    end
     tau_star      = tau;
     %% DEBUG DIAGNOSTICS
 
