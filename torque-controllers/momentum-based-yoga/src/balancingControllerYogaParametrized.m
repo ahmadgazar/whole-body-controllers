@@ -16,7 +16,7 @@
 %  */
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
+function [tau_star, errorCoM, error_H_linear, error_H_angular, f_desired, xi_dot]    =  ...
               balancingControllerYogaParametrized(SM_TYPE_BIN, constraints, ROBOT_DOF_FOR_SIMULINK, qj, qjDes, nu, M, h, L, ...
                                       intHw, w_H_l_sole, w_H_r_sole, JL, JR, dJL_nu, dJR_nu, xCoM, ...
                                       J_CoM, desired_x_dx_ddx_CoM, gainsPCOM, gainsDCOM, gainsICOM, ...
@@ -212,4 +212,10 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     
     % Error on the center of massF1
     errorCoM       = xCoM - desired_x_dx_ddx_CoM(:,1);
+    
+    % Error on the linear momentum
+    error_H_linear = m*(desired_x_dx_ddx_CoM(:,2) - xCoM_dot);
+    
+    % Error on the angular momentum
+    error_H_angular= 0 - Gain.KI_AngularMomentum*intHw;
 end
