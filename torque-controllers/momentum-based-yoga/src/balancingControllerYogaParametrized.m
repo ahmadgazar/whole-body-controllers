@@ -186,7 +186,7 @@ function [tau_star, errorCoM, error_H_linear, error_H_angular, f_desired, xi_dot
     %% joint torques realizing the desired xi_dot
     
     %tau_star       = Sigma*f + tauModel; 
-    tau       = Sigma*f + tauModel;
+    tau       = Sigma*f + tauModel; %try to move this beyond the f block
     
     %% xi_dot option for minimizing the joint torques
     %xi_dot1       = pinvA_total * (L_ddot_star - Beta);
@@ -217,5 +217,5 @@ function [tau_star, errorCoM, error_H_linear, error_H_angular, f_desired, xi_dot
     error_H_linear = m*(desired_x_dx_ddx_CoM(:,2) - xCoM_dot);
     
     % Error on the angular momentum
-    error_H_angular= 0 - Gain.KI_AngularMomentum*intHw;
+    error_H_angular= 0 - L(4:end);
 end

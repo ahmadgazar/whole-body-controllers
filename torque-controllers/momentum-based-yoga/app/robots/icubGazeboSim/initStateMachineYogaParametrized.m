@@ -1,4 +1,4 @@
-% INITSTATEMACHINEYOGA initializes the robot configuration for running
+ % INITSTATEMACHINEYOGA initializes the robot configuration for running
 %                      'YOGA' demo. 
 % 
 
@@ -26,7 +26,7 @@ Config.DEMO_MOVEMENTS = false;
 
 % If equal to one, the desired streamed values of the center of mass 
 % are smoothed internally 
-Config.SMOOTH_COM_DES = true;   
+Config.SMOOTH_COM_DES = false;   
 
 % If equal to one, the desired streamed values of the postural tasks are
 % smoothed internally 
@@ -38,6 +38,7 @@ Sat.torque = 60;
 %% Regularization parameters
 Reg.pinvDamp_nu_b = 1e-7;
 Reg.pinvDamp      = 1; 
+Reg.pinvDamp2     = 0.8; 
 Reg.pinvTol       = 1e-5;
 Reg.impedances    = 0.1;
 Reg.dampings      = 0;
@@ -52,11 +53,11 @@ Gain.KP_COM              =     [1    15   1  % state ==  1  TWO FEET BALANCING
                                 1    15   1  % state ==  6  LOOKING FOR CONTACT
                                 1    15   1  % state ==  7  TRANSITION TO INITIAL POSITION 
                                 1    15   1  % state ==  8  COM TRANSITION TO RIGHT FOOT
-                                50   50  50  % state ==  9  RIGHT FOOT BALANCING
-                                60   50  50  % state == 10  YOGA RIGHT FOOT 
-                                1    15   1  % state == 11  PREPARING FOR SWITCHING 
-                                1    15   1  % state == 12  LOOKING FOR CONTACT
-                                1    15   1];% state == 13  TRANSITION TO INITIAL POSITION
+                                50   50  30  % state ==  9  RIGHT FOOT BALANCING
+                                50   50  30  % state == 10  YOGA RIGHT FOOT 
+                                50   50  30  % state == 11  PREPARING FOR SWITCHING 
+                                50   50  30  % state == 12  LOOKING FOR CONTACT
+                                50   50  30];% state == 13  TRANSITION TO INITIAL POSITION
                             
 Gain.KI_COM              = [20   20    20
                             20   20    20
@@ -66,11 +67,11 @@ Gain.KI_COM              = [20   20    20
                             20   20    20
                             20   20    20
                             20   20    20
-                            30   30    30
-                            40   30    30
-                            20   20    20
-                            20   20    20
-                            20   20    20]; 
+                            10   10    2
+                            10   10    2
+                            10   10    2
+                            10   10    2
+                            10   10    2]; 
 %                         
 Gain.KD_COM              = [0    2.5   0
                             0    2.5   0
@@ -80,12 +81,11 @@ Gain.KD_COM              = [0    2.5   0
                             2*sqrt(Gain.KP_COM(6,:))
                             0    2.5   0
                             0    2.5   0
-                            2*sqrt(Gain.KP_COM(9,:))
-                            2*sqrt(Gain.KP_COM(10,:))
-                            0    2.5   0
-                            0    2.5   0
-                            0    2.5   0
-                            0    2.5   0];
+                            20  20   20
+                            20  20   20
+                            20  20   20
+                            20  20   20
+                            20  20   20];
 
 Gain.KP_AngularMomentum  = [diag([0  150    150])
                             diag([0  150    150])
@@ -95,11 +95,11 @@ Gain.KP_AngularMomentum  = [diag([0  150    150])
                             diag([0  150    150])
                             diag([0  150    150])
                             diag([0  150    150])
+                            diag([200  150    130])
                             diag([200  150    150])
                             diag([200  150    130])
-                            diag([0  150    150])
-                            diag([0  150    150])
-                            diag([0  150    150])];
+                            diag([200  150    130])
+                            diag([200  150    130])];
                         
 Gain.KD_AngularMomentum  = 2*sqrt(Gain.KP_AngularMomentum);
 Gain.KI_AngularMomentum  = 100;
@@ -114,8 +114,8 @@ Gain.impedances  = [10   30   20, 10   10    10    8, 10   10    10    8, 30   5
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  7  TRANSITION TO INITIAL POSITION 
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  8  COM TRANSITION TO RIGHT FOOT
                     30   30   30, 10   10    10   10, 10   10    10   10, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  9  RIGHT FOOT BALANCING
-                    30   30   30, 10   10    10   10, 10   10    10   10, 50   50   50    50     50  50, 50   50  250   200     50  50  % state == 10  YOGA RIGHT FOOT 
-                    30   30   30, 10   10    10   10, 10   10    10   10, 30   50   30    60     50  50, 30   50  300    60     50  50  % state == 11  PREPARING FOR SWITCHING 
+                    30   30   30, 10   10    10   10, 10   10    10   10, 50   50   50    50     50  50, 50   50  100   200     50  50  % state == 10  YOGA RIGHT FOOT 
+                    30   30   30, 10   10    10   10, 10   10    10   10, 30   50   30    60     50  50, 30   50  50    60     50  50  % state == 11  PREPARING FOR SWITCHING 
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state == 12  LOOKING FOR CONTACT
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50];% state == 13  TRANSITION TO INITIAL POSITION    
 Gain.dampings    = 0*sqrt(Gain.impedances(1,:));  

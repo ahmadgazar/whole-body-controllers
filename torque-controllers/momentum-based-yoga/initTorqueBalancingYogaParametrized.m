@@ -1,4 +1,4 @@
-%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % /**
 %  * Copyright (C) 2016 CoDyCo
 %  * @author: Daniele Pucci
@@ -49,7 +49,7 @@ Config.SIMULATION_TIME = inf;
 %
 %                app/robots/YARP_ROBOT_NAME/initRefGen.m
 % 
-SM_TYPE                      = 'COORDINATOR';
+SM_TYPE                      = 'YOGA';
 % Config.SCOPES: if set to true, all visualizers for debugging are active
 Config.SCOPES_ALL            = true;
 
