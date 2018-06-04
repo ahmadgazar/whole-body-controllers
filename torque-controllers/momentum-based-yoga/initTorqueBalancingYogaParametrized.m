@@ -18,6 +18,9 @@
 clear variables
 clc
 
+data = open('/home/agazar/Pictures/Investigation/changing_com_desired/com_z.mat');
+
+com_z_measured = data.com_z_measured;
 %% GENERAL SIMULATION INFO
 % If you are simulating the robot with Gazebo, 
 % remember that you have to launch Gazebo as follow:

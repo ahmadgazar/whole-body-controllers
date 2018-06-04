@@ -18,6 +18,10 @@
 clear variables
 clc
 
+data =open('/home/agazar/Pictures/Investigation/changing_com_desired/com_z.mat');
+
+com_z_measured = data.com_z_measured;
+
 %% GENERAL SIMULATION INFO
 % If you are simulating the robot with Gazebo, 
 % remember that you have to launch Gazebo as follow:
@@ -49,7 +53,7 @@ Config.SIMULATION_TIME = inf;
 %
 %                app/robots/YARP_ROBOT_NAME/initRefGen.m
 % 
-SM_TYPE                      = 'COORDINATOR';
+SM_TYPE                      = 'YOGA';
 % Config.SCOPES: if set to true, all visualizers for debugging are active
 Config.SCOPES_ALL            = true;
 

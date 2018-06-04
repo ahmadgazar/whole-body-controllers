@@ -5,12 +5,12 @@
 %% --- Initialization ---
 
 % Feet in contact (COORDINATOR DEMO ONLY)
-Config.LEFT_RIGHT_FOOT_IN_CONTACT = [0 1];
+Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
 
 % Initial foot on ground. If false, right foot is used as default contact
 % frame (this does not means that the other foot cannot be in contact too).
 % (COORDINATOR DEMO ONLY)
-Config.LEFT_FOOT_IN_CONTACT_AT_0 = false;
+Config.LEFT_FOOT_IN_CONTACT_AT_0 = true;
 
 %initial conditions of xi_dot
 if Config.LEFT_RIGHT_FOOT_IN_CONTACT(1) == 1 && Config.LEFT_RIGHT_FOOT_IN_CONTACT(2) == 0
@@ -26,7 +26,7 @@ Config.DEMO_MOVEMENTS = false;
 
 % If equal to one, the desired streamed values of the center of mass 
 % are smoothed internally 
-Config.SMOOTH_COM_DES = false;   
+Config.SMOOTH_COM_DES = true;   
 
 % If equal to one, the desired streamed values of the postural tasks are
 % smoothed internally 
@@ -45,55 +45,55 @@ Reg.dampings      = 0;
 Reg.HessianQP     = 1e-7;    
                             
 %% COM AND JOINT GAINS 
-Gain.KP_COM              =     [1    15   1  % state ==  1  TWO FEET BALANCING
-                                1    15   1  % state ==  2  COM TRANSITION TO LEFT 
-                                50   50  50  % state ==  3  LEFT FOOT BALANCING
-                                60   50  50  % state ==  4  YOGA LEFT FOOT 
-                                50   50  50  % state ==  5  PREPARING FOR SWITCHING 
-                                1    15   1  % state ==  6  LOOKING FOR CONTACT
-                                1    15   1  % state ==  7  TRANSITION TO INITIAL POSITION 
-                                1    15   1  % state ==  8  COM TRANSITION TO RIGHT FOOT
-                                50   50  30  % state ==  9  RIGHT FOOT BALANCING
-                                50   50  30  % state == 10  YOGA RIGHT FOOT 
-                                50   50  30  % state == 11  PREPARING FOR SWITCHING 
-                                50   50  30  % state == 12  LOOKING FOR CONTACT
-                                50   50  30];% state == 13  TRANSITION TO INITIAL POSITION
+Gain.KP_COM              =     [1    15   1    % state ==  1  TWO FEET BALANCING
+                                1    15   1    % state ==  2  COM TRANSITION TO LEFT 
+                                50   50  30    % state ==  3  LEFT FOOT BALANCING
+                                50   50  30    % state ==  4  YOGA LEFT FOOT 
+                                50   50  30    % state ==  5  PREPARING FOR SWITCHING 
+                                1    15   1    % state ==  6  LOOKING FOR CONTACT
+                                1    15   1    % state ==  7  TRANSITION TO INITIAL POSITION 
+                                1    15   1    % state ==  8  COM TRANSITION TO RIGHT FOOT
+                                50   50  30    % state ==  9  RIGHT FOOT BALANCING
+                                50   50  30    % state == 10  YOGA RIGHT FOOT 
+                                50   50  30    % state == 11  PREPARING FOR SWITCHING 
+                                50   50  30    % state == 12  LOOKING FOR CONTACT
+                                50   50  30];  % state == 13  TRANSITION TO INITIAL POSITION
                             
-Gain.KI_COM              = [20   20    20
-                            20   20    20
-                            30   30    30
-                            40   30    80
-                            30   30    30
-                            20   20    20
-                            20   20    20
-                            20   20    20
-                            10   10    2
-                            10   10    2
-                            10   10    2
-                            10   10    2
-                            10   10    2]; 
+Gain.KI_COM              = [5   5    2
+                            5   5    2
+                            5   5    2
+                            5   5    2
+                            10  10   2
+                            5   5    2
+                            5   5    2
+                            10  10   2
+                            10  10   2
+                            10  10   2
+                            10  10   2
+                            10  10   2
+                            10  10   2]; 
 %                         
-Gain.KD_COM              = [0    2.5   0
-                            0    2.5   0
-                            2*sqrt(Gain.KP_COM(3,:))
-                            2*sqrt(Gain.KP_COM(4,:))
-                            2*sqrt(Gain.KP_COM(5,:))
-                            2*sqrt(Gain.KP_COM(6,:))
-                            0    2.5   0
-                            0    2.5   0
+Gain.KD_COM              = [0   2.5   0
+                            0   2.5   0
+                            20  20   20
+                            20  20   20
+                            20  20   20
+                            0   2.5  0
+                            0   2.5  0
+                            0   2.5   0
                             20  20   20
                             20  20   20
                             20  20   20
                             20  20   20
                             20  20   20];
 
-Gain.KP_AngularMomentum  = [diag([0  150    150])
-                            diag([0  150    150])
+Gain.KP_AngularMomentum  = [diag([200  150    150])
+                            diag([200  150    150])
                             diag([200  150    150])
                             diag([200  150    150])
                             diag([200  130    130])
-                            diag([0  150    150])
-                            diag([0  150    150])
+                            diag([200  150    150])
+                            diag([200  150    150])
                             diag([0  150    150])
                             diag([200  150    130])
                             diag([200  150    150])
@@ -108,7 +108,7 @@ Gain.KI_AngularMomentum  = 100;
 Gain.impedances  = [10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  1  TWO FEET BALANCING
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  2  COM TRANSITION TO LEFT 
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  3  LEFT FOOT BALANCING
-                    30   30   30, 10   10    10   10, 10   10    10   10, 50   50  250   200     50  50, 50   50   50    50     50  50  % state ==  4  YOGA LEFT FOOT 
+                    10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  4  YOGA LEFT FOOT 
                     30   30   30, 10   10    10   10, 10   10    10   10, 30   50  300    60     50  50, 30   50   30    60     50  50  % state ==  5  PREPARING FOR SWITCHING 
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  6  LOOKING FOR CONTACT
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50  % state ==  7  TRANSITION TO INITIAL POSITION 
@@ -122,7 +122,7 @@ Gain.dampings    = 0*sqrt(Gain.impedances(1,:));
 Gain.k_t         = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
 Gain.k_xi        = 1;  
 % Smoothing time gain scheduling (YOGA DEMO ONLY)
-Gain.SmoothingTimeGainScheduling = 0.35;
+Gain.SmoothingTimeGainScheduling = 2;
 
 %% STATE MACHINE PARMETERS
 
@@ -154,7 +154,7 @@ Sm.joints_thresholdNotInContact = 5;
 Sm.joints_thresholdInContact    = 50;
 
 % initial state for state machine (YOGA DEMO ONLY)
-Sm.stateAt0 = 9;
+Sm.stateAt0 = 1;
 
 % delta to be summed to the reference CoM position (YOGA DEMO ONLY)
 
@@ -162,7 +162,7 @@ Sm.CoM_delta       = [% THIS REFERENCE IS USED AS A DELTA W.R.T. THE POSITION OF
                       0.0,  0.00, 0.0;   %% NOT USED
                       0.0,  0.00, 0.0;   %% state ==  2  COM TRANSITION TO LEFT FOOT
                       0.0,  0.00, 0.0;   %% state ==  3  LEFT FOOT BALANCING 
-                      0.0,  -0.005, 0.00;   %% state ==  4  YOGA LEFT FOOT
+                      0.0,  0.00, 0.00;   %% state ==  4  YOGA LEFT FOOT
                       0.0,  0.00, 0.0;   %% state ==  5  PREPARING FOR SWITCHING
                       0.0,  0.00, 0.0;   %% state ==  6  LOOKING FOR CONTACT 
                       0.0,  0.00, 0.0;   %% NOT USED
@@ -179,7 +179,7 @@ Sm.tBalancing               = 1;
 Sm.tBalancingBeforeYoga     = 1;
 Sm.skipYoga                 = false;
 Sm.demoOnlyBalancing        = false;
-Sm.demoStartsOnRightSupport = true;
+Sm.demoStartsOnRightSupport = false;
 Sm.yogaAlsoOnRightFoot      = false;
 Sm.yogaInLoop               = false;
 
