@@ -72,7 +72,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         % Set the center of mass projection onto the x-y plane to be
         % coincident to the origin of the left foot (l_sole) plus a
         % configurable delta
-        CoM_des     = [w_H_fixedLink(1:2,4);CoM_0(3)] + Sm.CoM_delta(state,:)';         
+        CoM_des     = [w_H_fixedLink(1:2,4);0.5046] + Sm.CoM_delta(state,:)';         
  
         % right foot is no longer a constraints
         constraints = [1; 0];
@@ -103,7 +103,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         % Set the center of mass projection onto the x-y plane to be
         % coincident to the origin of the left foot (l_sole) plus a
         % configurable delta
-        CoM_des      = [w_H_fixedLink(1:2,4);CoM_0(3)] + Sm.CoM_delta(state,:)';         
+        CoM_des      = [w_H_fixedLink(1:2,4);0.6] + Sm.CoM_delta(state,:)';         
         
         constraints  = [1; 0]; 
 
@@ -139,7 +139,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         % Set the center of mass projection onto the x-y plane to be
         % coincident to the origin of the left foot (l_sole) plus a
         % configurable delta
-        CoM_des     = [w_H_fixedLink(1:2,4);CoM_0(3)] + Sm.CoM_delta(state,:)';         
+        CoM_des     = [w_H_fixedLink(1:2,4);0.5046] + Sm.CoM_delta(state,:)';         
         
         constraints = [1; 0]; 
 

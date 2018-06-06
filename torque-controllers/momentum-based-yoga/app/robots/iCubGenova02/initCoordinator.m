@@ -7,10 +7,21 @@
 % Feet in contact (COORDINATOR DEMO ONLY)
 Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
 
+
+%initial conditions of xi_dot
+if Config.LEFT_RIGHT_FOOT_IN_CONTACT(1) == 1 && Config.LEFT_RIGHT_FOOT_IN_CONTACT(2) == 0
+  Config.xi_dot_initial = [0 0 log(300) 0 0 0 0 0 0 0 0 0];
+  
+elseif Config.LEFT_RIGHT_FOOT_IN_CONTACT(1) == 0 && Config.LEFT_RIGHT_FOOT_IN_CONTACT(2) == 1
+    Config.xi_dot_initial = [0 0 0 0 0 0 0 0 log(300) 0 0 0];
+else
+    Config.xi_dot_initial = [0 0 log(150) 0 0 0 0 0 log(150) 0 0 0];
+end
+
 % Initial foot on ground. If false, right foot is used as default contact
 % frame (this does not means that the other foot cannot be in contact too).
 % (COORDINATOR DEMO ONLY)
-Config.LEFT_FOOT_IN_CONTACT_AT_0 = true;
+Config.LEFT_FOOT_IN_CONTACT_AT_0 = false;
 
 % If true, the robot CoM will follow a desired reference trajectory (COORDINATOR DEMO ONLY)
 Config.DEMO_MOVEMENTS = false;
@@ -24,42 +35,51 @@ Config.SMOOTH_COM_DES = false;
 Config.SMOOTH_JOINT_DES = false;   
 
 % torque saturation
-Sat.torque = 34; 
+Sat.torque = 34;
+Sat.xiDot  = 10;
 
 %% Control gains
 
 % PARAMETERS FOR TWO FEET BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
     
-    Gain.KP_COM             = diag([50 100 5]);
-    Gain.KD_COM             = 2*sqrt(Gain.KP_COM)*0;
-    Gain.KP_AngularMomentum = 5;
-    Gain.KD_AngularMomentum = 2*sqrt(Gain.KP_AngularMomentum);
+    Gain.KP_COM               = diag([50  150  50])/2;     % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
+    Gain.KD_COM               = 2*sqrt(Gain.KP_COM)*0;      % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
+    Gain.KI_COM               = diag([30   100    30])/4;  % Ki(x_CoMDesired - x_CoM)
+    Gain.KP_AngularMomentum   = diag([200   150    150])/10;
+    Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum)*0;
+    Gain.KI_AngularMomentum   = 10;
+    Gain.k_xi                 = 0;
+    Gain.k_t                  = diag([10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10]);
+    
+   % Impedances acting in the null space of the desired contact forces    
+    impTorso            = [30   30   30];
+    
+    impArms             = [15   15   15    8];
+                        
+    impLeftLeg          = [60   5   60    60   50   5];
 
-    % Impedances acting in the null space of the desired contact forces 
-    impTorso            = [10   10   20]; 
-
-    impArms             = [10   10   10    8];
-
-    impLeftLeg          = [30   30   30    60   10   10]; 
-
-    impRightLeg         = [30   30   30    60   10   10];                                            
+    impRightLeg         = [60   5   60    60   50   5];                                            
 end
 
 % PARAMETERS FOR ONE FOOT BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
-    Gain.KP_COM               = diag([50  100  50]);
-    Gain.KD_COM               = diag([0   0    0]);
-    Gain.KP_AngularMomentum   = 1 ;
-    Gain.KD_AngularMomentum   = 1 ;
+    Gain.KP_COM               = diag([50  50  50])/2;     % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
+    Gain.KD_COM               = 2*sqrt(Gain.KP_COM)*0;      % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
+    Gain.KI_COM               = diag([30   30    30])/7;  % Ki(x_CoMDesired - x_CoM)
+    Gain.KP_AngularMomentum   = diag([200   150    150])/10;
+    Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum)*0;
+    Gain.KI_AngularMomentum   = 10;
+    Gain.k_xi                 = 0;
+    Gain.k_t                  = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
 
     % Impedances acting in the null space of the desired contact forces    
-    impTorso            = [20   20   30];
+    impTorso            = [30   30   30];
     
     impArms             = [15   15   15    8];
                         
-    impLeftLeg          = [30   30   30    120   10   10];
+    impLeftLeg          = [60   60   60    60   20   20];
 
     impRightLeg         = [30   30   30    60    10   10];   
 end
@@ -72,7 +92,7 @@ if (size(Gain.impedances,2) ~= ROBOT_DOF)
 end
 
 % Smoothing time gain scheduling (YOGA DEMO ONLY)
-Gain.SmoothingTimeGainScheduling = 2;
+Gain.SmoothingTimeGainScheduling = 0.02;
 
 %% Parameters for motors reflected inertia
 
@@ -121,7 +141,7 @@ Config.K_ff  = 0;
 %% References for CoM trajectory (COORDINATOR DEMO ONLY)
 
 % that the robot waits before starting the left-and-right 
-Config.noOscillationTime = 0;   
+Config.noOscillationTime = 1;   
 
 if Config.DEMO_MOVEMENTS && sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
         
@@ -129,7 +149,7 @@ if Config.DEMO_MOVEMENTS && sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
     % amplitude of oscillations in meters
     Config.amplitudeOfOscillation = 0.02;
     % frequency of oscillations in hertz
-    Config.frequencyOfOscillation = 1;
+    Config.frequencyOfOscillation = 0.5;
 else
     Config.directionOfOscillation  = [0;0;0];
     Config.amplitudeOfOscillation  = 0.0;  
@@ -139,7 +159,7 @@ end
 %% State machine parameters
 
 % smoothing time for joints and CoM
-Sm.smoothingTimeCoM_Joints = 3; 
+Sm.smoothingTimeCoM_Joints = 1; 
 
 % time between two yoga positions (YOGA DEMO ONLY)
 Sm.joints_pauseBetweenYogaMoves = 0;
@@ -179,18 +199,22 @@ Sm.yogaInLoop               = false;
 % So, numberOfPoints defines the number of points used to interpolate the circle 
 % in each cicle's quadrant
 numberOfPoints               = 4;  
-forceFrictionCoefficient     = 1/3;  
-torsionalFrictionCoefficient = 1/75;
+delta_c                      = 1/3; %friction coefficient
+forceFrictionCoefficient     = 1/3;
+delta_x                      = 0.07*2;    %CoP along x must be inside the support polygon i.e foot size along X
+delta_y                      = 0.03*2;    %CoP along y must be inside the support polygon i.e foot size along Y
+delta_z                      = 1/75;    % torsional coefficient 
+torsionalFrictionCoefficient = 1/75; 
 
 % physical size of the foot                             
-feet_size                    = [-0.07 0.12;     % xMin, xMax
-                                -0.04 0.04 ];   % yMin, yMax    
+feet_size                    = [-0.07  0.07;   % xMin, xMax
+                                -0.03  0.03];  % yMin, yMax    
  
 fZmin                        = 10;
 
 %% Regularization parameters
 Reg.pinvDamp_nu_b = 1e-7;
-Reg.pinvDamp      = 2; 
+Reg.pinvDamp      = 0.5; 
 Reg.pinvTol       = 1e-5;
 Reg.impedances    = 0.1;
 Reg.dampings      = 0;
