@@ -45,25 +45,25 @@ Reg.dampings      = 0;
 Reg.HessianQP     = 1e-7;    
                             
 %% COM AND JOINT GAINS 
-Gain.KP_COM              =     [1    15   1    % state ==  1  TWO FEET BALANCING
-                                1    15   1    % state ==  2  COM TRANSITION TO LEFT 
-                                50   50  30    % state ==  3  LEFT FOOT BALANCING
-                                50   50  30    % state ==  4  YOGA LEFT FOOT 
-                                50   50  30    % state ==  5  PREPARING FOR SWITCHING 
-                                1    15   1    % state ==  6  LOOKING FOR CONTACT
-                                1    15   1    % state ==  7  TRANSITION TO INITIAL POSITION 
-                                1    15   1    % state ==  8  COM TRANSITION TO RIGHT FOOT
-                                50   50  30    % state ==  9  RIGHT FOOT BALANCING
-                                50   50  30    % state == 10  YOGA RIGHT FOOT 
-                                50   50  30    % state == 11  PREPARING FOR SWITCHING 
-                                50   50  30    % state == 12  LOOKING FOR CONTACT
-                                50   50  30];  % state == 13  TRANSITION TO INITIAL POSITION
+Gain.KP_COM              =     [50   50   30    % state ==  1  TWO FEET BALANCING
+                                50   50   30    % state ==  2  COM TRANSITION TO LEFT 
+                                50   50   30    % state ==  3  LEFT FOOT BALANCING
+                                30   30   30    % state ==  4  YOGA LEFT FOOT 
+                                50   50   30    % state ==  5  PREPARING FOR SWITCHING 
+                                50   50   30    % state ==  6  LOOKING FOR CONTACT
+                                50   50   30    % state ==  7  TRANSITION TO INITIAL POSITION 
+                                50   50   30    % state ==  8  COM TRANSITION TO RIGHT FOOT
+                                50   50   30    % state ==  9  RIGHT FOOT BALANCING
+                                50   50   30    % state == 10  YOGA RIGHT FOOT 
+                                50   50   30    % state == 11  PREPARING FOR SWITCHING 
+                                50   50   30    % state == 12  LOOKING FOR CONTACT
+                                50   50   30];  % state == 13  TRANSITION TO INITIAL POSITION
                             
 Gain.KI_COM              = [5   5    2
                             5   5    2
                             5   5    2
+                            3   5    2
                             5   5    2
-                            10  10   2
                             5   5    2
                             5   5    2
                             10  10   2
@@ -73,14 +73,14 @@ Gain.KI_COM              = [5   5    2
                             10  10   2
                             10  10   2]; 
 %                         
-Gain.KD_COM              = [0   2.5   0
-                            0   2.5   0
+Gain.KD_COM              = [20  20   20
                             20  20   20
                             20  20   20
                             20  20   20
-                            0   2.5  0
-                            0   2.5  0
-                            0   2.5   0
+                            20  20   20
+                            20  20   20
+                            20  20   20
+                            20  20   20
                             20  20   20
                             20  20   20
                             20  20   20
@@ -90,11 +90,11 @@ Gain.KD_COM              = [0   2.5   0
 Gain.KP_AngularMomentum  = [diag([200  150    150])
                             diag([200  150    150])
                             diag([200  150    150])
+                            diag([100  100    100])
                             diag([200  150    150])
-                            diag([200  130    130])
                             diag([200  150    150])
                             diag([200  150    150])
-                            diag([0  150    150])
+                            diag([200  150    150])
                             diag([200  150    130])
                             diag([200  150    150])
                             diag([200  150    130])
