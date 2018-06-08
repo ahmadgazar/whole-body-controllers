@@ -5,7 +5,7 @@
 %% --- Initialization ---
 
 % Feet in contact (COORDINATOR DEMO ONLY)
-Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 0];
+Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
 
 %initial conditions of xi_dot
 if Config.LEFT_RIGHT_FOOT_IN_CONTACT(1) == 1 && Config.LEFT_RIGHT_FOOT_IN_CONTACT(2) == 0
@@ -143,7 +143,7 @@ Sm.joints_thresholdNotInContact = 5;
 Sm.joints_thresholdInContact    = 50;
 
 % initial state for state machine (YOGA DEMO ONLY)
-Sm.stateAt0 = 3;
+Sm.stateAt0 = 1;
 
 % delta to be summed to the reference CoM position (YOGA DEMO ONLY)
 
