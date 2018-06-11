@@ -192,41 +192,42 @@ title(ax2,'angular momentum error')
 legend('x','y','z')
 grid on
 
-%% plot 
-time              = jointErrorData.time;
+%% plot postural task joint errors
+
+time                       = jointErrorData.time;
 
 % Torso joint errors
-torso_roll_error  = jointErrorData.signals(1).values(:,1);
-torso_pitch_error = jointErrorData.signals(1).values(:,2);
-torso_yaw_error   = jointErrorData.signals(1).values(:,3);
+torso_roll_error           = jointDesiredData.signals(1).values(:,1);
+torso_pitch_error          = jointDesiredData.signals(1).values(:,2);
+torso_yaw_error            = jointDesiredData.signals(1).values(:,3);
 
 % left arm joint errors
-left_shoulder_roll_error  = jointErrorData.signals(2).values(:,1);
-left_shoulder_pitch_error = jointErrorData.signals(2).values(:,2);
-left_shoulder_yaw_error   = jointErrorData.signals(2).values(:,3);
-left_elbow_error          = jointErrorData.signals(2).values(:,4);
+left_shoulder_roll_error   = jointDesiredData.signals(2).values(:,1);
+left_shoulder_pitch_error  = jointDesiredData.signals(2).values(:,2);
+left_shoulder_yaw_error    = jointDesiredData.signals(2).values(:,3);
+left_elbow_error           = jointDesiredData.signals(2).values(:,4);
 
 % right arm joint errors
-right_shoulder_roll_error  = jointErrorData.signals(3).values(:,1);
-right_shoulder_pitch_error = jointErrorData.signals(3).values(:,2);
-right_shoulder_yaw_error   = jointErrorData.signals(3).values(:,3);
-right_elbow_error          = jointErrorData.signals(3).values(:,4);
+right_shoulder_roll_error  = jointDesiredData.signals(3).values(:,1);
+right_shoulder_pitch_error = jointDesiredData.signals(3).values(:,2);
+right_shoulder_yaw_error   = jointDesiredData.signals(3).values(:,3);
+right_elbow_error          = jointDesiredData.signals(3).values(:,4);
 
 % left leg joint errors
-left_hip_roll_error        = jointErrorData.signals(4).values(:,1);
-left_hip_pitch_error       = jointErrorData.signals(4).values(:,2);
-left_hip_yaw_error         = jointErrorData.signals(4).values(:,3);
-left_knee_error            = jointErrorData.signals(4).values(:,4);
-left_ankle_roll_error      = jointErrorData.signals(4).values(:,5);
-left_ankle_pitch_error     = jointErrorData.signals(4).values(:,6);
+left_hip_roll_error        = jointDesiredData.signals(4).values(:,1);
+left_hip_pitch_error       = jointDesiredData.signals(4).values(:,2);
+left_hip_yaw_error         = jointDesiredData.signals(4).values(:,3);
+left_knee_error            = jointDesiredData.signals(4).values(:,4);
+left_ankle_roll_error      = jointDesiredData.signals(4).values(:,5);
+left_ankle_pitch_error     = jointDesiredData.signals(4).values(:,6);
 
 % right leg joint errors
-right_hip_roll_error       = jointErrorData.signals(5).values(:,1);
-right_hip_pitch_error      = jointErrorData.signals(5).values(:,2);
-right_hip_yaw_error        = jointErrorData.signals(5).values(:,3);
-right_knee_error           = jointErrorData.signals(5).values(:,4);
-right_ankle_roll_error     = jointErrorData.signals(5).values(:,5);
-right_ankle_pitch_error    = jointErrorData.signals(5).values(:,6);
+right_hip_roll_error       = jointDesiredData.signals(5).values(:,1);
+right_hip_pitch_error      = jointDesiredData.signals(5).values(:,2);
+right_hip_yaw_error        = jointDesiredData.signals(5).values(:,3);
+right_knee_error           = jointDesiredData.signals(5).values(:,4);
+right_ankle_roll_error     = jointDesiredData.signals(5).values(:,5);
+right_ankle_pitch_error    = jointDesiredData.signals(5).values(:,6);
 
 
 figure
@@ -251,11 +252,11 @@ grid on
 ax4 = subplot(5,1,4); % left leg joint errors subplot
 plot(time, left_hip_roll_error, time, left_hip_pitch_error, time, left_hip_yaw_error, time, left_knee_error, time, left_ankle_roll_error, time, left_ankle_pitch_error)
 title(ax4,'Left foot joint errors')
-legend('F_x','F_y','F_z', 'M_x', 'M_y', 'M_z')
+legend('hip_roll','hip_pitch','hip_yaw', 'knee_roll', 'ankle_pitch', 'ankle_roll')
 grid on
 
 ax5 = subplot(5,1,5); % right leg joint errors subplot
 plot(time, right_hip_roll_error, time, right_hip_pitch_error, time, right_hip_yaw_error, time, right_knee_error, time, right_ankle_roll_error, time, right_ankle_pitch_error)
 title(ax5,'Right foot joint errors')
-legend('F_x','F_y','F_z', 'M_x', 'M_y', 'M_z')
+legend('hip_roll','hip_pitch','hip_yaw', 'knee_roll', 'ankle_pitch', 'ankle_roll')
 grid on

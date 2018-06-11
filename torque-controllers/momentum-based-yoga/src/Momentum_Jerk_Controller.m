@@ -76,10 +76,10 @@ H_ddot_star    = [m*xCoM_Jerk_Star_linear
               
 Beta           =  A_dot*f_ext_L*constraints(1) + A_dot*f_ext_R*constraints(2);
 
-%% xi_dot realizing the desired momentum jerk dynamics
+%% xi_dot realizing the desired CoM jerk dynamics
 
-if constraints(1) == 1 && constraints (2) == 1
-     xi_dot1       = pinvA_total * (H_ddot_star - Beta);
+if constraints(1) == 1 && constraints (2) == 1 
+      xi_dot1       = pinvA_total * (H_ddot_star - Beta);
      xi_dot0       = -pinvDamped((Sigma*nullA_total), Reg.pinvDamp) ...
                        * ((Sigma * xi_dot1) + Gain.k_t*tau);
                    
@@ -89,6 +89,7 @@ if constraints(1) == 1 && constraints (2) == 1
      xi_dot        = pinvA_total * (H_ddot_star - Beta);      
          fprintf('one foot yoga')
 end
+
 %% DEBUG DIAGNOSTICS
 
 % Error on the center of massF1
