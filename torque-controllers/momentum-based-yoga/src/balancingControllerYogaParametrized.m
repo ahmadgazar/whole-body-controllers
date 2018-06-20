@@ -187,9 +187,11 @@ function [tau_star, errorCoM, error_H_linear,  error_H_angular, f_desired, xi_do
      tau       = Sigma*f + tauModel;
     
     %% xi_dot option for minimizing the joint torques
-    
-%    if  constraints(1) == 1 && constraints (2) == 1
-          xi_dot1       = pinvA_total * (L_ddot_star - Beta);
+           xi_dot1       = pinvA_total * (L_ddot_star - Beta);
+           xi_dot = xi_dot1;
+ 
+   if  state == 7 %constraints(1) == 1 && constraints (2) == 1
+%          xi_dot1       = pinvA_total * (L_ddot_star - Beta);
 %          xi_dot0       = -pinvDamped((Sigma*nullA_total), Reg.pinvDamp) ...
 %                        * ((Sigma * xi_dot1) + Gain.k_t*tau);
 %                    
@@ -198,14 +200,21 @@ function [tau_star, errorCoM, error_H_linear,  error_H_angular, f_desired, xi_do
 %     else
 %          xi_dot        = pinvA_total * (L_ddot_star - Beta);      
 %          fprintf('one foot yoga')
-%     end 
-    k_xi       = diag([0 0 1 0 0 0 0 0 1 0 0 0]);
-    xi_desired = [0 0 log(300) 0 0 0 0 0 0 0 0 0]';
+        k_xi       = diag([0 0 1 0 0 0 0 0 1 0 0 0]);
+        xi_desired = [0 0 log(150) 0 0 0 0 0 log(150) 0 0 0]';
+        xi_dot1       = pinvA_total * (L_ddot_star - Beta);
+        xi_dot        =  xi_dot1 + nullA_total * k_xi *(xi_desired - xi) ;  
+   end 
+    
+   
     
     if state == 2
+         k_xi       = diag([0 0 1 0 0 0 0 0 1 0 0 0]);
+         xi_desired = [0 0 log(300) 0 0 0 0 0 0 0 0 0]';
+        xi_dot1       = pinvA_total * (L_ddot_star - Beta);
         xi_dot        =  xi_dot1 + nullA_total * k_xi *(xi_desired - xi) ;  
-    else
-        xi_dot = xi_dot1;
+%     else
+%         xi_dot = xi_dot1;
     end
     tau_star      = tau;
     %% DEBUG DIAGNOSTICS
