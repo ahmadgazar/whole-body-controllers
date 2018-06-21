@@ -72,7 +72,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         % Set the center of mass projection onto the x-y plane to be
         % coincident to the origin of the left foot (l_sole) plus a
         % configurable delta
-        CoM_des     = [w_H_fixedLink(1:2,4);CoM_0(3)] + Sm.CoM_delta(state,:)';         
+        CoM_des     = [w_H_fixedLink(1:2,4);0.545] + Sm.CoM_delta(state,:)';         
  
         % right foot is no longer a constraints
         constraints = [1; 0];
@@ -103,7 +103,6 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         % Set the center of mass projection onto the x-y plane to be
         % coincident to the origin of the left foot (l_sole) plus a
         % configurable delta
-        CoM_des      = [w_H_fixedLink(1:2,4);CoM_0(3)] + Sm.CoM_delta(state,:)';         
         
         constraints  = [1; 0]; 
 
@@ -118,11 +117,15 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
             if t > (Sm.joints_leftYogaRef(i,1) + tSwitch) && t <= (Sm.joints_leftYogaRef(i+1,1)+ tSwitch)
                 
                 qj_des = Sm.joints_leftYogaRef(i,2:end)';
+                CoM_des = [w_H_fixedLink(1:2,4); Sm.CoM_desired_z(i)] + Sm.CoM_delta(state,:)';
+
             end
         end
         if t > (Sm.joints_leftYogaRef(end,1) + tSwitch) 
             
             qj_des = Sm.joints_leftYogaRef(end,2:end)';
+            CoM_des = [w_H_fixedLink(1:2,4); Sm.CoM_desired_z(end)] + Sm.CoM_delta(state,:)';
+
             
             if t > (Sm.joints_leftYogaRef(end,1) + tSwitch + Sm.smoothingTimeCoM_Joints(state) + Sm.joints_pauseBetweenYogaMoves)
                 state   = 5;
@@ -139,7 +142,7 @@ function  [w_H_b, CoM_des, qj_des, constraints, impedances, KPCoM, KDCoM, KICoM,
         % Set the center of mass projection onto the x-y plane to be
         % coincident to the origin of the left foot (l_sole) plus a
         % configurable delta
-        CoM_des     = [w_H_fixedLink(1:2,4);CoM_0(3)] + Sm.CoM_delta(state,:)';         
+        CoM_des     = [w_H_fixedLink(1:2,4);0.556] + Sm.CoM_delta(state,:)';         
         
         constraints = [1; 0]; 
 
