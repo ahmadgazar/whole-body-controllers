@@ -109,6 +109,7 @@ Gain.impedances  = [30   30   30, 10   10    10    10, 10   10    10    10, 30  
                     10   30   20, 10   10    10    8, 10   10    10    8, 30   50   30    60     50  50, 30   50   30    60     50  50];% state == 13  TRANSITION TO INITIAL POSITION
 %Gain.impedances(4,18:23) = Gain.impedances(4,18:23)*2; 
 %Gain.impedances(5,1:end) = Gain.impedances(5,1:end)*2; 
+Gain.impedances(5,18:23) = Gain.impedances(5,18:23)*2; 
 
 Gain.dampings    = 0*sqrt(Gain.impedances(1,:));  
 Gain.k_t         = diag([10  10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10]);
@@ -151,9 +152,9 @@ Sm.stateAt0 = 1;
 
 Sm.CoM_delta       = [% THIS REFERENCE IS USED AS A DELTA W.R.T. THE POSITION OF THE LEFT FOOT
                       0.0,  0.00,  0.0;   %% NOT USED
-                      0.0,  0.0,  0.0;   %% state ==  2  COM TRANSITION TO LEFT FOOT
+                      0.0, -0.01,  0.0;   %% state ==  2  COM TRANSITION TO LEFT FOOT
                       0.0,  0.00, 0.0;   %% state ==  3  LEFT FOOT BALANCING 
-                      0.0,  0.00, 0.0;   %% state ==  4  YOGA LEFT FOOT
+                      0.0,  0.005, 0.0;   %% state ==  4  YOGA LEFT FOOT
                       0.0,  0.00,  0.0;   %% state ==  5  PREPARING FOR SWITCHING
                       0.02,-0.09,  0.0;   %% state ==  6  LOOKING FOR CONTACT 
                       0.0,  0.00,  0.0;   %% NOT USED
@@ -386,8 +387,8 @@ if ~Sm.yogaExtended
    
     Sm.joints_leftYogaRef       = Sm.joints_leftYogaRef(1:8,:);
     Sm.joints_rightYogaRef      = Sm.joints_rightYogaRef(1:8,:);
-    Sm.joints_leftYogaRef(8,1)  = 15*Sm.smoothingTimeCoM_Joints(4);
-    Sm.joints_rightYogaRef(8,1) = 15*Sm.smoothingTimeCoM_Joints(10);
+    Sm.joints_leftYogaRef(8,1)  = 11*Sm.smoothingTimeCoM_Joints(4);
+    Sm.joints_rightYogaRef(8,1) = 11*Sm.smoothingTimeCoM_Joints(10);
 end
 
 % MIRROR YOGA LEFT MOVESET FOR RIGHT YOGA					 
