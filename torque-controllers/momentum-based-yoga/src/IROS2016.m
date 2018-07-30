@@ -64,4 +64,4 @@ ROBOT_DOF      = size(ROBOT_DOF_FOR_SIMULINK,1);
     Sigma          = -(Pinv_JcMinvSt*JcMinvJct + nullJcMinvSt*JBar);
     tauModel       =  Pinv_JcMinvSt*(JcMinv*h - Jc_nuDot) + nullJcMinvSt*(h(7:end) - Mbj'/Mb*h(1:6) ...
                      -impedances*NLMbar*qjTilde -dampings*NLMbar*qjDot);
-end                
+end 

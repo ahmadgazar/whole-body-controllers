@@ -1,6 +1,6 @@
 function [xi_dot, errorCoM,error_H_linear,error_H_angular] = Momentum_Jerk_Controller(M, nu, w_H_l_sole, w_H_r_sole, Left_Right_F_T_Sensors, ...
                                                                  J_CoM, desired_x_dx_ddx_CoM,  gainsPCOM, ...
-                                                                 gainsDCOM, gainsICOM, H, constraints, intHw, xCoM, state, tau, Sigma, F, Gain, Reg)
+                                                                 gainsDCOM, gainsICOM, H, constraints, intHw, xCoM, state, tau, Sigma, F, Gain, Reg, xi)
 % Mass of the robot
 m              = M(1,1);
 
@@ -19,11 +19,11 @@ Pr             = pos_rightFoot - xCoM;
 % Application point of the contact force on the left foot w.r.t. CoM
 Pl             = pos_leftFoot - xCoM;     
 
-AL             = [ eye(3),zeros(3);
-                   skew(Pl), eye(3)];
+AL             = [eye(3)  , zeros(3);
+                  skew(Pl), eye(3)];
                
-AR             = [ eye(3), zeros(3);
-                    skew(Pr), eye(3)];  
+AR             = [eye(3)  , zeros(3);
+                  skew(Pr), eye(3)];  
                 
 % Velocity of the center of mass 
 xCoM_dot       = J_CoM(1:3,:) * nu;                   
@@ -78,8 +78,9 @@ Beta           =  A_dot*f_ext_L*constraints(1) + A_dot*f_ext_R*constraints(2);
 
 %% xi_dot realizing the desired CoM jerk dynamics
 
+%Minimizing joint torques null space
 if constraints(1) == 1 && constraints (2) == 1 
-      xi_dot1       = pinvA_total * (H_ddot_star - Beta);
+      xi_dot1      = pinvA_total * (H_ddot_star - Beta);
      xi_dot0       = -pinvDamped((Sigma*nullA_total), Reg.pinvDamp) ...
                        * ((Sigma * xi_dot1) + Gain.k_t*tau);
                    
@@ -90,6 +91,16 @@ if constraints(1) == 1 && constraints (2) == 1
          fprintf('one foot yoga')
 end
 
+% CoM transistion on left foot null space
+%  k_xi = diag(0*[1 1 1 1 1 1 1 1 1 1 1 1]);
+%  xi_dot1 = pinvA_total * (H_ddot_star - Beta);
+%  xi_desired = [0 0.06508 log(300) 0.1774 0.0025 0 0 0 0 0 0 0]';
+%     
+% if state == 2
+%         xi_dot        =  xi_dot1 + nullA_total * k_xi *(xi_desired - xi) ;  
+%     else
+%         xi_dot = xi_dot1;
+% end
 %% DEBUG DIAGNOSTICS
 
 % Error on the center of massF1

@@ -63,8 +63,8 @@ Gain.KI_COM              = [5   5    2
                             5   5    2
                             5   5    2
                             5   5    2
-                            5   5    2
-                            5   5    2
+                            5   10    10
+                            5   10    10
                             5   5    2
                             10  10   2
                             10  10   2
@@ -164,7 +164,7 @@ Sm.CoM_delta       = [% THIS REFERENCE IS USED AS A DELTA W.R.T. THE POSITION OF
                       0.0,  0.00, 0.0;   %% state ==  3  LEFT FOOT BALANCING 
                       0.0,  0.00, 0.00;   %% state ==  4  YOGA LEFT FOOT
                       0.0,  0.00, 0.0;   %% state ==  5  PREPARING FOR SWITCHING
-                      0.0,  0.00, 0.0;   %% state ==  6  LOOKING FOR CONTACT 
+                      0.0,  -0.035, 0;   %% state ==  6  LOOKING FOR CONTACT 
                       0.0,  0.00, 0.0;   %% NOT USED
                       % THIS REFERENCE IS USED AS A DELTA W.R.T. THE POSITION OF THE RIGHT FOOT
                       0.0,  0.0, 0.0;   %% state ==  8  COM TRANSITION TO RIGHT FOOT
