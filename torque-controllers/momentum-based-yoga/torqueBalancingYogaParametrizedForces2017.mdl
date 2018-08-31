@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3323"
+    ComputedModelVersion    "1.3324"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -631,7 +631,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [65.0, 24.0, 1855.0, 1056.0]
+      Location		      [65.0, -4.0, 1855.0, 1084.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -666,8 +666,8 @@ Model {
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "4504"
 	  Extents		  [1817.0, 901.0]
-	  ZoomFactor		  [1.0680597014925373]
-	  Offset		  [36.892118501956361, -0.79290106204587119]
+	  ZoomFactor		  [0.8]
+	  Offset		  [-140.11151481274476, -204.97344885410848]
 	}
 	Object {
 	  $ObjectID		  7
@@ -748,9 +748,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "icub"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Jun 22 17:20:25 2018"
-  RTWModifiedTimeStamp	  451586074
-  ModelVersionFormat	  "1.%<AutoIncrement:3323>"
+  LastModifiedDate	  "Fri Aug 31 15:45:14 2018"
+  RTWModifiedTimeStamp	  457631048
+  ModelVersionFormat	  "1.%<AutoIncrement:3324>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1913,7 +1913,7 @@ Model {
   System {
     Name		    "torqueBalancingYogaParametrizedForces2017"
     Location		    [65, 24, 1920, 1080]
-    Open		    off
+    Open		    on
     PortBlocksUseCompactNotation off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1964,7 +1964,7 @@ Model {
       System {
 	Name			"Dump and visualize"
 	Location		[65, 24, 1920, 1080]
-	Open			off
+	Open			on
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2092,8 +2092,8 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "Visualizer"
-	    Location		    [65, 24, 1920, 1080]
-	    Open		    off
+	    Location		    [65, -4, 1920, 1080]
+	    Open		    on
 	    PortBlocksUseCompactNotation off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2105,7 +2105,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "107"
+	    ZoomFactor		    "80"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "tau_des"
@@ -5640,7 +5640,7 @@ Model {
       System {
 	Name			"Force_paramterization_controller"
 	Location		[65, 24, 1920, 1080]
-	Open			off
+	Open			on
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -12391,7 +12391,7 @@ Model {
 	  System {
 	    Name		    "Select State and References"
 	    Location		    [65, 24, 1920, 1080]
-	    Open		    off
+	    Open		    on
 	    PortBlocksUseCompactNotation off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -13789,8 +13789,8 @@ Model {
 	  Variant		  off
 	  System {
 	    Name		    "State Machine Yoga"
-	    Location		    [65, 1104, 1920, 2160]
-	    Open		    off
+	    Location		    [65, 24, 1920, 1080]
+	    Open		    on
 	    PortBlocksUseCompactNotation off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -18100,7 +18100,7 @@ Model {
       System {
 	Name			"emergency stop: joint limits"
 	Location		[65, 24, 1920, 1080]
-	Open			off
+	Open			on
 	PortBlocksUseCompactNotation off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200

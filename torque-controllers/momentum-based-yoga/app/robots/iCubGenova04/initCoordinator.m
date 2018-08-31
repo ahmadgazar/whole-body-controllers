@@ -24,7 +24,7 @@ end
 Config.LEFT_FOOT_IN_CONTACT_AT_0 = false;
 
 % If true, the robot CoM will follow a desired reference trajectory (COORDINATOR DEMO ONLY)
-Config.DEMO_MOVEMENTS = true;
+Config.DEMO_MOVEMENTS = false;
 
 % If equal to true, the desired streamed values of the center of mass 
 % are smoothed internally 
@@ -39,6 +39,7 @@ Sat.torque = 34;
 Sat.xiDot  = 10;
 
 %% Control gains
+Sm.CoM_desired_z = [0.5553; 0.5708; 0.5857; 0.5909; 0.6039; 0.58; 0.6267; 0.64];                     
 
 % PARAMETERS FOR TWO FEET BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
@@ -69,7 +70,7 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     Gain.KD_COM               = 2*sqrt(Gain.KP_COM)*0;      % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
     Gain.KI_COM               = diag([30   30    30])/5;  % Ki(x_CoMDesired - x_CoM)
     Gain.KP_AngularMomentum   = diag([200   150    150])/10;
-    Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum)*0;
+    Gain.KD_AngularMomentum   = diag([1 1 1]);%2*sqrt(Gain.KP_AngularMomentum)*0;
     Gain.KI_AngularMomentum   = 10;
     Gain.k_xi                 = 0;
     Gain.k_t                  = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
