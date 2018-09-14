@@ -32,8 +32,8 @@ clc
 
 % setenv('YARP_ROBOT_NAME','iCubGenova04');
  setenv('YARP_ROBOT_NAME','icubGazeboSim');
-% setenv('YARP_ROBOT_NAME','iCubGenova02');
-% setenv('YARP_ROBOT_NAME','iCubGazeboV2_5');  
+%setenv('YARP_ROBOT_NAME','iCubGenova02');
+%setenv('YARP_ROBOT_NAME','iCubGazeboV2_5');  
 
 % Simulation time in seconds
 Config.SIMULATION_TIME = inf;   
@@ -52,7 +52,7 @@ Config.SIMULATION_TIME = inf;
 %
 %                app/robots/YARP_ROBOT_NAME/initRefGen.m
 % 
-SM_TYPE                      = 'YOGA';
+SM_TYPE                      = 'COORDINATOR';
 % Config.SCOPES: if set to true, all visualizers for debugging are active
 Config.SCOPES_ALL            = true;
 
