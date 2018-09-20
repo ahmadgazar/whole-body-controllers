@@ -16,7 +16,7 @@
 %  */
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
+function [tau_star, errorCoM, f_desired, xi_dot,  HDot_linear_ft,  HDot_angular_ft]    =  ...
               balancingControllerYogaParametrized(SM_TYPE_BIN, constraints, ROBOT_DOF_FOR_SIMULINK, qj, qjDes, nu, M, h, L, ...
                                       intHw, w_H_l_sole, w_H_r_sole, JL, JR, dJL_nu, dJR_nu, xCoM, ...
                                       J_CoM, desired_x_dx_ddx_CoM, gainsPCOM, gainsDCOM, gainsICOM, ...
@@ -170,6 +170,13 @@ function [tau_star, errorCoM, f_desired, xi_dot]    =  ...
     % Desired rate-of-change of the robot momentum 
     % HDotDes      = [m*xDDcomStar ;
     %                -Gain.KD_AngularMomentum*L(4:end) - Gain.KP_AngularMomentum*intHw];
+    
+    % rate-of-change of the robot momentum computed from the f/t sesnors
+    H_linear_wbt    = m*xCoM_dot;      
+
+    HDot_ft          = AL*Left_Right_F_T_Sensors(1:6,:)*constraints(1) + AR*Left_Right_F_T_Sensors(7:12,:)*constraints(2) + gravityWrench; 
+    HDot_linear_ft   = HDot_ft(1:3,:);
+    HDot_angular_ft = HDot_ft(4:6,:);
     
     %% Desired momentum jerk dynamics 
      %   L_ddot_star    = [m*xCoM_Jerk_Star;

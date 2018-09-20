@@ -66,23 +66,23 @@ end
 % PARAMETERS FOR ONE FOOT BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
-    Gain.KP_COM               = diag([50  50  50])/2;     % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
-    Gain.KD_COM               = diag([5   5    10]);      % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
-    Gain.KI_COM               = diag([30   30    30])/5;  % Ki(x_CoMDesired - x_CoM)
-    Gain.KP_AngularMomentum   = diag([200   150    150])/10;
-    Gain.KD_AngularMomentum   = diag([1   1    1]); %2*sqrt(Gain.KP_AngularMomentum)*0;
-    Gain.KI_AngularMomentum   = 10;
-    Gain.k_xi                 = 0;
-    Gain.k_t                  = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
-    
-%     Gain.KP_COM               = diag([30  30  30]);   % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
-%     Gain.KD_COM               = diag([15  15  15]);   % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
-%     Gain.KI_COM               = diag([10  10  10]);   % Ki(x_CoMDesired - x_CoM)
-%     Gain.KP_AngularMomentum   = diag([30   30    30]);
-%     Gain.KD_AngularMomentum   = diag([15   15    15]);
-%     Gain.KI_AngularMomentum   = 100;
+%     Gain.KP_COM               = diag([50  50  50])/2;     % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
+%     Gain.KD_COM               = diag([5   5    10]);      % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
+%     Gain.KI_COM               = diag([30   30    30])/5;  % Ki(x_CoMDesired - x_CoM)
+%     Gain.KP_AngularMomentum   = diag([200   150    150])/10;
+%     Gain.KD_AngularMomentum   = diag([1   1    1]); %2*sqrt(Gain.KP_AngularMomentum)*0;
+%     Gain.KI_AngularMomentum   = 10;
 %     Gain.k_xi                 = 0;
-%     Gain.k_t = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
+%     Gain.k_t                  = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
+    
+    Gain.KP_COM               = diag([30  30  30]);   % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
+    Gain.KD_COM               = diag([15  15  15]);   % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
+    Gain.KI_COM               = diag([10  10  10]);   % Ki(x_CoMDesired - x_CoM)
+    Gain.KP_AngularMomentum   = diag([30   30    30]);
+    Gain.KD_AngularMomentum   = diag([15   15    15]);
+    Gain.KI_AngularMomentum   = 100;
+    Gain.k_xi                 = 0;
+    Gain.k_t = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
 
 
     % Impedances acting in the null space of the desired contact forces    
