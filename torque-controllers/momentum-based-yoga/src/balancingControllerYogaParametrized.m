@@ -176,11 +176,11 @@ function [tau_star, errorCoM, f_desired, xi_dot,  HDot_linear_ft,  HDot_angular_
 
     HDot_ft          = AL*Left_Right_F_T_Sensors(1:6,:)*constraints(1) + AR*Left_Right_F_T_Sensors(7:12,:)*constraints(2) + gravityWrench; 
     HDot_linear_ft   = HDot_ft(1:3,:);
-    HDot_angular_ft = HDot_ft(4:6,:);
+    HDot_angular_ft  = HDot_ft(4:6,:);
     
     %% Desired momentum jerk dynamics 
-     %   L_ddot_star    = [m*xCoM_Jerk_Star;
-      %                   -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - Gain.KI_AngularMomentum *intHw] ;          
+%        L_ddot_star    = [m*xCoM_Jerk_Star;
+%                         -Gain.KP_AngularMomentum*L(4:end) - Gain.KD_AngularMomentum*w_dot - Gain.KI_AngularMomentum *intHw] ;          
         
     L_ddot_star    = [m*xCoM_Jerk_Star;
                       -Gain.KP_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*L(4:end) - Gain.KD_AngularMomentum(((state-1)*3)+1:((state-1)*3)+3 ,:)*w_dot - Gain.KI_AngularMomentum*intHw]; 
@@ -205,7 +205,7 @@ function [tau_star, errorCoM, f_desired, xi_dot,  HDot_linear_ft,  HDot_angular_
 %     xi_dot        =  xi_dot1 + nullA_total * xi_dot0 ;  
  %% xi_dot option for minimizing the joint torques
            xi_dot1       = pinvA_total * (L_ddot_star - Beta);
-           xi_dot = xi_dot1;
+           xi_dot        = xi_dot1;
  
    if  state == 7 %constraints(1) == 1 && constraints (2) == 1
 %          xi_dot1       = pinvA_total * (L_ddot_star - Beta);
@@ -217,8 +217,8 @@ function [tau_star, errorCoM, f_desired, xi_dot,  HDot_linear_ft,  HDot_angular_
 %     else
 %          xi_dot        = pinvA_total * (L_ddot_star - Beta);      
 %          fprintf('one foot yoga')
-        k_xi       = diag([0 0 1 0 0 0 0 0 1 0 0 0]);
-        xi_desired = [0 0 log(150) 0 0 0 0 0 log(150) 0 0 0]';
+        k_xi          = diag([0 0 1 0 0 0 0 0 1 0 0 0]);
+        xi_desired    = [0 0 log(150) 0 0 0 0 0 log(150) 0 0 0]';
         xi_dot1       = pinvA_total * (L_ddot_star - Beta);
         xi_dot        =  xi_dot1 + nullA_total * k_xi *(xi_desired - xi) ;  
    end 
