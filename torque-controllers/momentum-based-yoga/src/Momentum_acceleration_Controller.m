@@ -1,4 +1,4 @@
-function [xi_dot, errorCoM,error_H_linear,error_H_angular] = Momentum_acceleration_Controller(M, nu, w_H_l_sole, w_H_r_sole, Left_Right_F_T_Sensors, ...
+function [xi_dot, errorCoM,error_H_linear,error_H_angular, HDot_linear_ft,  HDot_angular_ft] = Momentum_acceleration_Controller(M, nu, w_H_l_sole, w_H_r_sole, Left_Right_F_T_Sensors, ...
                                                                  J_CoM, desired_x_dx_ddx_CoM,  gainsPCOM, ...
                                                                  gainsDCOM, gainsICOM, H, constraints, intHw, xCoM, state, tau, Sigma, F, Gain, Reg, xi)
 % Mass of the robot
@@ -112,4 +112,9 @@ error_H_linear = m*(desired_x_dx_ddx_CoM(:,2) - xCoM_dot);
 % Error on the angular momentum
 error_H_angular= 0 - H(4:end);
 
+% Linear momentum derivative
+HDot_linear_ft   = H_dot(1:3,:);
+    
+%Angular momentum derivative 
+HDot_angular_ft = H_dot(4:6,:);
 end
