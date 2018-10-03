@@ -5,15 +5,15 @@
 %% --- Initialization ---
 
 % Feet in contact (COORDINATOR DEMO ONLY)
-Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
+Config.LEFT_RIGHT_FOOT_IN_CONTACT = [0 1];
 
 
 %initial conditions of xi_dot
 if Config.LEFT_RIGHT_FOOT_IN_CONTACT(1) == 1 && Config.LEFT_RIGHT_FOOT_IN_CONTACT(2) == 0
-  Config.xi_dot_initial = [0 0 log(300) 0 0 0 0 0 0 0 0 0];
+  Config.xi_dot_initial = [0 0 log(324) 0 0 0 0 0 0 0 0 0];
   
 elseif Config.LEFT_RIGHT_FOOT_IN_CONTACT(1) == 0 && Config.LEFT_RIGHT_FOOT_IN_CONTACT(2) == 1
-    Config.xi_dot_initial = [0 0 0 0 0 0 0 0 log(300) 0 0 0];
+    Config.xi_dot_initial = [0 0 0 0 0 0 0 0 log(324) 0 0 0];
 else
     Config.xi_dot_initial = [0 0 log(150) 0 0 0 0 0 log(150) 0 0 0];
 end
@@ -39,6 +39,8 @@ Sat.torque = 34;
 Sat.xiDot  = 10;
 
 %% Control gains
+%% Control gains
+Sm.CoM_desired_z = [0.5553; 0.5708; 0.5857; 0.5909; 0.6039; 0.58; 0.6267; 0.64];                     
 
 % PARAMETERS FOR TWO FEET BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
@@ -65,12 +67,21 @@ end
 % PARAMETERS FOR ONE FOOT BALANCING
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
-    Gain.KP_COM               = diag([50  50  50])/2;     % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
-    Gain.KD_COM               = 2*sqrt(Gain.KP_COM)*0;      % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
-    Gain.KI_COM               = diag([30   30    30])/7;  % Ki(x_CoMDesired - x_CoM)
-    Gain.KP_AngularMomentum   = diag([200   150    150])/10;
-    Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum)*0;
-    Gain.KI_AngularMomentum   = 10;
+%     Gain.KP_COM               = diag([50  50  50])/2;     % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
+%     Gain.KD_COM               = 2*sqrt(Gain.KP_COM)*0;      % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
+%     Gain.KI_COM               = diag([30   30    30])/7;  % Ki(x_CoMDesired - x_CoM)
+%     Gain.KP_AngularMomentum   = diag([200   150    150])/10;
+%     Gain.KD_AngularMomentum   = 2*sqrt(Gain.KP_AngularMomentum)*0;
+%     Gain.KI_AngularMomentum   = 10;
+%     Gain.k_xi                 = 0;
+%     Gain.k_t                  = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
+
+    Gain.KP_COM               = diag([35  35  0]);   % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
+    Gain.KD_COM               = diag([15  15  0]);   % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
+    Gain.KI_COM               = diag([20  20  0]);   % Ki(x_CoMDesired - x_CoM)
+    Gain.KP_AngularMomentum   = diag([30   30    30]);
+    Gain.KD_AngularMomentum   = diag([15   15    15]);
+    Gain.KI_AngularMomentum   = 100;
     Gain.k_xi                 = 0;
     Gain.k_t                  = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
 

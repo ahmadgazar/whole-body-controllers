@@ -60,6 +60,9 @@ Config.CORRECT_NECK_IMU  = true;
 % inequality constraints of contact wrenches.
 Config.USE_QP_SOLVER     = true; 
 
+% configuring number of joint boards new setting for WB-toolbox 4.0
+Config.numOfJointsForEachControlboard = [3 4 4 6 6];
+
 % Ports name list
 Ports.IMU               = ['/' WBTConfigRobot.RobotName '/inertial'];
 Ports.NECK_POS          = ['/' WBTConfigRobot.RobotName '/head/state:o'];

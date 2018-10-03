@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3323"
+    ComputedModelVersion    "1.3324"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -61,15 +61,15 @@ Model {
       }
       Array {
 	Type			"Simulink.EditorInfo"
-	Dimension		6
+	Dimension		7
 	Object {
 	  $ObjectID		  5
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
 	  Extents		  [1821.0, 905.0]
 	  ZoomFactor		  [1.2710144927536231]
-	  Offset		  [-1741.3568985176739, -493.01482326111739]
+	  Offset		  [-1741.3568985176739, -493.01482326111727]
 	}
 	Object {
 	  $ObjectID		  6
@@ -82,12 +82,12 @@ Model {
 	}
 	Object {
 	  $ObjectID		  7
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "2355"
 	  Extents		  [1821.0, 905.0]
-	  ZoomFactor		  [0.72761097114316]
-	  Offset		  [-26483.552706317972, -4892.6654716318444]
+	  ZoomFactor		  [0.6]
+	  Offset		  [-26787.796015405947, -5134.4388091293331]
 	}
 	Object {
 	  $ObjectID		  8
@@ -105,7 +105,7 @@ Model {
 	  LoadSaveID		  "2432"
 	  Extents		  [1817.0, 901.0]
 	  ZoomFactor		  [6.919999999999999]
-	  Offset		  [0.0, 4.4624277456647832]
+	  Offset		  [0.0, 4.4624277456648116]
 	}
 	Object {
 	  $ObjectID		  10
@@ -116,11 +116,20 @@ Model {
 	  ZoomFactor		  [1.25]
 	  Offset		  [0.0, 0.0]
 	}
+	Object {
+	  $ObjectID		  11
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "4104"
+	  Extents		  [1821.0, 905.0]
+	  ZoomFactor		  [1.5017123287671232]
+	  Offset		  [-264.89380523090085, 59.677309007981762]
+	}
 	PropName		"EditorsInfo"
       }
       Object {
 	$PropName		"DockComponentsInfo"
-	$ObjectID		11
+	$ObjectID		12
 	$ClassName		"Simulink.DockComponentInfo"
 	Type			"GLUE2:PropertyInspector"
 	ID			"Property Inspector"
@@ -149,9 +158,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "icub"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jun 19 18:07:06 2018"
-  RTWModifiedTimeStamp	  451332423
-  ModelVersionFormat	  "1.%<AutoIncrement:3323>"
+  LastModifiedDate	  "Wed Oct 03 13:45:31 2018"
+  RTWModifiedTimeStamp	  460472676
+  ModelVersionFormat	  "1.%<AutoIncrement:3324>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -199,7 +208,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    12
+    $ObjectID		    13
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "torqueBalancingYogaParametrizedForces2016"
     signals_		    []
@@ -244,7 +253,7 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      13
+      $ObjectID		      14
       Version		      "1.16.5"
       DisabledProps	      []
       Description	      ""
@@ -252,7 +261,7 @@ Model {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.16.5"
 	  DisabledProps		  []
 	  Description		  ""
@@ -292,7 +301,7 @@ Model {
 	  SampleTimeProperty	  []
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  15
+	  $ObjectID		  16
 	  Version		  "1.16.5"
 	  DisabledProps		  []
 	  Description		  ""
@@ -332,7 +341,7 @@ Model {
 	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  16
+	  $ObjectID		  17
 	  Version		  "1.16.5"
 	  Array {
 	    Type		    "Cell"
@@ -390,7 +399,7 @@ Model {
 	  AccelVerboseBuild	  off
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  17
+	  $ObjectID		  18
 	  Version		  "1.16.5"
 	  Array {
 	    Type		    "Cell"
@@ -498,7 +507,7 @@ Model {
 	  AllowAutomaticUnitConversions	on
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  18
+	  $ObjectID		  19
 	  Version		  "1.16.5"
 	  DisabledProps		  []
 	  Description		  ""
@@ -546,7 +555,7 @@ Model {
 	  UseSimulinkCoderFeatures on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  19
+	  $ObjectID		  20
 	  Version		  "1.16.5"
 	  DisabledProps		  []
 	  Description		  ""
@@ -565,7 +574,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  20
+	  $ObjectID		  21
 	  Version		  "1.16.5"
 	  DisabledProps		  []
 	  Description		  ""
@@ -593,7 +602,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  21
+	  $ObjectID		  22
 	  Version		  "1.16.5"
 	  Array {
 	    Type		    "Cell"
@@ -679,7 +688,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      22
+	      $ObjectID		      23
 	      Version		      "1.16.5"
 	      Array {
 		Type			"Cell"
@@ -765,7 +774,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      23
+	      $ObjectID		      24
 	      Version		      "1.16.5"
 	      Array {
 		Type			"Cell"
@@ -862,7 +871,7 @@ Model {
 	  }
 	}
 	SlCovCC.ConfigComp {
-	  $ObjectID		  24
+	  $ObjectID		  25
 	  Version		  "1.16.5"
 	  DisabledProps		  []
 	  Description		  "Simulink Coverage Configuration Component"
@@ -911,11 +920,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    13
+    $ObjectID		    14
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    25
+    $ObjectID		    26
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -1280,7 +1289,7 @@ Model {
   System {
     Name		    "torqueBalancingYogaParametrizedForces2016"
     Location		    [65, 24, 1920, 1080]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1293,7 +1302,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "127"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "4641"
+    SIDHighWatermark	    "4651"
     Block {
       BlockType		      Reference
       Name		      "Configuration"
@@ -1301,18 +1310,12 @@ Model {
       Ports		      []
       Position		      [-1275, -260, -1200, -230]
       ZOrder		      553
-      LibraryVersion	      "1.625"
+      LibraryVersion	      "1.649"
       SourceBlock	      "WBToolboxLibrary/Utilities/Configuration"
       SourceType	      ""
       ContentPreviewEnabled   off
       ConfigSource	      "Workspace"
       ConfigObject	      "'WBTConfigRobot'"
-      RobotName		      "'icubSim'"
-      UrdfFile		      "'model.urdf'"
-      ControlledJoints	      "{'l_elbow','l_shoulder_pitch','torso_roll'}"
-      ControlBoardsNames      "{'left_arm','right_arm','torso'}"
-      LocalName		      "'WBT'"
-      GravityVector	      "[0,0,-9.81]"
     }
     Block {
       BlockType		      SubSystem
@@ -1328,14 +1331,14 @@ Model {
       Variant		      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		26
+	$ObjectID		27
 	$ClassName		"Simulink.Mask"
 	Display			"disp('VISUALIZER')"
       }
       System {
 	Name			"Dump and visualize"
 	Location		[65, 24, 1920, 1080]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1462,7 +1465,7 @@ Model {
 	  System {
 	    Name		    "Visualizer"
 	    Location		    [65, 24, 1920, 1080]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1696,6 +1699,88 @@ Model {
 	    }
 	    Block {
 	      BlockType		      Demux
+	      Name		      "Demux1"
+	      SID		      "4646"
+	      Ports		      [1, 5]
+	      Position		      [445, 311, 450, 409]
+	      ZOrder		      879
+	      ShowName		      off
+	      Outputs		      "Config.numOfJointsForEachControlboard"
+	      DisplayOption	      "bar"
+	      Port {
+		PortNumber		1
+		Name			"torso"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"left_arm"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"right_arm"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"left_leg"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"right_leg"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux2"
+	      SID		      "4647"
+	      Ports		      [1, 5]
+	      Position		      [445, 176, 450, 274]
+	      ZOrder		      880
+	      ShowName		      off
+	      Outputs		      "Config.numOfJointsForEachControlboard"
+	      DisplayOption	      "bar"
+	      Port {
+		PortNumber		1
+		Name			"torso"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"left_arm"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"right_arm"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"left_leg"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"right_leg"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Demux
 	      Name		      "Demux3"
 	      SID		      "3312"
 	      Ports		      [1, 2]
@@ -1741,16 +1826,15 @@ Model {
 	      }
 	    }
 	    Block {
-	      BlockType		      Reference
-	      Name		      "DoFs converter"
-	      SID		      "3705"
+	      BlockType		      Demux
+	      Name		      "Demux5"
+	      SID		      "4648"
 	      Ports		      [1, 5]
-	      Position		      [360, 19, 455, 121]
-	      ZOrder		      585
-	      LibraryVersion	      "1.625"
-	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
-	      SourceType	      "DoFs converter"
-	      yarp2WBIOption	      "From YARP to WBI"
+	      Position		      [445, 21, 450, 119]
+	      ZOrder		      881
+	      ShowName		      off
+	      Outputs		      "Config.numOfJointsForEachControlboard"
+	      DisplayOption	      "bar"
 	      Port {
 		PortNumber		1
 		Name			"torso"
@@ -1783,16 +1867,15 @@ Model {
 	      }
 	    }
 	    Block {
-	      BlockType		      Reference
-	      Name		      "DoFs converter1"
-	      SID		      "3706"
+	      BlockType		      Demux
+	      Name		      "Demux6"
+	      SID		      "4649"
 	      Ports		      [1, 5]
-	      Position		      [360, 174, 455, 276]
-	      ZOrder		      586
-	      LibraryVersion	      "1.625"
-	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
-	      SourceType	      "DoFs converter"
-	      yarp2WBIOption	      "From YARP to WBI"
+	      Position		      [1085, 311, 1090, 409]
+	      ZOrder		      882
+	      ShowName		      off
+	      Outputs		      "Config.numOfJointsForEachControlboard"
+	      DisplayOption	      "bar"
 	      Port {
 		PortNumber		1
 		Name			"torso"
@@ -1825,16 +1908,15 @@ Model {
 	      }
 	    }
 	    Block {
-	      BlockType		      Reference
-	      Name		      "DoFs converter2"
-	      SID		      "3707"
+	      BlockType		      Demux
+	      Name		      "Demux7"
+	      SID		      "4650"
 	      Ports		      [1, 5]
-	      Position		      [360, 309, 455, 411]
-	      ZOrder		      587
-	      LibraryVersion	      "1.625"
-	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
-	      SourceType	      "DoFs converter"
-	      yarp2WBIOption	      "From YARP to WBI"
+	      Position		      [1085, 176, 1090, 274]
+	      ZOrder		      883
+	      ShowName		      off
+	      Outputs		      "Config.numOfJointsForEachControlboard"
+	      DisplayOption	      "bar"
 	      Port {
 		PortNumber		1
 		Name			"torso"
@@ -1867,100 +1949,15 @@ Model {
 	      }
 	    }
 	    Block {
-	      BlockType		      Reference
-	      Name		      "DoFs converter3"
-	      SID		      "3708"
+	      BlockType		      Demux
+	      Name		      "Demux8"
+	      SID		      "4651"
 	      Ports		      [1, 5]
-	      Position		      [1000, 39, 1095, 141]
-	      ZOrder		      588
-	      LibraryVersion	      "1.625"
-	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
-	      SourceType	      "DoFs converter"
-	      yarp2WBIOption	      "From YARP to WBI"
-	      Port {
-		PortNumber		1
-		Name			"torso"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		2
-		Name			"left_arm"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"right_arm"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"left_leg"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		5
-		Name			"right_leg"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "DoFs converter4"
-	      SID		      "3709"
-	      Ports		      [1, 5]
-	      Position		      [1000, 174, 1095, 276]
-	      ZOrder		      589
-	      LibraryVersion	      "1.625"
-	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
-	      SourceType	      "DoFs converter"
-	      yarp2WBIOption	      "From YARP to WBI"
-	      Port {
-		PortNumber		1
-		Name			"torso"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		2
-		Name			"left_arm"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"right_arm"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"left_leg"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		5
-		Name			"right_leg"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "DoFs converter5"
-	      SID		      "3710"
-	      Ports		      [1, 5]
-	      Position		      [1000, 309, 1095, 411]
-	      ZOrder		      590
-	      LibraryVersion	      "1.625"
-	      SourceBlock	      "WBToolboxLibrary/Utilities/DoFs converter"
-	      SourceType	      "DoFs converter"
-	      yarp2WBIOption	      "From YARP to WBI"
+	      Position		      [1085, 41, 1090, 139]
+	      ZOrder		      884
+	      ShowName		      off
+	      Outputs		      "Config.numOfJointsForEachControlboard"
+	      DisplayOption	      "bar"
 	      Port {
 		PortNumber		1
 		Name			"torso"
@@ -2036,7 +2033,7 @@ Model {
 	      Position		      [705, 76, 780, 104]
 	      ZOrder		      869
 	      BackgroundColor	      "[0.513700, 0.851000, 0.670600]"
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyStates/Get Measurement"
 	      SourceType	      "Get Measurement"
 	      ContentPreviewEnabled   off
@@ -2056,7 +2053,7 @@ Model {
 	      Position		      [50, 346, 115, 374]
 	      ZOrder		      870
 	      BackgroundColor	      "[0.827500, 0.576500, 0.603900]"
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyStates/Get Measurement"
 	      SourceType	      "Get Measurement"
 	      ContentPreviewEnabled   off
@@ -3012,10 +3009,10 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      129
+	      ZOrder		      713
 	      SrcBlock		      "Gain"
 	      SrcPort		      1
-	      DstBlock		      "DoFs converter3"
+	      DstBlock		      "Demux8"
 	      DstPort		      1
 	    }
 	    Line {
@@ -3057,36 +3054,36 @@ Model {
 	    }
 	    Line {
 	      Name		      "right_leg"
-	      ZOrder		      494
+	      ZOrder		      712
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter3"
+	      SrcBlock		      "Demux8"
 	      SrcPort		      5
 	      DstBlock		      "qj"
 	      DstPort		      5
 	    }
 	    Line {
 	      Name		      "torso"
-	      ZOrder		      124
+	      ZOrder		      709
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter3"
+	      SrcBlock		      "Demux8"
 	      SrcPort		      1
 	      DstBlock		      "qj"
 	      DstPort		      1
 	    }
 	    Line {
 	      Name		      "left_arm"
-	      ZOrder		      496
+	      ZOrder		      708
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter3"
+	      SrcBlock		      "Demux8"
 	      SrcPort		      2
 	      DstBlock		      "qj"
 	      DstPort		      2
 	    }
 	    Line {
 	      Name		      "left_leg"
-	      ZOrder		      495
+	      ZOrder		      711
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter3"
+	      SrcBlock		      "Demux8"
 	      SrcPort		      4
 	      DstBlock		      "qj"
 	      DstPort		      4
@@ -3110,9 +3107,9 @@ Model {
 	    }
 	    Line {
 	      Name		      "right_arm"
-	      ZOrder		      497
+	      ZOrder		      710
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter3"
+	      SrcBlock		      "Demux8"
 	      SrcPort		      3
 	      DstBlock		      "qj"
 	      DstPort		      3
@@ -3146,8 +3143,8 @@ Model {
 	      SrcPort		      1
 	      Points		      [41, 0]
 	      Branch {
-		ZOrder			111
-		DstBlock		"DoFs converter"
+		ZOrder			718
+		DstBlock		"Demux5"
 		DstPort			1
 	      }
 	      Branch {
@@ -3163,8 +3160,8 @@ Model {
 	      SrcPort		      1
 	      Points		      [100, 0]
 	      Branch {
-		ZOrder			333
-		DstBlock		"DoFs converter2"
+		ZOrder			716
+		DstBlock		"Demux1"
 		DstPort			1
 	      }
 	      Branch {
@@ -3175,144 +3172,144 @@ Model {
 	    }
 	    Line {
 	      Name		      "right_leg"
-	      ZOrder		      482
+	      ZOrder		      695
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter"
+	      SrcBlock		      "Demux5"
 	      SrcPort		      5
 	      DstBlock		      "tauDes"
 	      DstPort		      5
 	    }
 	    Line {
 	      Name		      "torso"
-	      ZOrder		      108
+	      ZOrder		      696
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter"
+	      SrcBlock		      "Demux5"
 	      SrcPort		      1
 	      DstBlock		      "tauDes"
 	      DstPort		      1
 	    }
 	    Line {
 	      Name		      "left_arm"
-	      ZOrder		      483
+	      ZOrder		      697
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter"
+	      SrcBlock		      "Demux5"
 	      SrcPort		      2
 	      DstBlock		      "tauDes"
 	      DstPort		      2
 	    }
 	    Line {
 	      Name		      "left_leg"
-	      ZOrder		      484
+	      ZOrder		      694
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter"
+	      SrcBlock		      "Demux5"
 	      SrcPort		      4
 	      DstBlock		      "tauDes"
 	      DstPort		      4
 	    }
 	    Line {
 	      Name		      "right_arm"
-	      ZOrder		      485
+	      ZOrder		      693
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter"
+	      SrcBlock		      "Demux5"
 	      SrcPort		      3
 	      DstBlock		      "tauDes"
 	      DstPort		      3
 	    }
 	    Line {
 	      Name		      "right_leg"
-	      ZOrder		      486
+	      ZOrder		      689
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter1"
+	      SrcBlock		      "Demux2"
 	      SrcPort		      5
 	      DstBlock		      "tauError"
 	      DstPort		      5
 	    }
 	    Line {
 	      Name		      "torso"
-	      ZOrder		      116
+	      ZOrder		      688
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter1"
+	      SrcBlock		      "Demux2"
 	      SrcPort		      1
 	      DstBlock		      "tauError"
 	      DstPort		      1
 	    }
 	    Line {
 	      Name		      "left_arm"
-	      ZOrder		      487
+	      ZOrder		      692
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter1"
+	      SrcBlock		      "Demux2"
 	      SrcPort		      2
 	      DstBlock		      "tauError"
 	      DstPort		      2
 	    }
 	    Line {
 	      Name		      "left_leg"
-	      ZOrder		      488
+	      ZOrder		      690
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter1"
+	      SrcBlock		      "Demux2"
 	      SrcPort		      4
 	      DstBlock		      "tauError"
 	      DstPort		      4
 	    }
 	    Line {
 	      Name		      "right_arm"
-	      ZOrder		      489
+	      ZOrder		      691
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter1"
+	      SrcBlock		      "Demux2"
 	      SrcPort		      3
 	      DstBlock		      "tauError"
 	      DstPort		      3
 	    }
 	    Line {
 	      Name		      "torqueError"
-	      ZOrder		      117
+	      ZOrder		      717
 	      Labels		      [0, 0]
 	      SrcBlock		      "Sum"
 	      SrcPort		      1
-	      DstBlock		      "DoFs converter1"
+	      DstBlock		      "Demux2"
 	      DstPort		      1
 	    }
 	    Line {
 	      Name		      "right_leg"
-	      ZOrder		      492
+	      ZOrder		      684
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter2"
+	      SrcBlock		      "Demux1"
 	      SrcPort		      5
 	      DstBlock		      "tauMeasured"
 	      DstPort		      5
 	    }
 	    Line {
 	      Name		      "torso"
-	      ZOrder		      119
+	      ZOrder		      681
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter2"
+	      SrcBlock		      "Demux1"
 	      SrcPort		      1
 	      DstBlock		      "tauMeasured"
 	      DstPort		      1
 	    }
 	    Line {
 	      Name		      "left_arm"
-	      ZOrder		      490
+	      ZOrder		      683
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter2"
+	      SrcBlock		      "Demux1"
 	      SrcPort		      2
 	      DstBlock		      "tauMeasured"
 	      DstPort		      2
 	    }
 	    Line {
 	      Name		      "left_leg"
-	      ZOrder		      491
+	      ZOrder		      682
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter2"
+	      SrcBlock		      "Demux1"
 	      SrcPort		      4
 	      DstBlock		      "tauMeasured"
 	      DstPort		      4
 	    }
 	    Line {
 	      Name		      "right_arm"
-	      ZOrder		      493
+	      ZOrder		      685
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter2"
+	      SrcBlock		      "Demux1"
 	      SrcPort		      3
 	      DstBlock		      "tauMeasured"
 	      DstPort		      3
@@ -3335,105 +3332,105 @@ Model {
 	      }
 	    }
 	    Line {
-	      ZOrder		      135
+	      ZOrder		      714
 	      SrcBlock		      "Gain3"
 	      SrcPort		      1
-	      DstBlock		      "DoFs converter4"
+	      DstBlock		      "Demux7"
 	      DstPort		      1
 	    }
 	    Line {
 	      Name		      "right_leg"
-	      ZOrder		      501
+	      ZOrder		      704
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter4"
+	      SrcBlock		      "Demux7"
 	      SrcPort		      5
 	      DstBlock		      "qjDes"
 	      DstPort		      5
 	    }
 	    Line {
 	      Name		      "torso"
-	      ZOrder		      132
+	      ZOrder		      706
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter4"
+	      SrcBlock		      "Demux7"
 	      SrcPort		      1
 	      DstBlock		      "qjDes"
 	      DstPort		      1
 	    }
 	    Line {
 	      Name		      "left_arm"
-	      ZOrder		      499
+	      ZOrder		      703
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter4"
+	      SrcBlock		      "Demux7"
 	      SrcPort		      2
 	      DstBlock		      "qjDes"
 	      DstPort		      2
 	    }
 	    Line {
 	      Name		      "left_leg"
-	      ZOrder		      498
+	      ZOrder		      707
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter4"
+	      SrcBlock		      "Demux7"
 	      SrcPort		      4
 	      DstBlock		      "qjDes"
 	      DstPort		      4
 	    }
 	    Line {
 	      Name		      "right_arm"
-	      ZOrder		      500
+	      ZOrder		      705
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter4"
+	      SrcBlock		      "Demux7"
 	      SrcPort		      3
 	      DstBlock		      "qjDes"
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      141
+	      ZOrder		      715
 	      SrcBlock		      "Gain4"
 	      SrcPort		      1
-	      DstBlock		      "DoFs converter5"
+	      DstBlock		      "Demux6"
 	      DstPort		      1
 	    }
 	    Line {
 	      Name		      "right_leg"
-	      ZOrder		      505
+	      ZOrder		      698
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter5"
+	      SrcBlock		      "Demux6"
 	      SrcPort		      5
 	      DstBlock		      "qj_err"
 	      DstPort		      5
 	    }
 	    Line {
 	      Name		      "torso"
-	      ZOrder		      139
+	      ZOrder		      699
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter5"
+	      SrcBlock		      "Demux6"
 	      SrcPort		      1
 	      DstBlock		      "qj_err"
 	      DstPort		      1
 	    }
 	    Line {
 	      Name		      "left_arm"
-	      ZOrder		      504
+	      ZOrder		      700
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter5"
+	      SrcBlock		      "Demux6"
 	      SrcPort		      2
 	      DstBlock		      "qj_err"
 	      DstPort		      2
 	    }
 	    Line {
 	      Name		      "left_leg"
-	      ZOrder		      502
+	      ZOrder		      702
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter5"
+	      SrcBlock		      "Demux6"
 	      SrcPort		      4
 	      DstBlock		      "qj_err"
 	      DstPort		      4
 	    }
 	    Line {
 	      Name		      "right_arm"
-	      ZOrder		      503
+	      ZOrder		      701
 	      Labels		      [-1, 0]
-	      SrcBlock		      "DoFs converter5"
+	      SrcBlock		      "Demux6"
 	      SrcPort		      3
 	      DstBlock		      "qj_err"
 	      DstPort		      3
@@ -4027,7 +4024,7 @@ Model {
 	      Ports		      [4, 1]
 	      Position		      [370, 281, 555, 344]
 	      ZOrder		      223
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Dynamics/Centroidal Momentum"
 	      SourceType	      "Centroidal Momentum"
 	      ContentPreviewEnabled   off
@@ -4065,7 +4062,7 @@ Model {
 	      Ports		      [4, 1]
 	      Position		      [395, 132, 535, 233]
 	      ZOrder		      222
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Dynamics/Get Bias Forces"
 	      SourceType	      "Get Generalized Bias Forces"
 	      ContentPreviewEnabled   off
@@ -4077,7 +4074,7 @@ Model {
 	      Ports		      [2, 1]
 	      Position		      [395, 19, 535, 86]
 	      ZOrder		      221
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Dynamics/Mass Matrix"
 	      SourceType	      "Mass Matrix"
 	      ContentPreviewEnabled   off
@@ -4325,7 +4322,7 @@ Model {
 	      Position		      [60, 395, 235, 460]
 	      ZOrder		      829
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Jacobians/DotJ Nu"
 	      SourceType	      "DotJ Nu"
 	      ContentPreviewEnabled   off
@@ -4338,7 +4335,7 @@ Model {
 	      Ports		      [4, 1]
 	      Position		      [65, 479, 235, 536]
 	      ZOrder		      831
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Jacobians/DotJ Nu"
 	      SourceType	      "DotJ Nu"
 	      ContentPreviewEnabled   off
@@ -4352,7 +4349,7 @@ Model {
 	      Position		      [60, 260, 225, 300]
 	      ZOrder		      835
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Jacobians/Jacobian"
 	      SourceType	      "Jacobian"
 	      ContentPreviewEnabled   off
@@ -4366,7 +4363,7 @@ Model {
 	      Position		      [60, 160, 225, 195]
 	      ZOrder		      828
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Jacobians/Jacobian"
 	      SourceType	      "Jacobian"
 	      ContentPreviewEnabled   off
@@ -4380,7 +4377,7 @@ Model {
 	      Position		      [60, 210, 225, 245]
 	      ZOrder		      830
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Jacobians/Jacobian"
 	      SourceType	      "Jacobian"
 	      ContentPreviewEnabled   off
@@ -4394,7 +4391,7 @@ Model {
 	      Position		      [60, 33, 220, 77]
 	      ZOrder		      826
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 	      SourceType	      "Forward Kinematics"
 	      ContentPreviewEnabled   off
@@ -4408,7 +4405,7 @@ Model {
 	      Position		      [60, 95, 220, 135]
 	      ZOrder		      827
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 	      SourceType	      "Forward Kinematics"
 	      ContentPreviewEnabled   off
@@ -4464,7 +4461,7 @@ Model {
 		  Ports			  [2, 1]
 		  Position		  [110, 230, 275, 290]
 		  ZOrder		  578
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		  SourceType		  "Forward Kinematics"
 		  ContentPreviewEnabled	  off
@@ -5082,7 +5079,7 @@ Model {
       System {
 	Name			"Force_paramterization_controller"
 	Location		[65, 24, 1920, 1080]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5093,7 +5090,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"73"
+	ZoomFactor		"60"
 	Block {
 	  BlockType		  Inport
 	  Name			  "M"
@@ -5357,7 +5354,7 @@ Model {
 	      Ports		      [4, 1]
 	      Position		      [3370, -384, 3520, 54]
 	      ZOrder		      73
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Dynamics/Centroidal Momentum"
 	      SourceType	      "Centroidal Momentum"
 	      ContentPreviewEnabled   off
@@ -5479,7 +5476,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [575, 25, 740, 85]
 		    ZOrder		    729
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		    SourceType		    "Forward Kinematics"
 		    ContentPreviewEnabled   off
@@ -5492,7 +5489,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [575, 190, 740, 250]
 		    ZOrder		    737
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		    SourceType		    "Forward Kinematics"
 		    ContentPreviewEnabled   off
@@ -5546,7 +5543,7 @@ Model {
 		    Position		    [980, 308, 1055, 332]
 		    ZOrder		    742
 		    ForegroundColor	    "[0.490196, 0.000000, 0.000000]"
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/Yarp Read"
 		    SourceType		    "YARP Read"
 		    portName		    "Ports.NECK_POS"
@@ -5783,7 +5780,7 @@ Model {
 		    ZOrder		    739
 		    BackgroundColor	    "[0.537255, 0.721569, 1.000000]"
 		    ShowName		    off
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/holder\n"
 		    SourceType		    "Holder"
 		    ContentPreviewEnabled   off
@@ -5797,7 +5794,7 @@ Model {
 		    ZOrder		    740
 		    BackgroundColor	    "[0.537255, 0.721569, 1.000000]"
 		    ShowName		    off
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/holder\n"
 		    SourceType		    "Holder"
 		    ContentPreviewEnabled   off
@@ -6137,7 +6134,7 @@ Model {
 		  Ports			  [2, 1]
 		  Position		  [165, 22, 330, 53]
 		  ZOrder		  894
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		  SourceType		  "Forward Kinematics"
 		  ContentPreviewEnabled	  off
@@ -6209,7 +6206,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [575, 25, 740, 85]
 		    ZOrder		    729
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		    SourceType		    "Forward Kinematics"
 		    ContentPreviewEnabled   off
@@ -6222,7 +6219,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [575, 190, 740, 250]
 		    ZOrder		    737
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		    SourceType		    "Forward Kinematics"
 		    ContentPreviewEnabled   off
@@ -6276,7 +6273,7 @@ Model {
 		    Position		    [980, 308, 1055, 332]
 		    ZOrder		    742
 		    ForegroundColor	    "[0.490196, 0.000000, 0.000000]"
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/Yarp Read"
 		    SourceType		    "YARP Read"
 		    portName		    "Ports.NECK_POS"
@@ -6513,7 +6510,7 @@ Model {
 		    ZOrder		    739
 		    BackgroundColor	    "[0.537255, 0.721569, 1.000000]"
 		    ShowName		    off
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/holder\n"
 		    SourceType		    "Holder"
 		    ContentPreviewEnabled   off
@@ -6527,7 +6524,7 @@ Model {
 		    ZOrder		    740
 		    BackgroundColor	    "[0.537255, 0.721569, 1.000000]"
 		    ShowName		    off
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/holder\n"
 		    SourceType		    "Holder"
 		    ContentPreviewEnabled   off
@@ -6867,7 +6864,7 @@ Model {
 		  Ports			  [2, 1]
 		  Position		  [165, 107, 330, 138]
 		  ZOrder		  899
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		  SourceType		  "Forward Kinematics"
 		  ContentPreviewEnabled	  off
@@ -7011,7 +7008,7 @@ Model {
 	      Ports		      [2, 1]
 	      Position		      [2875, -141, 3040, -119]
 	      ZOrder		      40
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Jacobians/Jacobian"
 	      SourceType	      "Jacobian"
 	      ContentPreviewEnabled   off
@@ -7024,7 +7021,7 @@ Model {
 	      Ports		      [2, 1]
 	      Position		      [2875, -106, 3040, -84]
 	      ZOrder		      79
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyModel/Jacobians/Jacobian"
 	      SourceType	      "Jacobian"
 	      ContentPreviewEnabled   off
@@ -7353,7 +7350,7 @@ Model {
 	      Position		      [2255, -252, 2305, -238]
 	      ZOrder		      727
 	      ForegroundColor	      "[0.490196, 0.000000, 0.000000]"
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Read"
 	      SourceType	      "YARP Read"
 	      portName		      "Ports.IMU"
@@ -7729,7 +7726,7 @@ Model {
 	      Position		      [-360, -139, -270, -111]
 	      ZOrder		      869
 	      BackgroundColor	      "[0.925500, 0.870600, 0.133300]"
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/wholeBodyStates/Get Measurement"
 	      SourceType	      "Get Measurement"
 	      ContentPreviewEnabled   off
@@ -7927,7 +7924,7 @@ Model {
 	  ZOrder		  903
 	  ForegroundColor	  "[0.490196, 0.000000, 0.000000]"
 	  NamePlacement		  "alternate"
-	  LibraryVersion	  "1.625"
+	  LibraryVersion	  "1.649"
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Read"
 	  SourceType		  "YARP Read"
 	  portName		  "'/wholeBodyDynamics/left_foot/cartesianEndEffectorWrench:o'"
@@ -8851,7 +8848,7 @@ Model {
 	  Position		  [-26155, -4162, -26095, -4148]
 	  ZOrder		  904
 	  ForegroundColor	  "[0.490196, 0.000000, 0.000000]"
-	  LibraryVersion	  "1.625"
+	  LibraryVersion	  "1.649"
 	  SourceBlock		  "WBToolboxLibrary/Utilities/Yarp Read"
 	  SourceType		  "YARP Read"
 	  portName		  "'/wholeBodyDynamics/right_foot/cartesianEndEffectorWrench:o'"
@@ -9712,7 +9709,7 @@ Model {
 	  Position		  [-2055, 2536, -1980, 2564]
 	  ZOrder		  868
 	  BackgroundColor	  "[0.513700, 0.851000, 0.670600]"
-	  LibraryVersion	  "1.625"
+	  LibraryVersion	  "1.649"
 	  SourceBlock		  "WBToolboxLibrary/wholeBodyStates/Get Measurement"
 	  SourceType		  "Get Measurement"
 	  ContentPreviewEnabled	  off
@@ -9919,7 +9916,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [575, 25, 740, 85]
 		    ZOrder		    729
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		    SourceType		    "Forward Kinematics"
 		    ContentPreviewEnabled   off
@@ -9932,7 +9929,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [575, 190, 740, 250]
 		    ZOrder		    737
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		    SourceType		    "Forward Kinematics"
 		    ContentPreviewEnabled   off
@@ -9986,7 +9983,7 @@ Model {
 		    Position		    [980, 308, 1055, 332]
 		    ZOrder		    742
 		    ForegroundColor	    "[0.490196, 0.000000, 0.000000]"
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/Yarp Read"
 		    SourceType		    "YARP Read"
 		    portName		    "Ports.NECK_POS"
@@ -10223,7 +10220,7 @@ Model {
 		    ZOrder		    739
 		    BackgroundColor	    "[0.537255, 0.721569, 1.000000]"
 		    ShowName		    off
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/holder\n"
 		    SourceType		    "Holder"
 		    ContentPreviewEnabled   off
@@ -10237,7 +10234,7 @@ Model {
 		    ZOrder		    740
 		    BackgroundColor	    "[0.537255, 0.721569, 1.000000]"
 		    ShowName		    off
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/holder\n"
 		    SourceType		    "Holder"
 		    ContentPreviewEnabled   off
@@ -10578,7 +10575,7 @@ Model {
 		  Position		  [490, -73, 655, -42]
 		  ZOrder		  725
 		  NamePlacement		  "alternate"
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		  SourceType		  "Forward Kinematics"
 		  ContentPreviewEnabled	  off
@@ -10591,7 +10588,7 @@ Model {
 		  Ports			  [2, 1]
 		  Position		  [485, -33, 655, 3]
 		  ZOrder		  896
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		  SourceType		  "Forward Kinematics"
 		  ContentPreviewEnabled	  off
@@ -10978,7 +10975,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [745, 475, 905, 530]
 		    ZOrder		    687
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Jacobians/Jacobian"
 		    SourceType		    "Jacobian"
 		    ContentPreviewEnabled   off
@@ -10991,7 +10988,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [745, 565, 905, 620]
 		    ZOrder		    688
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Jacobians/Jacobian"
 		    SourceType		    "Jacobian"
 		    ContentPreviewEnabled   off
@@ -11072,7 +11069,7 @@ Model {
 		  Position		  [215, -99, 290, -71]
 		  ZOrder		  869
 		  BackgroundColor	  "[0.513700, 0.674500, 1.000000]"
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyStates/Get Measurement"
 		  SourceType		  "Get Measurement"
 		  ContentPreviewEnabled	  off
@@ -11244,7 +11241,7 @@ Model {
 	      Position		      [-560, 303, -510, 317]
 	      ZOrder		      679
 	      ForegroundColor	      "[0.490196, 0.000000, 0.000000]"
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Read"
 	      SourceType	      "YARP Read"
 	      portName		      "Ports.IMU"
@@ -11429,7 +11426,7 @@ Model {
 	      ZOrder		      577
 	      BackgroundColor	      "[0.537255, 0.721569, 1.000000]"
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/holder\n"
 	      SourceType	      "Holder"
 	      ContentPreviewEnabled   off
@@ -11443,7 +11440,7 @@ Model {
 	      ZOrder		      579
 	      BackgroundColor	      "[0.537255, 0.721569, 1.000000]"
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/holder\n"
 	      SourceType	      "Holder"
 	      ContentPreviewEnabled   off
@@ -11507,7 +11504,7 @@ Model {
 		  Ports			  [2, 1]
 		  Position		  [110, 230, 275, 290]
 		  ZOrder		  578
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		  SourceType		  "Forward Kinematics"
 		  ContentPreviewEnabled	  off
@@ -12025,7 +12022,7 @@ Model {
 	      Position		      [605, 115, 745, 155]
 	      ZOrder		      598
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Minimum Jerk Trajectory Generator"
 	      SourceType	      "Minimum Jerk Trajectory Generator"
 	      externalSettlingTime    on
@@ -12044,7 +12041,7 @@ Model {
 	      Position		      [605, 40, 745, 80]
 	      ZOrder		      597
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Minimum Jerk Trajectory Generator"
 	      SourceType	      "Minimum Jerk Trajectory Generator"
 	      externalSettlingTime    on
@@ -12182,7 +12179,7 @@ Model {
 		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 		TiledPageScale		1
 		ShowPageBoundaries	off
-		ZoomFactor		"149"
+		ZoomFactor		"150"
 		Block {
 		  BlockType		  Inport
 		  Name			  "smoothingTimeComAndJoints"
@@ -12279,16 +12276,15 @@ Model {
 		  }
 		}
 		Block {
-		  BlockType		  Reference
-		  Name			  "DoFs converter"
-		  SID			  "4112"
+		  BlockType		  Demux
+		  Name			  "Demux1"
+		  SID			  "4644"
 		  Ports			  [1, 5]
-		  Position		  [500, 244, 595, 346]
-		  ZOrder		  659
-		  LibraryVersion	  "1.625"
-		  SourceBlock		  "WBToolboxLibrary/Utilities/DoFs converter"
-		  SourceType		  "DoFs converter"
-		  yarp2WBIOption	  "From YARP to WBI"
+		  Position		  [585, 516, 590, 614]
+		  ZOrder		  879
+		  ShowName		  off
+		  Outputs		  "Config.numOfJointsForEachControlboard"
+		  DisplayOption		  "bar"
 		  Port {
 		    PortNumber		    1
 		    Name		    "torso"
@@ -12321,16 +12317,15 @@ Model {
 		  }
 		}
 		Block {
-		  BlockType		  Reference
-		  Name			  "DoFs converter1"
-		  SID			  "4113"
+		  BlockType		  Demux
+		  Name			  "Demux2"
+		  SID			  "4645"
 		  Ports			  [1, 5]
-		  Position		  [500, 514, 595, 616]
-		  ZOrder		  660
-		  LibraryVersion	  "1.625"
-		  SourceBlock		  "WBToolboxLibrary/Utilities/DoFs converter"
-		  SourceType		  "DoFs converter"
-		  yarp2WBIOption	  "From YARP to WBI"
+		  Position		  [585, 246, 590, 344]
+		  ZOrder		  880
+		  ShowName		  off
+		  Outputs		  "Config.numOfJointsForEachControlboard"
+		  DisplayOption		  "bar"
 		  Port {
 		    PortNumber		    1
 		    Name		    "torso"
@@ -12788,10 +12783,10 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  9
+		  ZOrder		  115
 		  SrcBlock		  "impedances"
 		  SrcPort		  1
-		  DstBlock		  "DoFs converter"
+		  DstBlock		  "Demux2"
 		  DstPort		  1
 		}
 		Line {
@@ -12805,45 +12800,45 @@ Model {
 		}
 		Line {
 		  Name			  "left_leg"
-		  ZOrder		  83
+		  ZOrder		  113
 		  Labels		  [-1, 0]
-		  SrcBlock		  "DoFs converter"
+		  SrcBlock		  "Demux2"
 		  SrcPort		  4
 		  DstBlock		  "Impedances(t)"
 		  DstPort		  4
 		}
 		Line {
 		  Name			  "right_leg"
-		  ZOrder		  86
+		  ZOrder		  110
 		  Labels		  [-1, 0]
-		  SrcBlock		  "DoFs converter"
+		  SrcBlock		  "Demux2"
 		  SrcPort		  5
 		  DstBlock		  "Impedances(t)"
 		  DstPort		  5
 		}
 		Line {
 		  Name			  "right_arm"
-		  ZOrder		  85
+		  ZOrder		  111
 		  Labels		  [-1, 0]
-		  SrcBlock		  "DoFs converter"
+		  SrcBlock		  "Demux2"
 		  SrcPort		  3
 		  DstBlock		  "Impedances(t)"
 		  DstPort		  3
 		}
 		Line {
 		  Name			  "torso"
-		  ZOrder		  14
+		  ZOrder		  112
 		  Labels		  [-1, 0]
-		  SrcBlock		  "DoFs converter"
+		  SrcBlock		  "Demux2"
 		  SrcPort		  1
 		  DstBlock		  "Impedances(t)"
 		  DstPort		  1
 		}
 		Line {
 		  Name			  "left_arm"
-		  ZOrder		  84
+		  ZOrder		  114
 		  Labels		  [-1, 0]
-		  SrcBlock		  "DoFs converter"
+		  SrcBlock		  "Demux2"
 		  SrcPort		  2
 		  DstBlock		  "Impedances(t)"
 		  DstPort		  2
@@ -12857,36 +12852,36 @@ Model {
 		}
 		Line {
 		  Name			  "left_leg"
-		  ZOrder		  89
+		  ZOrder		  107
 		  Labels		  [-1, 0]
-		  SrcBlock		  "DoFs converter1"
+		  SrcBlock		  "Demux1"
 		  SrcPort		  4
 		  DstBlock		  "qjDot(t) "
 		  DstPort		  4
 		}
 		Line {
 		  Name			  "right_arm"
-		  ZOrder		  88
+		  ZOrder		  108
 		  Labels		  [-1, 0]
-		  SrcBlock		  "DoFs converter1"
+		  SrcBlock		  "Demux1"
 		  SrcPort		  3
 		  DstBlock		  "qjDot(t) "
 		  DstPort		  3
 		}
 		Line {
 		  Name			  "torso"
-		  ZOrder		  20
+		  ZOrder		  105
 		  Labels		  [-1, 0]
-		  SrcBlock		  "DoFs converter1"
+		  SrcBlock		  "Demux1"
 		  SrcPort		  1
 		  DstBlock		  "qjDot(t) "
 		  DstPort		  1
 		}
 		Line {
 		  Name			  "left_arm"
-		  ZOrder		  87
+		  ZOrder		  106
 		  Labels		  [-1, 0]
-		  SrcBlock		  "DoFs converter1"
+		  SrcBlock		  "Demux1"
 		  SrcPort		  2
 		  DstBlock		  "qjDot(t) "
 		  DstPort		  2
@@ -12934,10 +12929,10 @@ Model {
 		  DstPort		  1
 		}
 		Line {
-		  ZOrder		  28
+		  ZOrder		  109
 		  SrcBlock		  "Gain"
 		  SrcPort		  1
-		  DstBlock		  "DoFs converter1"
+		  DstBlock		  "Demux1"
 		  DstPort		  1
 		}
 		Line {
@@ -12949,9 +12944,9 @@ Model {
 		}
 		Line {
 		  Name			  "right_leg"
-		  ZOrder		  90
+		  ZOrder		  104
 		  Labels		  [-1, 0]
-		  SrcBlock		  "DoFs converter1"
+		  SrcBlock		  "Demux1"
 		  SrcPort		  5
 		  DstBlock		  "qjDot(t) "
 		  DstPort		  5
@@ -13672,7 +13667,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [745, 475, 905, 530]
 		    ZOrder		    687
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Jacobians/Jacobian"
 		    SourceType		    "Jacobian"
 		    ContentPreviewEnabled   off
@@ -13685,7 +13680,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [745, 565, 905, 620]
 		    ZOrder		    688
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Jacobians/Jacobian"
 		    SourceType		    "Jacobian"
 		    ContentPreviewEnabled   off
@@ -13766,7 +13761,7 @@ Model {
 		  Position		  [215, -99, 290, -71]
 		  ZOrder		  869
 		  BackgroundColor	  "[0.513700, 0.674500, 1.000000]"
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyStates/Get Measurement"
 		  SourceType		  "Get Measurement"
 		  ContentPreviewEnabled	  off
@@ -13975,7 +13970,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [575, 25, 740, 85]
 		    ZOrder		    729
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		    SourceType		    "Forward Kinematics"
 		    ContentPreviewEnabled   off
@@ -13988,7 +13983,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [575, 190, 740, 250]
 		    ZOrder		    737
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		    SourceType		    "Forward Kinematics"
 		    ContentPreviewEnabled   off
@@ -14042,7 +14037,7 @@ Model {
 		    Position		    [980, 308, 1055, 332]
 		    ZOrder		    742
 		    ForegroundColor	    "[0.490196, 0.000000, 0.000000]"
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/Yarp Read"
 		    SourceType		    "YARP Read"
 		    portName		    "Ports.NECK_POS"
@@ -14279,7 +14274,7 @@ Model {
 		    ZOrder		    739
 		    BackgroundColor	    "[0.537255, 0.721569, 1.000000]"
 		    ShowName		    off
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/holder\n"
 		    SourceType		    "Holder"
 		    ContentPreviewEnabled   off
@@ -14293,7 +14288,7 @@ Model {
 		    ZOrder		    740
 		    BackgroundColor	    "[0.537255, 0.721569, 1.000000]"
 		    ShowName		    off
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/holder\n"
 		    SourceType		    "Holder"
 		    ContentPreviewEnabled   off
@@ -14633,7 +14628,7 @@ Model {
 		  Ports			  [2, 1]
 		  Position		  [165, 22, 330, 53]
 		  ZOrder		  894
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		  SourceType		  "Forward Kinematics"
 		  ContentPreviewEnabled	  off
@@ -14705,7 +14700,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [575, 25, 740, 85]
 		    ZOrder		    729
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		    SourceType		    "Forward Kinematics"
 		    ContentPreviewEnabled   off
@@ -14718,7 +14713,7 @@ Model {
 		    Ports		    [2, 1]
 		    Position		    [575, 190, 740, 250]
 		    ZOrder		    737
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		    SourceType		    "Forward Kinematics"
 		    ContentPreviewEnabled   off
@@ -14772,7 +14767,7 @@ Model {
 		    Position		    [980, 308, 1055, 332]
 		    ZOrder		    742
 		    ForegroundColor	    "[0.490196, 0.000000, 0.000000]"
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/Yarp Read"
 		    SourceType		    "YARP Read"
 		    portName		    "Ports.NECK_POS"
@@ -15009,7 +15004,7 @@ Model {
 		    ZOrder		    739
 		    BackgroundColor	    "[0.537255, 0.721569, 1.000000]"
 		    ShowName		    off
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/holder\n"
 		    SourceType		    "Holder"
 		    ContentPreviewEnabled   off
@@ -15023,7 +15018,7 @@ Model {
 		    ZOrder		    740
 		    BackgroundColor	    "[0.537255, 0.721569, 1.000000]"
 		    ShowName		    off
-		    LibraryVersion	    "1.625"
+		    LibraryVersion	    "1.649"
 		    SourceBlock		    "WBToolboxLibrary/Utilities/holder\n"
 		    SourceType		    "Holder"
 		    ContentPreviewEnabled   off
@@ -15363,7 +15358,7 @@ Model {
 		  Ports			  [2, 1]
 		  Position		  [165, 107, 330, 138]
 		  ZOrder		  899
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		  SourceType		  "Forward Kinematics"
 		  ContentPreviewEnabled	  off
@@ -15540,7 +15535,7 @@ Model {
 	      Position		      [3005, 465, 3105, 485]
 	      ZOrder		      594
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Minimum Jerk Trajectory Generator"
 	      SourceType	      "Minimum Jerk Trajectory Generator"
 	      externalSettlingTime    off
@@ -15879,7 +15874,7 @@ Model {
 	      ZOrder		      583
 	      BackgroundColor	      "[0.537255, 0.721569, 1.000000]"
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/holder\n"
 	      SourceType	      "Holder"
 	      ContentPreviewEnabled   off
@@ -15893,7 +15888,7 @@ Model {
 	      ZOrder		      584
 	      BackgroundColor	      "[0.537255, 0.721569, 1.000000]"
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/holder\n"
 	      SourceType	      "Holder"
 	      ContentPreviewEnabled   off
@@ -15906,7 +15901,7 @@ Model {
 	      Position		      [1975, 583, 2025, 597]
 	      ZOrder		      654
 	      ForegroundColor	      "[0.490196, 0.000000, 0.000000]"
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Read"
 	      SourceType	      "YARP Read"
 	      portName		      "Ports.IMU"
@@ -15926,7 +15921,7 @@ Model {
 	      ZOrder		      598
 	      ForegroundColor	      "[0.490196, 0.000000, 0.000000]"
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Read"
 	      SourceType	      "YARP Read"
 	      portName		      "'/wholeBodyDynamics/left_foot/cartesianEndEffectorWrench:o'"
@@ -15952,7 +15947,7 @@ Model {
 	      ZOrder		      599
 	      ForegroundColor	      "[0.490196, 0.000000, 0.000000]"
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Yarp Read"
 	      SourceType	      "YARP Read"
 	      portName		      "'/wholeBodyDynamics/right_foot/cartesianEndEffectorWrench:o'"
@@ -16504,7 +16499,7 @@ Model {
 		  Ports			  [2, 1]
 		  Position		  [110, 230, 275, 290]
 		  ZOrder		  578
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		  SourceType		  "Forward Kinematics"
 		  ContentPreviewEnabled	  off
@@ -16612,7 +16607,7 @@ Model {
 		  Ports			  [2, 1]
 		  Position		  [110, 230, 275, 290]
 		  ZOrder		  578
-		  LibraryVersion	  "1.625"
+		  LibraryVersion	  "1.649"
 		  SourceBlock		  "WBToolboxLibrary/wholeBodyModel/Kinematics/Forward Kinematics"
 		  SourceType		  "Forward Kinematics"
 		  ContentPreviewEnabled	  off
@@ -17671,12 +17666,13 @@ Model {
       ZOrder		      549
       BackgroundColor	      "[0.827500, 0.576500, 0.603900]"
       ShowName		      off
-      LibraryVersion	      "1.625"
+      LibraryVersion	      "1.649"
       SourceBlock	      "WBToolboxLibrary/wholeBodyActuators/Set References"
       SourceType	      "Set References"
       ContentPreviewEnabled   off
       controlType	      "Torque"
       refSpeed		      "50"
+      refAcceleration	      "1000000*(pi/180)"
     }
     Block {
       BlockType		      SubSystem
@@ -17693,7 +17689,7 @@ Model {
       System {
 	Name			"emergency stop: joint limits"
 	Location		[65, 24, 1920, 1080]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -17737,7 +17733,7 @@ Model {
 	  ZOrder		  551
 	  BackgroundColor	  "[0.513700, 0.851000, 0.670600]"
 	  ShowName		  off
-	  LibraryVersion	  "1.625"
+	  LibraryVersion	  "1.649"
 	  SourceBlock		  "WBToolboxLibrary/wholeBodyStates/Get Limits"
 	  SourceType		  "Get Limits"
 	  ContentPreviewEnabled	  off
@@ -17968,7 +17964,7 @@ Model {
       Variant		      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		27
+	$ObjectID		28
 	$ClassName		"Simulink.Mask"
 	Display			"disp('SYNCHRONIZER')"
       }
@@ -18028,7 +18024,7 @@ Model {
 	      ZOrder		      539
 	      ForegroundColor	      "[0.490196, 0.000000, 0.000000]"
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Simulator Synchronizer"
 	      SourceType	      "Simulator Synchronizer"
 	      period		      "Config.Ts"
@@ -18104,7 +18100,7 @@ Model {
 	      ForegroundColor	      "[0.916667, 0.916667, 0.916667]"
 	      BackgroundColor	      "gray"
 	      ShowName		      off
-	      LibraryVersion	      "1.625"
+	      LibraryVersion	      "1.649"
 	      SourceBlock	      "WBToolboxLibrary/Utilities/Real Time Synchronizer"
 	      SourceType	      "Real Time Synchronizer"
 	      period		      "Config.Ts"
