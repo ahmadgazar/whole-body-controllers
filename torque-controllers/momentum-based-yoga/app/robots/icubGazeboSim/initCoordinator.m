@@ -5,7 +5,7 @@
 %% --- Initialization ---
 
 % Feet in contact (COORDINATOR DEMO ONLY)
-Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 0];
+Config.LEFT_RIGHT_FOOT_IN_CONTACT = [1 1];
 Sm.CoM_desired_z       = [0.5553; 0.5708; 0.5857; 0.5909; 0.6039; 0.6054; 0.6267; 0.6437];          
 
 %initial conditions of xi_dot 
@@ -48,7 +48,7 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
 %     Gain.k_t                = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
     Gain.KP_COM               = diag([30  30  30]);   % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
     Gain.KD_COM               = diag([15  15  15]);   % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
-    Gain.KI_COM               = diag([10  10  10]);   % Ki(x_CoMDesired - x_CoM)
+    Gain.KI_COM               = diag([10  10  40]);   % Ki(x_CoMDesired - x_CoM)
     Gain.KP_AngularMomentum   = diag([30   30    30]);
     Gain.KD_AngularMomentum   = diag([15   15    15]);
     Gain.KI_AngularMomentum   = 100;
@@ -56,7 +56,7 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 2
     Gain.k_t = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5])/2;
 
     % Impedances acting in the null space of the desired contact forces 
-    impTorso            = [50   30   30]; 
+    impTorso            = [30   30   30]; 
 
     impArms             = [15   15   15    15];
 
@@ -69,8 +69,8 @@ end
 if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     
     Gain.KP_COM               = diag([30  30  30]);   % Kp(x_dot_CoMDesired -x_dotCoM), increasing this too much is not good since x_dotCoM is computed as x_dotCoM = Jc*nu, where nu is not accurately estimated 
-    Gain.KD_COM               = diag([15  15  10]);   % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
-    Gain.KI_COM               = diag([10  10  10]);   % Ki(x_CoMDesired - x_CoM)
+    Gain.KD_COM               = diag([15  15  15]);   % Kd(x_ddot_CoMDesired - x_ddot_CoM), start with zero first
+    Gain.KI_COM               = diag([10  10  50]);   % Ki(x_CoMDesired - x_CoM)
     Gain.KP_AngularMomentum   = diag([30   30    30]);
     Gain.KD_AngularMomentum   = diag([15   15    15]);
     Gain.KI_AngularMomentum   = 100;
@@ -78,7 +78,7 @@ if sum(Config.LEFT_RIGHT_FOOT_IN_CONTACT) == 1
     Gain.k_t = diag([5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5]);
 
     % Impedances acting in the null space of the desired contact forces    
-    impTorso            = [30   30   30];
+    impTorso            = [50   50   50];
     
     impArms             = [15   15   15    8];
                         

@@ -62,11 +62,6 @@ xCoM_ddot       = H_dot(1:3,:)/m;
 w_dot           = H_dot(4:6,:);
 
 %% Desired momentum acceleration dynamics 
-if abs((xCoM - desired_x_dx_ddx_CoM(:,1))) < 0.001
-    %gainsPCOM(3) = 0;
-    %gainsICOM(3) = 0;
-    %gainsDCOM(3) = 0;
-end
 
 xCoM_Jerk_Star_linear  = -gainsPCOM.*(xCoM_dot - desired_x_dx_ddx_CoM(:,2)) ...
                          -gainsICOM.*(xCoM - desired_x_dx_ddx_CoM(:,1))     ...

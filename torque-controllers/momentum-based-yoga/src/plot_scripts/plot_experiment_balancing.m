@@ -44,15 +44,15 @@ com_error_y    =  com_measured_y - com_desired_y;
 com_error_z    =  com_measured_z - com_desired_z;
 
 % state
-state          =  comData.signals(4).values(:);
+state          =  comData.signals(4).values;
 
 figure('rend','painters','pos',[10 10 600 520]);
 ax1            = subplot(4,1,1); % CoM desired subplot
-plot(time, com_desired_x,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), com_desired_x(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, com_desired_y, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), com_desired_y(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, com_desired_z,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), com_desired_z(1:4501),'Color', C(3,:), 'linewidth',2)
 
 title('CoM Desired Trajectory',...
 'FontUnits','points',...
@@ -77,11 +77,11 @@ ylabel('[m]',...
 grid on
 
 ax2            = subplot(4,1,2); %CoM measured subplot
-plot(time, com_measured_x,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), com_measured_x(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, com_measured_y, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), com_measured_y(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, com_measured_z,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), com_measured_z(1:4501),'Color', C(3,:), 'linewidth',2)
 
 grid on
 
@@ -106,11 +106,11 @@ ylabel('[m]',...
 
 
 ax3            = subplot(4,1,3); %CoM error subplot
-plot(time, com_error_x,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), com_error_x(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, com_error_y, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), com_error_y(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, com_error_z,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), com_error_z(1:4501),'Color', C(3,:), 'linewidth',2)
 
 title('CoM Error',...
 'FontUnits','points',...
@@ -139,17 +139,17 @@ N = 6;
 C = linspecer(N);
 
 % desired left foot wrenches
-left_F_x            = FORCES.signals(5).values(:,1);
+left_F_x            = FORCES.signals(2).values(:,1);
 
-left_F_y            = FORCES.signals(5).values(:,2);
+left_F_y            = FORCES.signals(2).values(:,2);
 
-left_F_z            = FORCES.signals(5).values(:,3);
+left_F_z            = FORCES.signals(2).values(:,3);
 
-left_M_x            = FORCES.signals(5).values(:,4);
+left_M_x            = FORCES.signals(2).values(:,4);
 
-left_M_y            = FORCES.signals(5).values(:,5);
+left_M_y            = FORCES.signals(2).values(:,5);
 
-left_M_z            = FORCES.signals(5).values(:,6);
+left_M_z            = FORCES.signals(2).values(:,6);
 
 % estimated left foot wrenches
 left_F_x_estimated  = FORCES.signals(1).values(:,1);
@@ -179,60 +179,60 @@ left_M_z_error      = FORCES.signals(3).values(:,6);
 
 
 % desired right foot wrenches
-right_F_x           = FORCES.signals(6).values(:,1);
+right_F_x           = FORCES.signals(5).values(:,1);
 
-right_F_y           = FORCES.signals(6).values(:,2);
+right_F_y           = FORCES.signals(5).values(:,2);
 
-right_F_z           = FORCES.signals(6).values(:,3);
+right_F_z           = FORCES.signals(5).values(:,3);
 
-right_M_x           = FORCES.signals(6).values(:,4);
+right_M_x           = FORCES.signals(5).values(:,4);
 
-right_M_y           = FORCES.signals(6).values(:,5);
+right_M_y           = FORCES.signals(5).values(:,5);
 
 right_M_z           = FORCES.signals(5).values(:,6);
 
 % estimated right foot wrenches
-right_F_x_estimated = FORCES.signals(2).values(:,1);
+right_F_x_estimated = FORCES.signals(4).values(:,1);
 
-right_F_y_estimated = FORCES.signals(2).values(:,2);
+right_F_y_estimated = FORCES.signals(4).values(:,2);
 
-right_F_z_estimated = FORCES.signals(2).values(:,3);
+right_F_z_estimated = FORCES.signals(4).values(:,3);
 
-right_M_x_estimated = FORCES.signals(2).values(:,4);
+right_M_x_estimated = FORCES.signals(4).values(:,4);
 
-right_M_y_estimated = FORCES.signals(2).values(:,5);
+right_M_y_estimated = FORCES.signals(4).values(:,5);
 
-right_M_z_estimated = FORCES.signals(2).values(:,6);
+right_M_z_estimated = FORCES.signals(4).values(:,6);
 
 % Error between estimated and esired right contact wrenches
-right_F_x_error     = FORCES.signals(4).values(:,1);
+right_F_x_error     = FORCES.signals(6).values(:,1);
 
-right_F_y_error     = FORCES.signals(4).values(:,2);
+right_F_y_error     = FORCES.signals(6).values(:,2);
 
-right_F_z_error     = FORCES.signals(4).values(:,3);
+right_F_z_error     = FORCES.signals(6).values(:,3);
 
-right_M_x_error     = FORCES.signals(4).values(:,4);
+right_M_x_error     = FORCES.signals(6).values(:,4);
 
-right_M_y_error     = FORCES.signals(4).values(:,5);
+right_M_y_error     = FORCES.signals(6).values(:,5);
 
-right_M_z_error     = FORCES.signals(4).values(:,6);
+right_M_z_error     = FORCES.signals(6).values(:,6);
 
 % state
 state               = comData.signals(4).values(:);
 
 figure('rend','painters','pos',[10 10 600 520]);
 ax1                 = subplot(4,1,1); % left desired wrenches subplot
-plot(time, left_F_x,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), left_F_x(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, left_F_y, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), left_F_y(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, left_F_z,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), left_F_z(1:4501),'Color', C(3,:), 'linewidth',2)
 hold on
-plot(time, left_M_x,'Color', C(4,:), 'linewidth',2)
+plot(time(1:4501), left_M_x(1:4501),'Color', C(4,:), 'linewidth',2)
 hold on
-plot(time, left_M_y, 'Color',C(5,:), 'linewidth',2)
+plot(time(1:4501), left_M_y(1:4501), 'Color',C(5,:), 'linewidth',2)
 hold on
-plot(time, left_M_z,'Color', C(6,:), 'linewidth',2)
+plot(time(1:4501), left_M_z(1:4501),'Color', C(6,:), 'linewidth',2)
 legend('F_x','F_y','F_z', 'M_x', 'M_y', 'M_z')
 
 grid on
@@ -256,17 +256,17 @@ ylabel('[N/N.m]',...
 'FontName','Times')
 
 ax2                 = subplot(4,1,2); % left estimated wrenches subplot
-plot(time, left_F_x_estimated,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), left_F_x_estimated(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, left_F_y_estimated, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), left_F_y_estimated(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, left_F_z_estimated,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), left_F_z_estimated(1:4501),'Color', C(3,:), 'linewidth',2)
 hold on
-plot(time, left_M_x_estimated,'Color', C(4,:), 'linewidth',2)
+plot(time(1:4501), left_M_x_estimated(1:4501),'Color', C(4,:), 'linewidth',2)
 hold on
-plot(time, left_M_y_estimated, 'Color',C(5,:), 'linewidth',2)
+plot(time(1:4501), left_M_y_estimated(1:4501), 'Color',C(5,:), 'linewidth',2)
 hold on
-plot(time, left_M_z_estimated,'Color', C(6,:), 'linewidth',2)
+plot(time(1:4501), left_M_z_estimated(1:4501),'Color', C(6,:), 'linewidth',2)
 grid on
 
 title('Estimated contact wrenches left foot',...
@@ -290,23 +290,24 @@ ylabel('[N/N.m]',...
 'FontName','Times')
 
 ax3                 = subplot(4,1,3); % left wrenches error subplot
-plot(time, left_F_x_error,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), left_F_x_error(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, left_F_y_error, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), left_F_y_error(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, left_F_z_error,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), left_F_z_error(1:4501),'Color', C(3,:), 'linewidth',2)
 hold on
-plot(time, left_M_x_error,'Color', C(4,:), 'linewidth',2)
+plot(time(1:4501), left_M_x_error(1:4501),'Color', C(4,:), 'linewidth',2)
 hold on
-plot(time, left_M_y_error, 'Color',C(5,:), 'linewidth',2)
+plot(time(1:4501), left_M_y_error(1:4501), 'Color',C(5,:), 'linewidth',2)
 hold on
-plot(time, left_M_z_error,'Color', C(6,:), 'linewidth',2)
+plot(time(1:4501), left_M_z_error(1:4501),'Color', C(6,:), 'linewidth',2)
 
 title('Contact wrench errors left foot',...
 'FontUnits','points',...
 'FontWeight','normal',...
 'FontSize',10,...
 'FontName','Times')
+
 
 legend({'$F_x$', '$F_y$', '$F_z$', '$M_x$', '$M_y$', '$M_z$'}, ...
 'Location','EastOutside', ...    
@@ -320,31 +321,51 @@ ylabel('[N/N.m]',...
 'FontWeight','normal',...
 'FontSize',10,...
 'FontName','Times')
-
-
-xlabel('Time [s]',...
-'FontUnits','points',...
-'FontWeight','normal',...
-'FontSize',10,...
-'FontName','Times')
-
 grid on
+
+% ax4                 = subplot(4,1,4); %state subplot
+% plot(time, state, 'linewidth',2)
+% title('State',...
+% 'FontUnits','points',...
+% 'FontWeight','normal',...
+% 'FontSize',10,...
+% 'FontName','Times')
+% 
+% legend({'state'}, ...
+% 'Location','EastOutside', ...    
+% 'FontUnits','points',...
+% 'FontSize',10,...
+% 'FontName','Times')
+% 
+% xlabel('Time [s]',...
+% 'FontUnits','points',...
+% 'FontWeight','normal',...
+% 'FontSize',10,...
+% 'FontName','Times')
+% 
+% ylabel('State',...
+% 'FontUnits','points',...
+% 'FontWeight','normal',...
+% 'FontSize',10,...
+% 'FontName','Times')
+% grid on
+
 print -depsc2 Contact_wrenches_left.eps
 
 
 figure('rend','painters','pos',[10 10 600 520]);
 ax1                 = subplot(4,1,1); % right desired wrenches subplot
-plot(time, right_F_x,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), right_F_x(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, right_F_y, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), right_F_y(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, right_F_z,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), right_F_z(1:4501),'Color', C(3,:), 'linewidth',2)
 hold on
-plot(time, right_M_x,'Color', C(4,:), 'linewidth',2)
+plot(time(1:4501), right_M_x(1:4501),'Color', C(4,:), 'linewidth',2)
 hold on
-plot(time, right_M_y, 'Color',C(5,:), 'linewidth',2)
+plot(time(1:4501), right_M_y(1:4501), 'Color',C(5,:), 'linewidth',2)
 hold on
-plot(time, right_M_z,'Color', C(6,:), 'linewidth',2)
+plot(time(1:4501), right_M_z(1:4501),'Color', C(6,:), 'linewidth',2)
 legend('F_x','F_y','F_z', 'M_x', 'M_y', 'M_z')
 
 grid on
@@ -368,17 +389,17 @@ ylabel('[N/N.m]',...
 'FontName','Times')
 
 ax2                 = subplot(4,1,2); % right estimated wrenches subplot
-plot(time, right_F_x_estimated,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), right_F_x_estimated(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, right_F_y_estimated, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), right_F_y_estimated(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, right_F_z_estimated,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), right_F_z_estimated(1:4501),'Color', C(3,:), 'linewidth',2)
 hold on
-plot(time, right_M_x_estimated,'Color', C(4,:), 'linewidth',2)
+plot(time(1:4501), right_M_x_estimated(1:4501),'Color', C(4,:), 'linewidth',2)
 hold on
-plot(time, right_M_y_estimated, 'Color',C(5,:), 'linewidth',2)
+plot(time(1:4501), right_M_y_estimated(1:4501), 'Color',C(5,:), 'linewidth',2)
 hold on
-plot(time, right_M_z_estimated,'Color', C(6,:), 'linewidth',2)
+plot(time(1:4501), right_M_z_estimated(1:4501),'Color', C(6,:), 'linewidth',2)
 grid on
 
 title('Estimated contact wrenches right foot',...
@@ -403,18 +424,17 @@ ylabel('[N/N.m]',...
 grid on
 
 ax3                 = subplot(4,1,3); % right wrenches error subplot
-plot(time, right_F_x_error, time, right_F_y_error, time, right_F_z_error, time, right_M_x_error, time, right_M_y_error, time, right_M_z_error)
-plot(time, right_F_x_error,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), right_F_x_error(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, right_F_y_error, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), right_F_y_error(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, right_F_z_error,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), right_F_z_error(1:4501),'Color', C(3,:), 'linewidth',2)
 hold on
-plot(time, right_M_x_error,'Color', C(4,:), 'linewidth',2)
+plot(time(1:4501), right_M_x_error(1:4501),'Color', C(4,:), 'linewidth',2)
 hold on
-plot(time, right_M_y_error, 'Color',C(5,:), 'linewidth',2)
+plot(time(1:4501), right_M_y_error(1:4501), 'Color',C(5,:), 'linewidth',2)
 hold on
-plot(time, right_M_z_error,'Color', C(6,:), 'linewidth',2)
+plot(time(1:4501), right_M_z_error(1:4501),'Color', C(6,:), 'linewidth',2)
 title('Contact wrench errors right foot',...
 'FontUnits','points',...
 'FontWeight','normal',...
@@ -436,77 +456,108 @@ ylabel('[N/N.m]',...
 'FontSize',10,...
 'FontName','Times')
 
-xlabel('Time [s]',...
+% ax4                 = subplot(4,1,4); %state subplot
+% plot(time, state, 'linewidth',2)
+% title('State',...
+% 'FontUnits','points',...
+% 'FontWeight','normal',...
+% 'FontSize',10,...
+% 'FontName','Times')
+% 
+% legend({'state'}, ...
+% 'Location','EastOutside', ...    
+% 'FontUnits','points',...
+% 'FontSize',10,...
+% 'FontName','Times')
+% 
+% xlabel('Time [s]',...
+% 'FontUnits','points',...
+% 'FontWeight','normal',...
+% 'FontSize',10,...
+% 'FontName','Times')
+% 
+% ylabel('State',...
+% 'FontUnits','points',...
+% 'FontWeight','normal',...
+% 'FontSize',10,...
+% 'FontName','Times')
+% grid on
+
+print -depsc2 Contact_wrenches_right.eps
+
+%% plot linear and angular momentum errors
+time                    = error_H_linear.time;
+
+% linear momentum error
+linear_momentum_error_x = error_H_linear.signals(1).values(:,1);
+linear_momentum_error_y = error_H_linear.signals(1).values(:,2);
+linear_momentum_error_z = error_H_linear.signals(1).values(:,3);
+
+% angular momentum error
+angular_momentum_error_x = error_H_angular.signals(1).values(:,1);
+angular_momentum_error_y = error_H_angular.signals(1).values(:,2);
+angular_momentum_error_z = error_H_angular.signals(1).values(:,3);
+
+figure('rend','painters','pos',[10 10 600 520]);
+ax1 = subplot(2,1,1); % linear momentum errors subplot
+
+
+plot(time(1:4501), linear_momentum_error_x(1:4501), 'Color', C(1,:), 'linewidth',2)
+hold on
+plot(time(1:4501), linear_momentum_error_y(1:4501), 'Color', C(2,:), 'linewidth',2)
+hold on
+plot(time(1:4501), linear_momentum_error_z(1:4501), 'Color', C(3,:), 'linewidth',2)
+grid on
+
+title('Linear Momentum Error',...
 'FontUnits','points',...
 'FontWeight','normal',...
 'FontSize',10,...
 'FontName','Times')
 
-print -depsc2 Contact_wrenches_right.eps
+legend({'$x$', '$y$', '$z$'}, ...
+'Location','EastOutside', ...    
+'FontUnits','points',...
+'interpreter','latex',...
+'FontSize',10,...
+'FontName','Times')
 
+ylabel('[kg.m/s]',...
+'FontUnits','points',...
+'FontWeight','normal',...
+'FontSize',10,...
+'FontName','Times')
 
-%% plot linear and angular momentum errors
-% time                    = error_H_linear.time;
-% 
-% % linear momentum error
-% linear_momentum_error_x = error_H_linear.signals(1).values(:,1);
-% linear_momentum_error_y = error_H_linear.signals(1).values(:,2);
-% linear_momentum_error_z = error_H_linear.signals(1).values(:,3);
-% 
-% % angular momentum error
-% angular_momentum_error_x = error_H_angular.signals(1).values(:,1);
-% angular_momentum_error_y = error_H_angular.signals(1).values(:,2);
-% angular_momentum_error_z = error_H_angular.signals(1).values(:,3);
-% 
-% figure('rend','painters','pos',[10 10 600 520]);
-% ax1 = subplot(2,1,1); % linear momentum errors subplot
-% plot(time, linear_momentum_error_x, time, linear_momentum_error_y, time, linear_momentum_error_z)
-% grid on
-% 
-% title('Linear Momentum Error',...
-% 'FontUnits','points',...
-% 'FontWeight','normal',...
-% 'FontSize',10,...
-% 'FontName','Times')
-% 
-% legend({'$x$', '$y$', '$z$'}, ...
-% 'Location','EastOutside', ...    
-% 'FontUnits','points',...
-% 'interpreter','latex',...
-% 'FontSize',10,...
-% 'FontName','Times')
-% 
-% ylabel('[kg.m/s]',...
-% 'FontUnits','points',...
-% 'FontWeight','normal',...
-% 'FontSize',10,...
-% 'FontName','Times')
-% 
-% ax2 = subplot(2,1,2); % angular momentum errors subplot
-% plot(time, angular_momentum_error_x, time, angular_momentum_error_y, time, angular_momentum_error_z)
-% grid on
-% title(ax2,'angular momentum error')
-% legend('$x$','$y$','$z$')
-% title('Angular Momentum Error',...
-% 'FontUnits','points',...
-% 'FontWeight','normal',...
-% 'FontSize',10,...
-% 'FontName','Times')
-% 
-% legend({'$\alpha$', '$\beta$', '$\gamma$'}, ...
-% 'Location','EastOutside', ...    
-% 'FontUnits','points',...
-% 'interpreter','latex',...
-% 'FontSize',10,...
-% 'FontName','Times')
-% 
-% ylabel('[kg.m^2/s]',...
-% 'FontUnits','points',...
-% 'FontWeight','normal',...
-% 'FontSize',10,...
-% 'FontName','Times')
-% 
-% print -depsc2 momentum_error.eps
+ax2 = subplot(2,1,2); % angular momentum errors subplot
+plot(time(1:4501), angular_momentum_error_x(1:4501), 'Color', C(1,:), 'linewidth',2)
+hold on
+plot(time(1:4501), angular_momentum_error_y(1:4501), 'Color', C(2,:), 'linewidth',2)
+hold on
+plot(time(1:4501), angular_momentum_error_z(1:4501), 'Color', C(3,:), 'linewidth',2)
+grid on
+
+title(ax2,'angular momentum error')
+legend('$x$','$y$','$z$')
+title('Angular Momentum Error',...
+'FontUnits','points',...
+'FontWeight','normal',...
+'FontSize',10,...
+'FontName','Times')
+
+legend({'$\alpha$', '$\beta$', '$\gamma$'}, ...
+'Location','EastOutside', ...    
+'FontUnits','points',...
+'interpreter','latex',...
+'FontSize',10,...
+'FontName','Times')
+
+ylabel('[kg.m^2/s]',...
+'FontUnits','points',...
+'FontWeight','normal',...
+'FontSize',10,...
+'FontName','Times')
+
+print -depsc2 momentum_error.eps
 
 %% plot postural task joint errors
 N = 6;
@@ -553,11 +604,11 @@ state                      =  comData.signals(4).values(:);
 figure('rend','painters','pos',[10 10 600 520]);
 ax1                        = subplot(4,1,1); % Torso joint errors subplot
 
-plot(time, torso_roll_error,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), torso_roll_error(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, torso_pitch_error, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), torso_pitch_error(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, torso_yaw_error,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), torso_yaw_error(1:4501),'Color', C(3,:), 'linewidth',2)
 
 grid on
 title('Torso joint errors',...
@@ -581,13 +632,13 @@ ylabel('[$\theta$]',...
 'FontName','Times')
 
 ax2                        = subplot(4,1,2); % left arm joint errors subplot
-plot(time, left_shoulder_roll_error,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), left_shoulder_roll_error(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, left_shoulder_pitch_error, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), left_shoulder_pitch_error(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, left_shoulder_yaw_error,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), left_shoulder_yaw_error(1:4501),'Color', C(3,:), 'linewidth',2)
 hold on
-plot(time, left_elbow_error,'Color', C(4,:), 'linewidth',2)
+plot(time(1:4501), left_elbow_error(1:4501),'Color', C(4,:), 'linewidth',2)
 
 grid on
 title('Left arm joint errors',...
@@ -611,13 +662,13 @@ ylabel('[$\theta$]',...
 'FontName','Times')
 
 ax3                        = subplot(4,1,3); % right arm joint errors subplot
-plot(time, right_shoulder_roll_error,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), right_shoulder_roll_error(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, right_shoulder_pitch_error, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), right_shoulder_pitch_error(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, right_shoulder_yaw_error,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), right_shoulder_yaw_error(1:4501),'Color', C(3,:), 'linewidth',2)
 hold on
-plot(time, right_elbow_error,'Color', C(4,:), 'linewidth',2)
+plot(time(1:4501), right_elbow_error(1:4501),'Color', C(4,:), 'linewidth',2)
 
 grid on
 title('Right arm joint errors',...
@@ -651,17 +702,17 @@ print -depsc2 postural_task_upper_body.eps
 
 figure('rend','painters','pos',[10 10 600 520]);
 ax1                       = subplot(4,1,1); % left leg joint errors subplot
-plot(time, left_hip_roll_error,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), left_hip_roll_error(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, left_hip_pitch_error, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), left_hip_pitch_error(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, left_hip_yaw_error,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), left_hip_yaw_error(1:4501),'Color', C(3,:), 'linewidth',2)
 hold on
-plot(time, left_knee_error,'Color', C(4,:), 'linewidth',2)
+plot(time(1:4501), left_knee_error(1:4501),'Color', C(4,:), 'linewidth',2)
 hold on
-plot(time, left_ankle_roll_error,'Color', C(5,:), 'linewidth',2)
+plot(time(1:4501), left_ankle_roll_error(1:4501),'Color', C(5,:), 'linewidth',2)
 hold on
-plot(time, left_ankle_pitch_error,'Color', C(6,:), 'linewidth',2)
+plot(time(1:4501), left_ankle_pitch_error(1:4501),'Color', C(6,:), 'linewidth',2)
 grid on
 
 title('Left leg joint errors',...
@@ -685,17 +736,17 @@ ylabel('[$\theta$]',...
 'FontName','Times')
 
 ax2                      = subplot(4,1,2); % right leg joint errors subplot
-plot(time, right_hip_roll_error,'Color', C(1,:), 'linewidth',2)
+plot(time(1:4501), right_hip_roll_error(1:4501),'Color', C(1,:), 'linewidth',2)
 hold on
-plot(time, right_hip_pitch_error, 'Color',C(2,:), 'linewidth',2)
+plot(time(1:4501), right_hip_pitch_error(1:4501), 'Color',C(2,:), 'linewidth',2)
 hold on
-plot(time, right_hip_yaw_error,'Color', C(3,:), 'linewidth',2)
+plot(time(1:4501), right_hip_yaw_error(1:4501),'Color', C(3,:), 'linewidth',2)
 hold on
-plot(time, right_knee_error,'Color', C(4,:), 'linewidth',2)
+plot(time(1:4501), right_knee_error(1:4501),'Color', C(4,:), 'linewidth',2)
 hold on
-plot(time, right_ankle_roll_error,'Color', C(5,:), 'linewidth',2)
+plot(time(1:4501), right_ankle_roll_error(1:4501),'Color', C(5,:), 'linewidth',2)
 hold on
-plot(time, right_ankle_pitch_error,'Color', C(6,:), 'linewidth',2)
+plot(time(1:4501), right_ankle_pitch_error(1:4501),'Color', C(6,:), 'linewidth',2)
 grid on
 
 title('Right leg joint errors',...
